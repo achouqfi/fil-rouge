@@ -14,13 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.home');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('admin/home', 'App\Http\Controllers\HomeController@adminHome')->name('admin')->middleware('is_admin');
 
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/contact','App\Http\Controllers\ContactController@index');
+Route::post('/contact/create','App\Http\Controllers\ContactController@store');
+Route::get('/contactadmin','App\Http\Controllers\ContactController@admin');
+
+
+Route::get('/ship','App\Http\Controllers\ShipController@index');
+Route::post('/ship/create','App\Http\Controllers\ShipController@store');
+
