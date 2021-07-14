@@ -16,6 +16,7 @@ class ShipController extends Controller
     public function index()
     {
         //
+        
         return view('user.ship');
     }
 
@@ -24,6 +25,7 @@ class ShipController extends Controller
         //
         $ship= ship::All();
         return view("admin.ship",["ship" => $ship]);
+        
     }
 
     public function create()

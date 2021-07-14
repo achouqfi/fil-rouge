@@ -24,25 +24,22 @@
 
         <ul class="menulist">
             <li>
-                <a href="#"><i class="fa fa-home "></i></a>    
+                <a href="/admin/home"><i class="fa fa-home "></i></a>    
             </li>
             <li>
-                <a href="#"><i class="fa fa-shopping-cart "></i></a>
+                <a href="/shipadmin"><i class="fa fa-shopping-cart "></i></a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-newspaper-o "></i></a>
             </li>
             <li>
-                <a href="/contact"><i class="fa fa-envelope "></i></a>
+                <a href="/contactadmin"><i class="fa fa-envelope "></i></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-ticket "></i></a>
+                <a href="/"><i class="fa fa-ticket "></i></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-users "></i></a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-user "></i></a>
+                <a href="/users"><i class="fa fa-users "></i></a>
             </li>
         </ul>
 

@@ -8,21 +8,19 @@
         <tr>
             <th>ID</th>
             <th>name</th>
-            <th>prenom</th>
             <th>email</th>
-            <th>message</th>
+            <th>role</th>
             <th class="text-center">Action</th>
         </tr>
     </thead>
-    @foreach ($contact as $contact)
+    @foreach ($users as $users)
         <tr>
-            <td> {{ $contact->id }}</td>
-            <td> {{ $contact->name}}</td>
-            <td> {{ $contact->prenom }}</td>
-            <td> {{ $contact->email }}</td>
-            <td> {{ $contact->message }}</td>
+            <td> {{ $users->id }}</td>
+            <td> {{ $users->name}}</td>
+            <td> {{ $users->email }}</td>
+            <td> {{ $users->is_admin }}</td>
             <td>
-                <form action="{{ url('contact/'.$contact->id) }}" method="POST">
+                <form action="{{ url('users/'.$users->id) }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <button class="btn btn-danger">Supprimer</button>

@@ -8,7 +8,7 @@
             <div class="order">
                 <i class="fa fa-shopping-cart"></i>
                 <div class="info">
-                    <span class="numbers">12</span>
+                    <span class="numbers">{{ $ShipCount }}</span>
                     <span class="name">Orders</span>
                 </div>
             </div>
@@ -16,7 +16,7 @@
             <div class="order" style="background-color: rgb(0, 194, 0);">
             <i class="fa fa-envelope"></i>
             <div class="info">
-                <span class="numbers">12</span>
+                <span class="numbers">{{ $contactCount }}</span>
                 <span class="message">Messages</span>
             </div>
             </div>
@@ -32,7 +32,7 @@
             <div class="order" style="background-color: rgb(2, 109, 158);">
             <i class="fa fa-users"></i>
             <div class="info">
-                <span class="numbers">12</span>
+                <span class="numbers">{{ $userCount }}</span>
                 <span class="users">Users</span>
             </div>
             </div>
