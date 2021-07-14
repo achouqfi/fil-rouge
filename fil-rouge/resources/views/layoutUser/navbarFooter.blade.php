@@ -25,7 +25,7 @@
         </button>
         <div id="navbarCollapse" class="collapse navbar-collapse ">
         <div class="navbar-nav">
-            <a href="/contact" class="nav-item nav-link active" >Home</a>
+            <a href="/" class="nav-item nav-link active" >Home</a>
             <a href="/about" class="nav-item nav-link">About</a>			
             <a href="/ship" class="nav-item nav-link">Ship</a>
             <a href="/plan" class="nav-item nav-link ">Plan</a>

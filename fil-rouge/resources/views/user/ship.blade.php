@@ -61,41 +61,47 @@
         </div>
       </div>
 
+      @auth    
       <div class="titleShip">
         <h4>Enter dimensions</h4>
         <div class="linee"></div>
       </div>
+      <form action="{{ url('ship/create') }}" method="POST" enctype="multipart/form-data">
+        <div class="formilaireCustomaze">
+          @csrf
+          <div class="select">
+            <select name="category" class="category">
+              <option selected>Category</option>
+              <option value="1">ShortBoard</option>
+              <option value="2">Fish</option>
+              <option value="3">Funboard</option>
+              <option value="3">Longboard</option>
+              <option value="3">Gun</option>
+              <option value="3">Funboard</option>
+            </select>
+          </div>
+          <div class="inputsForm">
+            <div class="rowform1">
+              <input type="text" name="color" placeholder="color">
+              <input type="text" name="rocker" placeholder="rocker">
+              <input type="text" name="typeOfWave" placeholder="type of wave">
+            </div>
+            <div class="rowform2"> 
+              <input type="text" name="lenght" placeholder="lenght in inch">
+              <input type="text" name="width" placeholder="width in inch">
+              <input type="text" name="thickness" placeholder="thickness in inch">
+            </div>
+            <div class="rowform3">
+              <textarea name="MoreDetails" id="" cols="30" rows="10" placeholder="More Details"></textarea>
+            </div>
+            <div class="btnForm">
+              <input type="submit" name="submit" class="btnContact" value="Send Message" />
+            </div>
+          </div>
+        </div>
+      </form>
+      
+      @endauth
 
-      <div class="formilaireCustomaze">
-        <div class="select">
-          <select class="category">
-            <option selected>Category</option>
-            <option value="1">ShortBoard</option>
-            <option value="2">Fish</option>
-            <option value="3">Funboard</option>
-            <option value="3">Longboard</option>
-            <option value="3">Gun</option>
-            <option value="3">Funboard</option>
-          </select>
-        </div>
-        <div class="inputsForm">
-          <div class="rowform1">
-            <input type="text" placeholder="name">
-            <input type="text" placeholder="email">
-            <input type="text" placeholder="type of wave">
-          </div>
-          <div class="rowform2"> 
-            <input type="text" placeholder="lenght in inch">
-            <input type="text" placeholder="width in inch">
-            <input type="text" placeholder="thickness in inch">
-          </div>
-          <div class="rowform3">
-            <textarea name="" id="" cols="30" rows="10" placeholder="More Details"></textarea>
-          </div>
-          <div class="btnForm">
-            <a class="btn btn-primary btn-outline btn-lg" href="#">Send</a>
-          </div>
-        </div>
-      </div>
 </body>
 @endsection

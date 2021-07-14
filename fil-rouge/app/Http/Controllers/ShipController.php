@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ship;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ShipController extends Controller
 {
@@ -18,67 +19,51 @@ class ShipController extends Controller
         return view('user.ship');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function admin()
+    {
+        //
+        $ship= ship::All();
+        return view("admin.ship",["ship" => $ship]);
+    }
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $shap = new ship();
+        $shap -> category = $request -> category;
+        $shap -> color =  $request -> color;
+        $shap -> rocker =  $request -> rocker;
+        $shap -> typeOfWave =  $request -> typeOfWave;
+        $shap -> lenght =  $request -> lenght;
+        $shap -> width =  $request -> width;
+        $shap -> thickness =  $request -> thickness;
+        $shap -> MoreDetails =  $request -> MoreDetails;
+        $shap -> users_id = auth::user() -> id;
+
+        $shap ->save();
+        return redirect("ship");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ship  $ship
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ship $ship)
+    public function show()
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\ship  $ship
-     * @return \Illuminate\Http\Response
-     */
     public function edit(ship $ship)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ship  $ship
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, ship $ship)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\ship  $ship
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(ship $ship)
     {
         //
