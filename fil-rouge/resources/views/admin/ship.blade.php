@@ -32,7 +32,7 @@
             <td> {{ $ship->MoreDetails }}</td>
             <td> {{ $ship->users_id }}</td>
             <td>
-                <form action="{{ url('ship/'.$ship->id) }}" method="POST">
+                <form action="{{ url("shipadmin/".$ship->id) }}" method="POST" >
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <button class="btn btn-danger">Supprimer</button>

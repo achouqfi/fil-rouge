@@ -1,6 +1,8 @@
 @extends('layouts.sidebar')
 
 @section('content')
+<link rel="stylesheet" href="{{ URL::asset('css/dashboardContent.css') }}">
+
 <div class="container">
     <div class="row ">
     <table class="table table-striped custab">
@@ -13,14 +15,18 @@
             <th class="text-center">Action</th>
         </tr>
     </thead>
-    @foreach ($users as $users)
+    @foreach ($users as $user)
         <tr>
-            <td> {{ $users->id }}</td>
-            <td> {{ $users->name}}</td>
-            <td> {{ $users->email }}</td>
-            <td> {{ $users->is_admin }}</td>
+            <td> {{ $user->id }}</td>
+            <td> {{ $user->name}}</td>
+            <td> {{ $user->email }}</td>
+            @if ($user->is_admin === 1)
+                <td>Admin</td>
+             @else
+                <td>User</td>
+            @endif 
             <td>
-                <form action="{{ url('users/'.$users->id) }}" method="POST">
+                <form action="{{ url('users/'.$user->id) }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <button class="btn btn-danger">Supprimer</button>

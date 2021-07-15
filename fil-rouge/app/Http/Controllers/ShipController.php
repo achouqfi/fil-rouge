@@ -8,11 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ShipController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
@@ -66,8 +62,12 @@ class ShipController extends Controller
         //
     }
 
-    public function destroy(ship $ship)
+    public function destroy( $id)
     {
         //
+        // $ship =ship::find($ship);
+        ship::destroy($id);
+
+        return redirect("/shipadmin");
     }
 }

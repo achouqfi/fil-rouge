@@ -17,7 +17,7 @@ class CreateShipsTable extends Migration
             $table->string('lenght');            
             $table->string('width');            
             $table->string('thickness');            
-            $table->string('MoreDetails');            
+            $table->string('MoreDetails');
             $table->foreignId('users_id')->constrained();
             $table->timestamps();
         });

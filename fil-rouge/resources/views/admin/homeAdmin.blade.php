@@ -2,6 +2,7 @@
 
 @section('content')
 
+<link rel="stylesheet" href="{{ URL::asset('css/contentHome.css') }}">
 
 <div class="content">
     <div class="navCount">

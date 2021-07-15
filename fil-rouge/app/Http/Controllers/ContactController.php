@@ -48,8 +48,12 @@ class ContactController extends Controller
         //
     }
 
-    public function destroy(contact $contact)
+    public function destroy($id)
     {
         //
+        $contact = contact::find($id);
+        $contact->delete();
+        
+        return redirect("/contactadmin");
     }
 }

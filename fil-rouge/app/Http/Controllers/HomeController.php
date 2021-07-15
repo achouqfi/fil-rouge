@@ -34,7 +34,7 @@ class HomeController extends Controller
         $users= user::All();
         return view("admin.users",["users" => $users]);
     }
-
+    
     public function adminHome()
     {
         $ship= ship::All();
