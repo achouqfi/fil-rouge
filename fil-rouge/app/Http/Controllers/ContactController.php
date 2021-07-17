@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\contact;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -15,14 +15,14 @@ class ContactController extends Controller
     public function admin()
     {
         //
-        $contact= contact::All();
-        return view("admin.contact",["contact" => $contact]);
+        $contact= Contact::All();
+        return view("admin.contact",["contacts" => $contact]);
     }
 
     public function store(Request $request)
     {
         //
-        $contact = new contact();
+        $contact = new Contact();
         $contact -> name = $request -> name;
         $contact -> prenom =  $request -> email;
         $contact -> email =  $request -> phone;
@@ -51,7 +51,7 @@ class ContactController extends Controller
     public function destroy($id)
     {
         //
-        $contact = contact::find($id);
+        $contact = Contact::find($id);
         $contact->delete();
         
         return redirect("/contactadmin");

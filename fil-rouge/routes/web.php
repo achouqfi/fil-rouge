@@ -35,10 +35,10 @@ Route::get('/contactadmin','App\Http\Controllers\ContactController@admin');
 Route::delete('/contact/{id}','App\Http\Controllers\ContactController@destroy');
 
 // shap route
-Route::get('/ship','App\Http\Controllers\ShipController@index');
-Route::post('/ship/create','App\Http\Controllers\ShipController@store');
-Route::get('/shipadmin','App\Http\Controllers\ShipController@admin');
-Route::delete('/shipadmin/{id}','App\Http\Controllers\ShipController@destroy');
+Route::get('/ship','App\Http\Controllers\ShapController@index');
+Route::post('/ship/create','App\Http\Controllers\ShapController@store');
+Route::get('/shipadmin','App\Http\Controllers\ShapController@admin');
+Route::delete('/shipadmin/{id}','App\Http\Controllers\ShapController@destroy');
 
 //users
 Route::get('/users','App\Http\Controllers\HomeController@user');
@@ -46,5 +46,15 @@ Route::get('/users','App\Http\Controllers\HomeController@user');
 
 //user view page
 Route::get('/compte','App\Http\Controllers\UserInfoController@index');
+
+
+//article
+Route::get('/article','App\Http\Controllers\ArticleController@index');
+Route::get('/article/create', 'App\Http\Controllers\ArticleController@create');
+Route::post('/article/save','App\Http\Controllers\ArticleController@store');
+Route::get('/article/{id}/edit', 'App\Http\Controllers\ArticleController@edit');
+Route::put('/article/{id}', 'App\Http\Controllers\ArticleController@update');
+Route::get('/articleUser','App\Http\Controllers\ArticleController@');
+Route::delete('/shipUser/{id}','App\Http\Controllers\ArticleController@destroy');
 
 

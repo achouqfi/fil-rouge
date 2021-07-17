@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ship;
+use App\Models\Shap;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ShipController extends Controller
-{
 
+class ShapController extends Controller
+{
     public function index()
     {
         //
@@ -19,7 +19,7 @@ class ShipController extends Controller
     public function admin()
     {
         //
-        $ship= ship::All();
+        $ship= Shap::All();
         return view("admin.ship",["ship" => $ship]);
         
     }
@@ -32,7 +32,7 @@ class ShipController extends Controller
 
     public function store(Request $request)
     {
-        $shap = new ship();
+        $shap = new Shap();
         $shap -> category = $request -> category;
         $shap -> color =  $request -> color;
         $shap -> rocker =  $request -> rocker;
@@ -52,12 +52,12 @@ class ShipController extends Controller
         //
     }
 
-    public function edit(ship $ship)
+    public function edit( )
     {
         //
     }
 
-    public function update(Request $request, ship $ship)
+    public function update()
     {
         //
     }
@@ -66,7 +66,7 @@ class ShipController extends Controller
     {
         //
         // $ship =ship::find($ship);
-        ship::destroy($id);
+        Shap::destroy($id);
 
         return redirect("/shipadmin");
     }

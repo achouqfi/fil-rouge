@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/sidebar.css') }}">
     <title>Home page</title>
 
@@ -36,7 +37,7 @@
                 <a href="/contactadmin"><i class="fa fa-envelope "></i></a>
             </li>
             <li>
-                <a href="/"><i class="fa fa-ticket "></i></a>
+                <a href="/article"><i class="fa fa-ticket "></i></a>
             </li>
             <li>
                 <a href="/users"><i class="fa fa-users "></i></a>
@@ -56,6 +57,8 @@
 
     @yield('content')
 
-    
+
+
+    @yield('scriptText')
 </body>
 </html>

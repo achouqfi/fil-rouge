@@ -7,79 +7,77 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
+        return view('admin.blog.article');
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
+        return view("admin.blog.createArticle");
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
+        $article = new article();
+        $article -> title = $request -> titre;
+        $article -> text = $request -> article;
+
+        // insert photo
+        $photo = $request->photo;
+        $ext = $photo->getClientOriginalExtension();
+        $filename = time() . ".".$ext ;
+        $filepath = "storage/images/";
+        $photo->move($filepath,$filename);
+        $article->photo = $filepath.$filename;
+
+
+
+
+        $article ->save();
+        // return redirect("article");
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\article  $article
-     * @return \Illuminate\Http\Response
-     */
-    public function show(article $article)
+    public function show(article $id)
     {
         //
+        $article = article::find($id);
+        return view('admin.preview',["article"=>$article]);
+        
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\article  $article
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(article $article)
+    public function edit(article $id)
     {
         //
+        $article = article::find($id);
+        return view('admin.editArticle.',["article"=>$article]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\article  $article
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, article $article)
+    public function update(Request $request, article $id)
     {
         //
+        $article =article::find($id);
+        $article -> author = $request -> author;
+
+
+        $article ->save();
+
+        return redirect("article");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\article  $article
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(article $article)
+    public function destroy(article $id)
     {
         //
+        $article =article::find($id);
+        $article->destroy();
+
+        return redirect("article");
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\ship;
-use App\Models\contact;
+use App\Models\Contact;
+use App\Models\Shap;
 use App\Models\User;
 
 
@@ -31,19 +31,19 @@ class HomeController extends Controller
     }
 
     public function user(){
-        $users= user::All();
+        $users= User::All();
         return view("admin.users",["users" => $users]);
     }
     
     public function adminHome()
     {
-        $ship= ship::All();
+        $ship= Shap::All();
         $ShipCount = count($ship);
 
-        $users= user::All();
+        $users= User::All();
         $userCount = count($users);
 
-        $contact= contact::All();
+        $contact= Contact::All();
         $contactCount = count($contact);
         return view('admin.homeAdmin',["contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount]);
     }
