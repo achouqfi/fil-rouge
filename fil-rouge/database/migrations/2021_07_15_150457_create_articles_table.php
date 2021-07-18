@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string('photo');
             $table->string('title');
-            $table->string('text');
+            $table->longText('text');
             $table->timestamps();
         });
     }

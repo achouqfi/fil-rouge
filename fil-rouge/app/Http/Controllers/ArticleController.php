@@ -11,7 +11,8 @@ class ArticleController extends Controller
     public function index()
     {
         //
-        return view('admin.blog.article');
+        $article= article::All();
+        return view('admin.blog.article',["articles"=>$article]);
 
     }
 
@@ -28,19 +29,15 @@ class ArticleController extends Controller
         $article -> title = $request -> titre;
         $article -> text = $request -> article;
 
-        // insert photo
-        $photo = $request->photo;
-        $ext = $photo->getClientOriginalExtension();
+        $file = $request->photo;
+        $ext = $file->getClientOriginalExtension();
         $filename = time() . ".".$ext ;
-        $filepath = "storage/images/";
-        $photo->move($filepath,$filename);
+        $filepath ="storage/public/";
+        $file->move($filepath,$filename);
         $article->photo = $filepath.$filename;
 
-
-
-
         $article ->save();
-        // return redirect("article");
+        return redirect("article");
 
     }
 
@@ -53,11 +50,11 @@ class ArticleController extends Controller
 
     }
 
-    public function edit(article $id)
+    public function edit($id)
     {
         //
         $article = article::find($id);
-        return view('admin.editArticle.',["article"=>$article]);
+        return view('admin.blog.editArticle',["article"=>$article]);
     }
 
     public function update(Request $request, article $id)
@@ -72,11 +69,11 @@ class ArticleController extends Controller
         return redirect("article");
     }
 
-    public function destroy(article $id)
+    public function destroy($id)
     {
         //
-        $article =article::find($id);
-        $article->destroy();
+        article::destroy($id);
+
 
         return redirect("article");
     }

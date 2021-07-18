@@ -65,9 +65,7 @@ class ShapController extends Controller
     public function destroy( $id)
     {
         //
-        // $ship =ship::find($ship);
         Shap::destroy($id);
-
         return redirect("/shipadmin");
     }
 }

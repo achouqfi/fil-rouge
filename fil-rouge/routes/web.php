@@ -55,6 +55,6 @@ Route::post('/article/save','App\Http\Controllers\ArticleController@store');
 Route::get('/article/{id}/edit', 'App\Http\Controllers\ArticleController@edit');
 Route::put('/article/{id}', 'App\Http\Controllers\ArticleController@update');
 Route::get('/articleUser','App\Http\Controllers\ArticleController@');
-Route::delete('/shipUser/{id}','App\Http\Controllers\ArticleController@destroy');
+Route::delete('/articleDlt/{id}','App\Http\Controllers\ArticleController@destroy');
 
 
