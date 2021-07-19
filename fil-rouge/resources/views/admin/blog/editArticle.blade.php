@@ -7,7 +7,7 @@
 		<div class="col-md-12 article">
 			<h2>Modifié cet article</h2>
 			<div class="Article-form">
-                <form action="{{ url('article/'.$article->id) }}" method="POST">
+                <form action="{{ url('article/'.$article->id) }}" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_method" value="PUT">
                     @csrf
 
@@ -28,7 +28,7 @@
                     <div class="form-group">
                     <label class="control-label col-sm-2">Article</label>
                         <div class="col-sm-12">
-                            <textarea name="article" placeholder="Saisir l'article" value="{{ $article->text }}" id="Text"></textarea>
+                            <textarea name="article" placeholder="Saisir l'article" id="Text">{{ $article->text }}</textarea>
                         </div>
                     </div>
                     

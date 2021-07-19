@@ -216,10 +216,10 @@ body{
     margin-left: 45%;
     margin-bottom: 26px;
 }
-.row {
+/* .row {
     margin-left: -95px;
     margin-right: -159px;
-}
+} */
 
 .desc{
 	position: absolute;
@@ -480,4 +480,29 @@ body{
 }
 .SocialMedia h4{
     font-family: 'Noto Serif', serif;
+}
+
+
+/* blog */
+
+.card-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px #c5c5c5;
+    margin-bottom: 30px;
+    float: left;
+    border-radius: 10px;
+}
+.card-box .card-thumbnail {
+    max-height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: 1s;
+}
+.card-box .card-thumbnail:hover {
+    transform: scale(1.1);
+}
+.card-box h3 a {
+    font-size: 20px;
+    text-decoration: none;
 }

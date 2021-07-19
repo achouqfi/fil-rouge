@@ -16,6 +16,14 @@ class ArticleController extends Controller
 
     }
 
+    public function blog()
+    {
+        //
+        $article= article::All();
+        return view('user.blog',["articles"=>$article]);
+
+    }
+
     public function create()
     {
         //
@@ -41,11 +49,11 @@ class ArticleController extends Controller
 
     }
 
-    public function show(article $id)
+    public function show( $id)
     {
         //
         $article = article::find($id);
-        return view('admin.preview',["article"=>$article]);
+        return view('user.showArticle',["article"=>$article]);
         
 
     }
@@ -57,12 +65,20 @@ class ArticleController extends Controller
         return view('admin.blog.editArticle',["article"=>$article]);
     }
 
-    public function update(Request $request, article $id)
+    public function update(Request $request, $id)
     {
         //
         $article =article::find($id);
-        $article -> author = $request -> author;
+        
+        $article -> title = $request -> titre;
+        $article -> text = $request -> article;
 
+        $file = $request->photo;
+        $ext = $file->getClientOriginalExtension();
+        $filename = time() . ".".$ext ;
+        $filepath ="storage/public/";
+        $file->move($filepath,$filename);
+        $article->photo = $filepath.$filename;
 
         $article ->save();
 
