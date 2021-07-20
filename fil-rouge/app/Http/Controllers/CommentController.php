@@ -20,27 +20,19 @@ class CommentController extends Controller
     public function create()
     {
         //
-
     }
 
 
     public function store(Request $request)
     {
         //
-        $shap = new Comment();
-        $shap -> category = $request -> category;
-        $shap -> color =  $request -> color;
-        $shap -> rocker =  $request -> rocker;
-        $shap -> typeOfWave =  $request -> typeOfWave;
-        $shap -> lenght =  $request -> lenght;
-        $shap -> width =  $request -> width;
-        $shap -> thickness =  $request -> thickness;
-        $shap -> MoreDetails =  $request -> MoreDetails;
-        $shap -> users_id = auth::user()-> id;
-        $shap -> articles_id = article::article()-> article;
+        $comment = new Comment();
+        $comment -> message = $request -> commentaire;
+        $comment -> users_id = auth::user() -> id;
+        $comment -> articles_id = article::get();
 
-        $shap ->save();
-        return redirect("ship");
+        $comment ->save();
+        return redirect("/article");
 
     }
 

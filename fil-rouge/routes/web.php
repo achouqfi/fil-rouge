@@ -56,7 +56,7 @@ Route::delete('/articleDlt/{id}','App\Http\Controllers\ArticleController@destroy
 
 //comments
 Route::get('/comment','App\Http\Controllers\CommentController@index');
-Route::post('/comment/save','App\Http\Controllers\CommentsController@store');
+Route::post('/comment/save','App\Http\Controllers\CommentController@store');
 Route::get('/comment/{id}/edit', 'App\Http\Controllers\CommentController@edit');
 Route::put('/comment/{id}', 'App\Http\Controllers\CommentController@update');
 Route::get('/comment/{id}/show', 'App\Http\Controllers\CommentController@show');

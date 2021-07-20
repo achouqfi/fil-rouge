@@ -15,12 +15,12 @@
         <h3>{{ $article->title }}</h3>
         {!! $article->text !!}
     </div>
-    <form action="{{ url('comment/save') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ url('comment/save') }}" method="POST">
         @csrf
         <div class="comments">
             <h4>Donner un commentaire</h4>
             <input type="text" name="commentaire" placeholder="Email">
-            <a class="btn btn-primary btn-outline" href="#">envoyer</a>
+            <button>send</button>
         </div>
     </form>
 @endsection
