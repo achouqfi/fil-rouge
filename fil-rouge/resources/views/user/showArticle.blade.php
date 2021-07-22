@@ -15,12 +15,12 @@
         <h3>{{ $article->title }}</h3>
         {!! $article->text !!}
     </div>
-    <form action="{{ url('comment/save') }}" method="POST">
+    <form action="{{ url('/comment'.$articleId->id) }}" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_method" value="PUT">
         @csrf
-        <div class="comments">
-            <h4>Donner un commentaire</h4>
-            <input type="text" name="commentaire" placeholder="Email">
-            <button>send</button>
-        </div>
+   
+        <h4>Donner un commentaire</h4>
+        <input type="text" name="commentaire" placeholder="Email">
+        <button>send</button>
     </form>
 @endsection
