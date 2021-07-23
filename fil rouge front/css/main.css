@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital@1&display=swap');
+
+/*------------------- navbar------------------------  */
+body{
+	font-family: 'Varela Round', sans-serif;
+    margin: 0%;
+}
+.form-inline {
+	display: inline-block;
+}
+.navbar-header.col {
+	padding: 0 !important;
+}	
+.navbar {	
+	background: #fff;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-bottom: 1px solid #d6d6d6;
+	box-shadow: 0 0 4px rgba(0,0,0,.1);
+}
+.nav-link {
+	margin: 0 5px;
+    color: black !important;
+    font-weight: 100;
+}
+.nav-link img {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	margin: -8px 0;
+	float: left;
+	margin-right: 10px;
+}
+.navbar .navbar-brand {
+	color: rgb(0, 0, 0);
+	padding-left: 0;
+	font-size: 20px;
+	padding-right: 50px;
+	font-family: 'Raleway', sans-serif;
+}
+.navbar .navbar-brand b {
+	font-weight: bold;
+	color: #5EB6DD;
+}
+.navbar .navbar-nav a:hover, .navbar .navbar-nav a:focus {
+	color: #5EB6DD !important;
+
+}
+.navbar .navbar-nav a.active, .navbar .navbar-nav a.active:hover {
+	color: #5EB6DD !important;
+	background: transparent !important;
+}
+.search-box {
+	position: relative;
+}	
+.search-box input.form-control {		
+	padding-right: 35px;
+	border-radius: 0;
+	padding-left: 0;
+	border-width: 0 0 1px 0;
+	box-shadow: none;
+}
+.search-box input.form-control:focus {		
+	border-color: #5EB6DD;		
+}
+.search-box .input-group-text {
+	min-width: 35px;
+	border: none;
+	background: transparent;
+	position: absolute;
+	right: 0;
+	z-index: 9;
+	padding: 7px 0 7px 7px;
+	height: 100%;
+}
+
+.navbar .nav-item i {
+	font-size: 18px;
+}
+.navbar .dropdown-item i {
+	font-size: 16px;
+	min-width: 22px;
+}
+.navbar .nav-item.show > a {
+	background: none !important;
+}
+.navbar .dropdown-menu {
+	border-radius: 1px;
+	border-color: #e5e5e5;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.navbar .dropdown-menu a {
+	color: rgb(0, 0, 0);
+	padding: 8px 20px;
+	line-height: normal;
+	font-size: 15px;
+}
+.navbar .navbar-form {
+	margin-right: 0;
+	margin-left: 0;
+	border: 0;
+}
+
+.navbar-nav{
+    margin-left: 25%;
+}
+@media (min-width: 992px){
+	.form-inline .input-group {
+		width: 250px;
+		margin-right: 30px;
+	}
+}
+@media (max-width: 991px){
+	.form-inline {
+		display: block;
+		margin-bottom: 10px;
+		margin-top: 0;
+	}
+	.input-group {
+		width: 100%;
+	}
+}
+
+/*--------------------- body ---------------------------*/
+
+
+/*-------------- header page home--------------------- */
+
+.img-home img{
+    filter: drop-shadow(0px 9px 15px #8a8a8a);
+    position: absolute;
+}
+
+.text h3{
+    position: relative;
+    margin-top: 14.5%;
+    font-size: x-large;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 38px;
+    margin-left: 2.7%;
+}@media (min-width:480px) and (max-width:700px){
+    .text h3{
+        font-size: large;
+        line-height: 20px;
+    }
+}
+
+.reservation{
+    position: relative;
+    margin-left: 3%;
+}
+
+.but-now{
+    background-color: red;
+    width: 108px;
+    height: 29px;
+    border-radius: 10px;
+    
+}.but-now:hover{
+    background-color: crimson;
+}
+
+.learn-more{
+    background-color: #5EB6DD;
+}.learn-more:hover{
+    background-color: rgb(0, 163, 163);
+}
+@media (min-width:480px) and (max-width:700px){
+    .btn{
+        font-size: small;
+    }
+}
+
+
+/* -----------------------About-us -----------------------*/
+ .avantage{
+    margin-left: 10%;
+    margin-right: 15%;
+     margin-top: 23%;
+    margin-bottom: 5%; 
+}
+.icons{
+    width: 70px;
+}
+.icons h2{
+    margin-left: 4%;
+    font-size: medium;
+    text-align: center;
+}.icons  img{
+    margin-left: 45%;
+}.icons p{
+    font-size: small;
+    text-align: center;
+    margin-left: 3%;
+}@media (min-width:480px) and (max-width:900px){
+    .container{
+        display: block;
+    }
+    .icons{
+        width: 100%;
+    }
+    .icons h2{
+        margin-left: 10%;
+        font-size: medium;
+        text-align: center;
+    }.icons  img{
+        margin-left: 45%;
+        
+    }.icons p{
+        font-size: small;
+        text-align: center;
+        margin-left: 10%;
+    }
+}
+

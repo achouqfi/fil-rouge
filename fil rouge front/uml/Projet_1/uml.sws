@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner signature="Workspace" version="15.1.0.2850"?>
+<!-- Veuillez ne pas modifier ce fichier -->
+
+<Workspace>
+	<Local Expanded="Yes">
+		<Model Expanded="Yes" ID="{21EBA526-2A74-4FCE-9993-8AC68CD42F30}" Loaded="No" Name="diagramme de classe" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="ModeleOrienteObjet_1.moo"/>
+		<Model ID="{C1ED61B9-D895-4C73-A7CB-CA61E46CF692}" Name="diagramme de cas d&#39;utilisation" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="diagramme de cas d&#39;utilisation.moo"/>
+		<Model Expanded="Yes" ID="{FFA981DA-8732-42EA-90DC-4CFEB5FD4C99}" Name="Projet_2" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="/xampp/htdocs/brief gestion de reservation/uml/Projet_2/Projet_2.prj"/>
+	</Local>
+	<BrowserModule Name="Référentiel"/>
+</Workspace>
