@@ -303,6 +303,7 @@ a {
   margin: 0;
   padding: 0;
   opacity: .70;
+  height: 240px;
 }
 .tours > .tourcard:hover .tipsinfo .tourpic img {
     opacity: 0.9;
@@ -374,14 +375,11 @@ a {
 	margin-bottom: 3%;
 }
 
-/* blog */
+/*----------------- blog ---------------*/
 
-.pad0
-{
-padding:0px;
-}
+
 .bg_black{
-background:#000;
+background:red;
 }
 .block-blog {
 	width: 100%;
@@ -395,9 +393,11 @@ background:#000;
 	position: relative;
 	overflow: hidden;
 	height: 250px;
+    width: 80%;
+    margin-left: 10%;
 }
 .transperent_block img {
-width:100%;
+    width:100%;
 	height: 100%;
 }
 .transperent_block:hover .black_hover_block {
@@ -423,10 +423,10 @@ width:100%;
 }
 .transperent_block:hover .black_hover_block, .black_hover_block:hover {
 	bottom: 30%;
-	transition: all 0.3s ease-in-out;
+	/* transition: all 0.3s ease-in-out; */
 }
 .transperent_block .blur {
-	background-color: rgba(0,0,0,0.7);
+	background-color:#005d85;
 	height: 400px;
 	z-index: 5;
 	position: absolute;
@@ -445,7 +445,7 @@ width:100%;
 	.block_header{
 		margin-top:5px;}
 		.black_hover_block_text i:hover {
-    color: #77132f;
+    color: #5EB6DD;
 }
 .black_hover_block_text i {
     padding: 10px 10px;
@@ -453,34 +453,34 @@ width:100%;
     color: #fff;
 }
 .black_hover_block_text i:hover {
-color:#ffffffa6}
+color:#005d85}
 
 .black_hover_block_text:hover .titl-h5 {
-    background-color: rgba(119, 19, 47, 0.60);
+    background-color: #5EB6DD;
 }
 .titl-h5 {
-    border-top: 2px solid #77132f;
-    border-bottom: 2px solid #77132f;
+    border-top: 2px solid #5EB6DD;
+    border-bottom: 2px solid #5EB6DD;
     padding: 10px;
     margin-top: 0px;
     line-height: 20px;
 	text-transform:uppercase;
 }
 .btn-pink {
-    background-color: #77132f;
+    background-color: #5EB6DD;
     color: #fff;
-    border: 4px solid #77132f;
+    border: 4px solid #5EB6DD;
 }
 .btn-pink:hover{
 color: #fff;
-    background-color: #6f0f2a9e;
-    border: 4px solid #6f0f2a4e;
+    background-color: #5EB6DD;
+    border: 4px solid #5EB6DD;
 }
 .btn-sm {
     margin-top: 10px;
 }
 .black_hover_block_text li:hover {
-    background-color: #77132f;
+    background-color: #5EB6DD;
     cursor: pointer;
     color: #fff;
     width: 33.34%;
@@ -488,6 +488,10 @@ color: #fff;
 .black_hover_block_text li {
     list-style: none;
     border: none !important;
+}
+
+.blogs{
+    margin-bottom: 5%;
 }
 	
 
