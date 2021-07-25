@@ -44,7 +44,7 @@ Route::get('/users','App\Http\Controllers\HomeController@user');
 //user view page
 Route::get('/compte','App\Http\Controllers\UserInfoController@index');
 
-//article
+//articles
 Route::get('/article','App\Http\Controllers\ArticleController@index');
 Route::get('/blog','App\Http\Controllers\ArticleController@blog');
 Route::get('/article/create', 'App\Http\Controllers\ArticleController@create');
@@ -55,9 +55,8 @@ Route::get('/article/{id}/show', 'App\Http\Controllers\ArticleController@show');
 Route::delete('/articleDlt/{id}','App\Http\Controllers\ArticleController@destroy');
 
 //comments
-Route::post('/comment/{id}','App\Http\Controllers\CommentController@store');
+Route::post('/comment/save','App\Http\Controllers\CommentController@store');
 Route::get('/comment/{id}/edit', 'App\Http\Controllers\CommentController@edit');
-// Route::put('/comment/{id}', 'App\Http\Controllers\CommentController@update');
+Route::put('/comment/{id}', 'App\Http\Controllers\CommentController@update');
 Route::get('/comment/{id}/show', 'App\Http\Controllers\CommentController@show');
 Route::delete('/commentDlt/{id}','App\Http\Controllers\CommentController@destroy');
-

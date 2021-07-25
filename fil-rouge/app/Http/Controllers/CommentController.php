@@ -16,38 +16,32 @@ class CommentController extends Controller
         //
     }
 
-
-    public function create()
+    public function create( Request $request)
     {
         //
     }
 
-    public function store($request,$id)
+    public function store(Request $request)
     {
-        dd(print_r("im in store controller"));
-
-        //
+        //insertion des commentaires
         $comment = new Comment();
-        // $article = article::find($id);
 
         $comment -> message = $request -> commentaire;
         $comment -> users_id = auth::user() -> id;
-        $comment-> article_id =article::find($id);
+        $comment-> article_id =$request -> article;
         $comment ->save();
 
-        return redirect("/article");
+        return redirect("/blog");
 
     }
 
-    public function show($id)
+    public function show(Request $request)
     {
         //
-        $articleId = article::find($id);
-        return view('user.showArticle',["articleId"=>$articleId]);
 
     }
 
-    public function edit()
+    public function edit(Request $request)
     {
         //
     }

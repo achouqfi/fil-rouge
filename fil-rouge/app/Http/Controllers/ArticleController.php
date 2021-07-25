@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\article;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -11,7 +12,7 @@ class ArticleController extends Controller
     public function index()
     {
         //
-        $article= article::All();
+        $article= Article::All();
         return view('admin.blog.article',["articles"=>$article]);
 
     }
@@ -20,6 +21,9 @@ class ArticleController extends Controller
     {
         //
         $article= article::All();
+        // $comment= Comment::All();
+
+
         return view('user.blog',["articles"=>$article]);
 
     }
@@ -49,19 +53,20 @@ class ArticleController extends Controller
 
     }
 
-    public function show( $id)
+    public function show($id)
     {
         //
         $article = article::find($id);
+
         return view('user.showArticle',["article"=>$article]);
         
-
     }
 
     public function edit($id)
     {
         //
         $article = article::find($id);
+
         return view('admin.blog.editArticle',["article"=>$article]);
     }
 
