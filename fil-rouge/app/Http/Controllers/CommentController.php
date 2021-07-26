@@ -27,12 +27,11 @@ class CommentController extends Controller
         $comment = new Comment();
 
         $comment -> message = $request -> commentaire;
-        $comment -> users_id = auth::user() -> id;
+        $comment -> user_id = auth::user() -> id;
         $comment-> article_id =$request -> article;
         $comment ->save();
 
-        return redirect("/blog");
-
+        return redirect()->back();
     }
 
     public function show(Request $request)
@@ -41,9 +40,11 @@ class CommentController extends Controller
 
     }
 
-    public function edit(Request $request)
+    public function edit($id)
     {
         //
+        $commentEdit = Comment::find($id);
+
     }
 
     public function update(Request $request, Comment $comment)
@@ -51,9 +52,13 @@ class CommentController extends Controller
         //
     }
 
-    public function destroy(Comment $comment)
+    public function destroy($id)
     {
         //
+        $comment = Comment::find($id);
+        $comment->delete();
+        
+        return redirect()->back();
     }
 
 }

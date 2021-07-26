@@ -26,7 +26,6 @@
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <button class="btn btn-danger btn-sm">Supprimer</button>
-                    <a href="/review/article" class="btn btn-success btn-sm">Preview</a>
                     <a href="{{ url('article/'.$article->id.'/edit') }}" class="btn btn-info btn-sm">Edit</a>
                 </form>
             </td>

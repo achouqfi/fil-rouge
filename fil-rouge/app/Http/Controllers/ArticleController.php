@@ -57,6 +57,7 @@ class ArticleController extends Controller
     {
         //
         $article = article::find($id);
+        // dd($article);
 
         return view('user.showArticle',["article"=>$article]);
         

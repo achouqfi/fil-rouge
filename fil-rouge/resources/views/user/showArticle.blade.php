@@ -13,45 +13,76 @@
     <div class="container">
         <img src="{{ asset($article->photo) }}" class="img-fluid"  width="80%">
         <h3>{{ $article->title }}</h3>
-        {!! $article->text !!}
+        <div style="width: 90%">
+            {!! $article->text !!}
+        </div>
     </div>
-    @foreach($article->comments  as $comment)
-        <div class="container">
-            <div class="row">
-                <div class="panel panel-default widget">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-10 col-md-11">
-                                <div>
-                                    <p> {{ $comment->message }}</p>
-                                    <div class="mic-info">
-                                        By: <p>{{ $comment->id_user }}</p> on 2 Aug 2013
+
+    <div class="container">
+        <div class="row bootstrap snippets bootdeys">
+            <div class="col-md-8 col-sm-12">
+                <div class="comment-wrapper">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Comment panel
+                        </div>
+                        <div class="panel-body">
+                            @auth 
+                                @if (\Auth::user()->is_admin == 0)
+                                    <form action="{{ url('comment/save') }}" method="POST"  enctype="multipart/form-data">
+                                        <input type="hidden" value="{{ $article->id }}" name="article" >
+                                        @csrf
+                                        <h4>Donner un commentaire</h4>
+                                        <textarea class="form-control" name="commentaire" placeholder="Enter your comment"></textarea>
+                                        <br>
+                                        <button type="submit" name="submit" class="btn btn-info pull-right">Post</button>
+                                        {{-- <input type="submit" name="submit"  class="btn btn-info pull-right" value="Post" /> --}}
+
+                                        <div class="clearfix"></div>
+                                    </form>
+                                @elseif (\Auth::user()->is_admin == 1)
+                                    <h3>this is comment list</h3>
+                                @else
+                                    <button class="btn btn-">connectez-vous</button>
+                                @endif 
+                            @endauth
+
+                            <hr>
+                            <ul class="media-list">
+                                @foreach($article->comments as $comment)
+                                <li class="media">
+                                    <div class="media-body">
+                                        {{-- <strong class="text-muted">{{ $comment->message }}</strong> --}}
+                                        <span></span>
+                                        <span class="text-muted pull-right">
+                                            <small class="text-muted">{{ $comment->created_at }}</small>
+                                        </span>
+                                        <strong class="text-success">{{ $comment->user->name }}</strong>
+                                        <p>
+                                            {{ $comment->message }}
+                                             @auth
+                                            @if ($comment->user_id === Auth::user()->id)
+                                            <div class="panel-body">
+                                                <form action="{{ url('commentDlt/'.$comment->id) }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <div>
+                                                        <button class="btn btn-danger btn-sm">Supprimer</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            @endif
+                                            @endauth
+                                        </p>
+
                                     </div>
-                                </div>
-                                <div class="comment-text">
-                                    Awesome design
-                                </div>
-                                <div class="action">
-                                    <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                                        <span class="glyphicon glyphicon-pencil">Edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                                        <span class="glyphicon glyphicon-trash">Supprimer</span>
-                                    </button>
-                                </div>
-                            </div>
+                                </li>
+                                @endforeach
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    @endforeach
-
-    <form action="{{ url('comment/save') }}" method="POST"  enctype="multipart/form-data">
-        <input type="hidden" value="{{ $article->id }}" name="article" >
-        @csrf
-        <h4>Donner un commentaire</h4>
-        <input type="text" name="commentaire" placeholder="Email">
-        <input type="submit" name="submit" class="btnContact" value="Send Message" />
-    </form>
+    </div>
 @endsection
