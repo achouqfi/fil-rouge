@@ -21,6 +21,10 @@ Route::get('/about', function () {
     return view('user.aboutUs');
 });
 
+Route::get('/plan', function () {
+    return view('user.reservation');
+});
+
 Auth::routes();
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -56,7 +60,28 @@ Route::delete('/articleDlt/{id}','App\Http\Controllers\ArticleController@destroy
 
 //comments
 Route::post('/comment/save','App\Http\Controllers\CommentController@store');
-Route::get('/comment/{id}/edit', 'App\Http\Controllers\CommentController@edit');
-Route::put('/comment/{id}', 'App\Http\Controllers\CommentController@update');
+// Route::get('/comment/{id}/edit', 'App\Http\Controllers\CommentController@edit');
+// Route::put('/comment/{id}', 'App\Http\Controllers\CommentController@update');
 Route::get('/comment/{id}/show', 'App\Http\Controllers\CommentController@show');
 Route::delete('/commentDlt/{id}','App\Http\Controllers\CommentController@destroy');
+
+//booking
+Route::get('/AdminAddBooking', 'App\Http\Controllers\BookingController@index');
+Route::post('/AdminAddBooking', 'App\Http\Controllers\BookingController@store');
+Route::delete('/AdminDltBooking', 'App\Http\Controllers\BookingController@descroy');
+Route::get('/AdminEditBooking', 'App\Http\Controllers\BookingController@edit');
+Route::put('/AdminUpdateBooking', 'App\Http\Controllers\BookingController@update');
+
+//hotel
+Route::get('/AdminHotel', 'App\Http\Controllers\HotelController@index');
+Route::post('/AdminAddHotel', 'App\Http\Controllers\HotelController@store');
+Route::delete('/AdminDltHotel', 'App\Http\Controllers\HotelController@descroy');
+Route::get('/AdminEditHotel', 'App\Http\Controllers\HotelController@edit');
+Route::put('/AdminUpdateHotel', 'App\Http\Controllers\HotelController@update');
+
+//photo
+Route::get('/adminPhotoHotel', 'App\Http\Controllers\PhotoHotelController@index');
+Route::post('/AdminAddPhotoHotel', 'App\Http\Controllers\PhotoHotelController@store');
+Route::delete('/AdminDltPhotoHotel', 'App\Http\Controllers\PhotoHotelController@descroy');
+Route::get('/AdminEditPhotoHotel', 'App\Http\Controllers\PhotoHotelController@edit');
+Route::put('/AdminUpdatePhotoHotel', 'App\Http\Controllers\PhotoHotelController@update');

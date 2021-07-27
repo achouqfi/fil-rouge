@@ -43,7 +43,7 @@ class CommentController extends Controller
     public function edit($id)
     {
         //
-        $commentEdit = Comment::find($id);
+        // $commentEdit = Comment::find($id);
 
     }
 

@@ -23,9 +23,6 @@
             <div class="col-md-8 col-sm-12">
                 <div class="comment-wrapper">
                     <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Comment panel
-                        </div>
                         <div class="panel-body">
                             @auth 
                                 @if (\Auth::user()->is_admin == 0)
@@ -36,7 +33,6 @@
                                         <textarea class="form-control" name="commentaire" placeholder="Enter your comment"></textarea>
                                         <br>
                                         <button type="submit" name="submit" class="btn btn-info pull-right">Post</button>
-                                        {{-- <input type="submit" name="submit"  class="btn btn-info pull-right" value="Post" /> --}}
 
                                         <div class="clearfix"></div>
                                     </form>
