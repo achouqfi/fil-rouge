@@ -19,7 +19,7 @@
     <nav class="main-menu">
         <ul class="logo">
             <li>
-                <a href="#"><img src="./image/logo.png" alt="" height="40px" width="65px"> </a>
+                <a href="/admin/home"><img src="./image/logo.png" alt="" height="40px" width="65px"> </a>
             </li>  
         </ul>
 
@@ -28,16 +28,16 @@
                 <a href="/admin/home"><i class="fa fa-home "></i></a>    
             </li>
             <li>
-                <a href="/shipadmin"><i class="fa fa-shopping-cart "></i></a>
+                <a href="/AdminHotel"><i class="fa fa-newspaper-o "></i></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-newspaper-o "></i></a>
+                <a href="/article"><i class=" fa fa-ticket"></i></a>
             </li>
             <li>
                 <a href="/contactadmin"><i class="fa fa-envelope "></i></a>
             </li>
             <li>
-                <a href="/article"><i class="fa fa-ticket "></i></a>
+                <a href="/shipadmin"><i class="fa fa-shopping-cart "></i></a>
             </li>
             <li>
                 <a href="/users"><i class="fa fa-users "></i></a>

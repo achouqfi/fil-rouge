@@ -73,7 +73,7 @@ Route::get('/AdminEditBooking', 'App\Http\Controllers\BookingController@edit');
 Route::put('/AdminUpdateBooking', 'App\Http\Controllers\BookingController@update');
 
 //hotel
-Route::get('/AdminHotel', 'App\Http\Controllers\HotelController@index');
+Route::get('/AdminHotel', 'App\Http\Controllers\RiadController@index');
 Route::post('/AdminAddHotel', 'App\Http\Controllers\HotelController@store');
 Route::delete('/AdminDltHotel', 'App\Http\Controllers\HotelController@descroy');
 Route::get('/AdminEditHotel', 'App\Http\Controllers\HotelController@edit');

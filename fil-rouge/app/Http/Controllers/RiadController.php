@@ -15,6 +15,8 @@ class RiadController extends Controller
     public function index()
     {
         //
+        // return dd("je suis dans le controlleur");
+        return view("admin.hotel.Hotels");
     }
 
     /**
