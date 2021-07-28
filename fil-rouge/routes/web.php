@@ -74,14 +74,14 @@ Route::put('/AdminUpdateBooking', 'App\Http\Controllers\BookingController@update
 
 //hotel
 Route::get('/AdminHotel', 'App\Http\Controllers\RiadController@index');
-Route::post('/AdminAddHotel', 'App\Http\Controllers\HotelController@store');
-Route::delete('/AdminDltHotel', 'App\Http\Controllers\HotelController@descroy');
-Route::get('/AdminEditHotel', 'App\Http\Controllers\HotelController@edit');
-Route::put('/AdminUpdateHotel', 'App\Http\Controllers\HotelController@update');
+Route::post('/AdminAddHotel', 'App\Http\Controllers\RiadController@store');
+Route::delete('/AdminDltHotel/{id}', 'App\Http\Controllers\RiadController@destroy');
+Route::get('/AdminEditHotel/{id}', 'App\Http\Controllers\RiadController@edit');
+Route::put('/AdminUpdateHotel', 'App\Http\Controllers\RiadController@update');
 
 //photo
 Route::get('/adminPhotoHotel', 'App\Http\Controllers\PhotoHotelController@index');
 Route::post('/AdminAddPhotoHotel', 'App\Http\Controllers\PhotoHotelController@store');
-Route::delete('/AdminDltPhotoHotel', 'App\Http\Controllers\PhotoHotelController@descroy');
+Route::delete('/AdminDltPhotoHotel', 'App\Http\Controllers\PhotoHotelController@destroy');
 Route::get('/AdminEditPhotoHotel', 'App\Http\Controllers\PhotoHotelController@edit');
 Route::put('/AdminUpdatePhotoHotel', 'App\Http\Controllers\PhotoHotelController@update');

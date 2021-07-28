@@ -7,81 +7,67 @@ use Illuminate\Http\Request;
 
 class RiadController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
-        // return dd("je suis dans le controlleur");
-        return view("admin.hotel.Hotels");
+        $hotel= Riad::All();
+
+        return view("admin.hotel.Hotels",["hotels" => $hotel]);
+        // return view("admin.hotel.Hotels");
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
+        $hotel = new Riad();
+
+        $hotel -> hotelName = $request -> name;
+        $hotel -> hotelAdresse =  $request -> adresse;
+        $hotel -> hotelDescription =  $request -> description;
+
+        $hotel ->save();
+        return redirect("AdminHotel");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Riad  $riad
-     * @return \Illuminate\Http\Response
-     */
     public function show(Riad $riad)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Riad  $riad
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Riad $riad)
+    public function edit($id)
     {
         //
+        $hotel = Riad::find($id);
+        return view('admin.hotel.Hotels',["editHotel"=>$hotel]);
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Riad  $riad
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Riad $riad)
+    public function update(Request $request,$id)
     {
         //
+        $hotel = Riad::find($id);
+
+        $hotel -> hotelName = $request -> name;
+        $hotel -> hotelAdresse =  $request -> adresse;
+        $hotel -> hotelDescription =  $request -> description;
+
+        $hotel -> save();
+        return redirect("AdminHotel");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Riad  $riad
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Riad $riad)
+    public function destroy($id)
     {
         //
+        Riad::destroy($id);
+
+        return redirect("AdminHotel");
     }
 }

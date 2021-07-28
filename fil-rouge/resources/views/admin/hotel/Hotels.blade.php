@@ -27,18 +27,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($hotels as $hotel)
                         <tr>
-
-                            <td>1</td>
-                            <td>aay</td>
-                            <td>2 rud jj dd ss jj</td>
-                            <td>2322332234</td>
+                            <td>{{ $hotel->id }}</td>
+                            <td>{{ $hotel->hotelName }}</td>
+                            <td>{{ $hotel->hotelAdresse }}</td>
+                            <td>{{ $hotel->hotelDescription }}</td>
                             <td><a href="#editEmployeeModal" class="btn btn-warning btn-md photo" data-toggle="modal"> Add photo</a></td>
                             <td class="actionBtn">
-                                <a href="#editEmployeeModal" class="btn btn-info btn-md" data-toggle="modal"> Update</a>
-                                <a href="#deleteEmployeeModal" class="btn btn-danger btn-md" data-toggle="modal">Delete</a>
+                                <a href="#editEmployeeModal {{ url('AdminEditHotel/'.$hotel->id) }}" class="btn btn-info btn-md" data-toggle="modal"> Update</a>
+                                <a href="#deleteEmployeeModal " class="btn btn-danger btn-md" data-toggle="modal">Delete</a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 <div class="clearfix">
@@ -55,11 +56,12 @@
             </div>
         </div>        
     </div>
-    <!-- Edit Modal HTML -->
+    <!-- Add -->
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+				<form action="{{ url('AdminAddHotel') }}" method="POST" enctype="multipart/form-data">
+					@csrf
                     <div class="modal-header">						
                         <h4 class="modal-title">Add New Hotel</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -67,20 +69,20 @@
                     <div class="modal-body">					
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Adresse</label>
-                            <input type="email" class="form-control" required>
+                            <input type="text" name="adresse" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea class="form-control" required></textarea>
+                            <textarea class="form-control" name="description" required></textarea>
                         </div>					
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Add">
+                        <input type="submit"  class="btn btn-success" value="Add">
                     </div>
                 </form>
             </div>
@@ -88,11 +90,11 @@
     </div>
 
     <!-- Edit -->
-
+    
     <div id="editEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form action="{{ url('AdminEditHotel/'.$hotel->id) }}" method="POST" >
                     <div class="modal-header">						
                         <h4 class="modal-title">Edit hotel content</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -100,15 +102,15 @@
                     <div class="modal-body">					
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" value="{{ $editHotel->title }}" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control" required>
+                            <input type="email" value="{{ $editHotel->title }}" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea class="form-control" required></textarea>
+                            <textarea class="form-control" {{ $editHotel->title }} required></textarea>
                         </div>					
                     </div>
                     <div class="modal-footer">
@@ -119,19 +121,22 @@
             </div>
         </div>
     </div>
-    <!-- Delete Modal HTML -->
+
+    <!-- Delete -->
     <div id="deleteEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
-                    <div class="modal-header">						
-                        <h4 class="modal-title">Delete Hotel</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">					
-                        <p>Are you sure ?</p>
-                        <p class="text-danger">This action cannot be undone.</p>
-                    </div>
+                <div class="modal-header">						
+                    <h4 class="modal-title">Delete Hotel</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">					
+                    <p>Are you sure ?</p>
+                    <p class="text-danger">This action cannot be undone.</p>
+                </div>
+                <form action="{{ url('AdminDltHotel/'.$hotel->id) }}" method="POST">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-danger" value="Delete">
