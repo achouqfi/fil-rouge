@@ -33,7 +33,6 @@
                                         <textarea class="form-control" name="commentaire" placeholder="Enter your comment"></textarea>
                                         <br>
                                         <button type="submit" name="submit" class="btn btn-info pull-right">Post</button>
-
                                         <div class="clearfix"></div>
                                     </form>
                                 @elseif (\Auth::user()->is_admin == 1)

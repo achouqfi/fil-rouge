@@ -4,81 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\PhotoHotel;
 use Illuminate\Http\Request;
+use App\Models\Riad;
 
 class PhotoHotelController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-        
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\PhotoHotel  $photoHotel
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(PhotoHotel $photoHotel)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\PhotoHotel  $photoHotel
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PhotoHotel $photoHotel)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PhotoHotel  $photoHotel
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, PhotoHotel $photoHotel)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\PhotoHotel  $photoHotel
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(PhotoHotel $photoHotel)
     {
         //

@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class PhotoHotel extends Model
 {
     use HasFactory;
+
+    public function hotel(){
+        return $this->belongsTo(Riad::class);
+    }
 }

@@ -10,11 +10,9 @@ class RiadController extends Controller
 
     public function index()
     {
-        //
+        //select tous les hotels 
         $hotel= Riad::All();
-
         return view("admin.hotel.Hotels",["hotels" => $hotel]);
-        // return view("admin.hotel.Hotels");
     }
 
     
@@ -26,7 +24,7 @@ class RiadController extends Controller
 
     public function store(Request $request)
     {
-        //
+        //insertion des hotel
         $hotel = new Riad();
 
         $hotel -> hotelName = $request -> name;
@@ -37,16 +35,17 @@ class RiadController extends Controller
         return redirect("AdminHotel");
     }
 
-    public function show(Riad $riad)
+    public function show($id)
     {
         //
+        $hotel = Riad::find($id);
+        return view('admin.hotel.hotelsPhotos',["hotel"=>$hotel]);
     }
 
     public function edit($id)
     {
         //
-        $hotel = Riad::find($id);
-        return view('admin.hotel.Hotels',["editHotel"=>$hotel]);
+
 
     }
 

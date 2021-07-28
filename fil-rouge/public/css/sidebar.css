@@ -20,6 +20,7 @@ nav{
 
 li{
     list-style-type: none; 
+	height: 43px;
 }
 
 .menulist{
@@ -41,6 +42,7 @@ li{
     font-size: x-large;
 }.menulist li a i:hover{
     font-size: xx-large;
+	color: white;
 }
 
 
@@ -50,6 +52,7 @@ li{
     background-color: #026d9e;
 }.logout li a i:hover{
     font-size: xx-large;
+	color: white;
 }
 
 
@@ -130,6 +133,7 @@ table.table td:last-child i {
 table.table td a {
 	font-weight: bold;
 	text-decoration: none;
+	color: white;
 }
 .photo{
     color: white;
@@ -174,4 +178,4 @@ table.table .avatar {
 }    
 .actionBtn{
     display: flex;
-} */
+}

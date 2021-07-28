@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('user.home');
 });
@@ -68,18 +67,19 @@ Route::delete('/commentDlt/{id}','App\Http\Controllers\CommentController@destroy
 //booking
 Route::get('/AdminAddBooking', 'App\Http\Controllers\BookingController@index');
 Route::post('/AdminAddBooking', 'App\Http\Controllers\BookingController@store');
-Route::delete('/AdminDltBooking', 'App\Http\Controllers\BookingController@descroy');
-Route::get('/AdminEditBooking', 'App\Http\Controllers\BookingController@edit');
-Route::put('/AdminUpdateBooking', 'App\Http\Controllers\BookingController@update');
+Route::delete('/AdminDltBooking/{id}', 'App\Http\Controllers\BookingController@descroy');
+Route::get('/AdminEditBooking/{id}', 'App\Http\Controllers\BookingController@edit');
+Route::put('/AdminUpdateBooking/{id}', 'App\Http\Controllers\BookingController@update');
 
 //hotel
 Route::get('/AdminHotel', 'App\Http\Controllers\RiadController@index');
 Route::post('/AdminAddHotel', 'App\Http\Controllers\RiadController@store');
 Route::delete('/AdminDltHotel/{id}', 'App\Http\Controllers\RiadController@destroy');
 Route::get('/AdminEditHotel/{id}', 'App\Http\Controllers\RiadController@edit');
-Route::put('/AdminUpdateHotel', 'App\Http\Controllers\RiadController@update');
+Route::put('/AdminUpdateHotel/{id}', 'App\Http\Controllers\RiadController@update');
 
 //photo
+Route::get('/adminPhotoHotel/{id}', 'App\Http\Controllers\RiadController@show');
 Route::get('/adminPhotoHotel', 'App\Http\Controllers\PhotoHotelController@index');
 Route::post('/AdminAddPhotoHotel', 'App\Http\Controllers\PhotoHotelController@store');
 Route::delete('/AdminDltPhotoHotel', 'App\Http\Controllers\PhotoHotelController@destroy');

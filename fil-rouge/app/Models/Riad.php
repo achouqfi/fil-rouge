@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Riad extends Model
 {
     use HasFactory;
+
+    public function photos(){
+        return $this->hasMany(PhotoHotel::class);
+    }
 }

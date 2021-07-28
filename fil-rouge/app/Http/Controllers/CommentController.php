@@ -11,16 +11,6 @@ use App\Models\article;
 class CommentController extends Controller
 {
 
-    public function index()
-    {
-        //
-    }
-
-    public function create( Request $request)
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         //insertion des commentaires
@@ -32,24 +22,6 @@ class CommentController extends Controller
         $comment ->save();
 
         return redirect()->back();
-    }
-
-    public function show(Request $request)
-    {
-        //
-
-    }
-
-    public function edit($id)
-    {
-        //
-        // $commentEdit = Comment::find($id);
-
-    }
-
-    public function update(Request $request, Comment $comment)
-    {
-        //
     }
 
     public function destroy($id)
