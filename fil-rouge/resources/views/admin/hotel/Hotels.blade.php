@@ -99,32 +99,6 @@
         </div>
     </div>
 
-    {{-- <!-- Edit -->
-    
-    <div id="addHotelPhotos" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="{{ url('AdminEditHotel') }}" method="POST" >
-                    <div class="modal-header">						
-                        <h4 class="modal-title">Add Hotel Photo</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">					
-                        <div class="form-group">
-                            <input type="text" value="{{ $hotel->id }}">
-                            <label>Photo</label>
-                            <input type="file" class="form-control" name="photos[]" required>
-                        </div>				
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" value="Save">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div> --}}
-
     <!-- Delete -->
     <div id="deleteHotel" class="modal fade">
         <div class="modal-dialog">
@@ -148,6 +122,7 @@
             </div>
         </div>
     </div>
+    
 @endsection
 
 <script>
