@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <div class="container-xl">
-        <div class="table-responsive">
+    <div class="container">
+        <div class="table-responsive"  style="width: 120%;margin-left:-10%">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
@@ -22,7 +22,9 @@
                             <th>Name</th>
                             <th>Adresse</th>
                             <th>Description</th>
-                            <th>Photos</th>
+                            <th>Photo principale</th>
+                            <th>Details photos</th>
+                            <th>housing type</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -44,20 +46,35 @@
                                 </td>
                                 <td>
                                     <label id="adresse<?=$i?>" >{{ $hotel->hotelAdresse  }}</label>
-                                    <input type="text" id="inputAdresse<?=$i?>" value="{{ $hotel->hotelAdresse }}" name="adresse" style="display:none" >
+                                    <input type="text" id="inputAdresse<?=$i?>" value="{{ $hotel->hotelAdresse }}" name="photoPrincipal" style="display:none" >
+                                </td>
+                                <td>
+                                    <label id="photoPr<?=$i?>" ><img src="{{ asset( $hotel->photoPrincipal ) }}" alt="" height="40px"></label>
+                                    <input type="file" id="inputPhotoPr<?=$i?>" value="{{ $hotel->photoPrincipal }}" name="photoPrincipal" style="display:none" >
                                 </td>
                                 <td>
                                     <label id="description<?=$i?>" >{{ $hotel->hotelDescription  }}</label>
                                     <input type="text" id="inputDescription<?=$i?>" value="{{ $hotel->hotelDescription }}" name="description" style="display:none" >
                                 </td>
                                 <td> <a href="{{ url('adminPhotoHotel/'.$hotel->id) }}"  id="photos<?=$i?>" class="btn btn-warning btn-md photo" > Add photo</a></td>
+                                <td> <a href="#"  id="photoPrincipal<?=$i?>" class="btn btn-warning btn-md photo" > Add caracteristique</a></td>
+
                                 <td class="actionBtn">
+                                    <div style="display: inline">
+                                        <input type="submit"  class="btn btn-success" class="saveInput" id="btnsave<?=$i?>" value="save" style="display:none">
+                                        <a type="text"  class="btn btn-warning" id="btncancel<?=$i?>" onclick='cancel(<?=$i?>)' style="display:none">annuler</a>
+                                    </div>
                                     <a  onclick='modifie(<?=$i?>)' id="btnedit<?=$i?>" class="btn btn-info btn-md"> Update</a>
-                                    <a href="#deleteHotel" id="btndlt<?=$i?>" class="btn btn-danger btn-md" data-toggle="modal">Delete</a>
-                                    <input type="submit"  class="btn btn-success" class="saveInput" id="btnsave<?=$i?>" value="save" style="display:none">
-                                    <a type="text"  class="btn btn-warning" id="btncancel<?=$i?>" onclick='cancel(<?=$i?>)' style="display:none">annuler</a>
-                                </td>
                             </form>
+
+                                    <form action="{{ url('AdminDltHotel/'.$hotel->id) }}" method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        {{-- <a type="submit">Delete</a> --}}
+                                        <button  id="btndlt<?=$i?>" class="btn btn-danger btn-md">Delete</button>
+                                    </form>
+
+                                </td>
                         </tr>
                         <?=$i++?>
                         @endforeach
@@ -84,6 +101,10 @@
                         <div class="form-group">
                             <label>Adresse</label>
                             <input type="text" name="adresse" class="form-control" required>
+                        </div> 
+                       <div class="form-group">
+                            <label>Photo Principale</label>
+                            <input type="file" name="photoPrincipal" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Description</label>
@@ -99,30 +120,8 @@
         </div>
     </div>
 
-    <!-- Delete -->
-    <div id="deleteHotel" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">						
-                    <h4 class="modal-title">Delete Hotel</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">					
-                    <p>Are you sure ?</p>
-                    <p class="text-danger">This action cannot be undone.</p>
-                </div>
-                <form action="{{ url('AdminDltHotel/'.$hotel->id) }}" method="POST">
-                    {{ csrf_field() }}
-                    {{ method_field('DELETE') }}
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-danger" value="Delete">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    
+
+
 @endsection
 
 <script>
@@ -131,11 +130,14 @@
     document.getElementById('inputName'+e).style.display="block";
     document.getElementById('adresse'+e).style.display="none";
     document.getElementById('inputAdresse'+e).style.display="block";
+    document.getElementById('photoPr'+e).style.display="block";
+    document.getElementById('inputPhotoPr'+e).style.display="block";
     document.getElementById('description'+e).style.display="none";
     document.getElementById('inputDescription'+e).style.display="block";
     document.getElementById('btnedit'+e).style.display="none";
     document.getElementById('btndlt'+e).style.display="none";
     document.getElementById('photos'+e).style.display="none";
+    document.getElementById('photoPrincipal'+e).style.display="none";
     document.getElementById('btnsave'+e).style.display="block";
     document.getElementById('btncancel'+e).style.display="block";
     }
@@ -147,10 +149,12 @@
         document.getElementById('adresse'+e).style.display="block";
         document.getElementById('inputAdresse'+e).style.display="none";
         document.getElementById('description'+e).style.display="block";
+        document.getElementById('inputPhotoPr'+e).style.display="none";
         document.getElementById('inputDescription'+e).style.display="none";
         document.getElementById('btnedit'+e).style.display="block";
         document.getElementById('btndlt'+e).style.display="block";
         document.getElementById('photos'+e).style.display="block";
+        document.getElementById('photoPrincipal'+e).style.display="block";
         document.getElementById('btnsave'+e).style.display="none";
         document.getElementById('btncancel'+e).style.display="none";
     }

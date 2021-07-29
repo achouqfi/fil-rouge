@@ -11,32 +11,23 @@ class PhotoHotelController extends Controller
     public function store(Request $request)
     {
         //
-        $photo = new PhotoHotel();
-
-        $photo -> riad_id = $request -> hotel_id;
+ 
         
-        foreach ($request->photos as $file) {
-            # code...
-            $ext = $file->getClientOriginalExtension();
-            $filename = time() . ".".$ext ;
-            $filepath ="storage/public/";
-            $file->move($filepath,$filename);
-            $photo->pathPhoto = $filepath.$filename;
+        foreach ($request->file('photos') as $file) {
+            // $photo = new PhotoHotel();
+
+            // $photo->hotel_id = $request->hotel_id;
+            $name = time()."".$file->getClientOriginalName();
+            // $filename=time()."".$name;
+            $file->move('storage/uploads/', $name);
+            $filepath="storage/uploads/".$name;
+            PhotoHotel::create([
+                "pathPhoto"=>$filepath,
+                "riad_id"=>$request->hotel_id
+            ]);
+
         }
-        // $file = $request->photos;
 
-
-        // foreach($request->photos as $file)
-        // {
-        //     $name = $file->getClientOriginalName();
-        //     $filename=time()."".$name;
-        //     $file->move('storage/uploads/', $filename);
-        //     Pic::create([
-        //         "img"=>$filename,
-        //     ]);
-
-
-        $photo ->save();
         return redirect()->back();
     }
 

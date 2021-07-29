@@ -31,6 +31,13 @@ class RiadController extends Controller
         $hotel -> hotelAdresse =  $request -> adresse;
         $hotel -> hotelDescription =  $request -> description;
 
+        $file = $request->photoPrincipal;
+        $ext = $file->getClientOriginalExtension();
+        $filename = time() . ".".$ext ;
+        $filepath ="storage/public/";
+        $file->move($filepath,$filename);
+        $hotel->photoPrincipal = $filepath.$filename;
+
         $hotel ->save();
         return redirect("AdminHotel");
     }
@@ -57,6 +64,13 @@ class RiadController extends Controller
         $hotel -> hotelName = $request -> name;
         $hotel -> hotelAdresse =  $request -> adresse;
         $hotel -> hotelDescription =  $request -> description;
+        
+        $file = $request->photoPrincipal;
+        $ext = $file->getClientOriginalExtension();
+        $filename = time() . ".".$ext ;
+        $filepath ="storage/public/";
+        $file->move($filepath,$filename);
+        $hotel->photoPrincipal = $filepath.$filename;
 
         $hotel -> save();
         return redirect("AdminHotel");
