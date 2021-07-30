@@ -49,10 +49,16 @@ class RiadController extends Controller
         return view('admin.hotel.hotelsPhotos',["hotel"=>$hotel]);
     }
 
+    public  function ShowChambre($id)
+    {
+        $hotel = Riad::find($id);
+        return view('admin.hotel.chambreHotel',["hotel"=>$hotel]);
+    }
     public function edit($id)
     {
         //
-
+        $hotel = Riad::find($id);
+        return view('admin.hotel.editHotel',["hotel"=>$hotel]);
 
     }
 

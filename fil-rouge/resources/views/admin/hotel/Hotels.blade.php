@@ -21,62 +21,34 @@
                             <th>Id</th>
                             <th>Name</th>
                             <th>Adresse</th>
-                            <th>Description</th>
                             <th>Photo principale</th>
+                            <th>Description</th>
                             <th>Details photos</th>
                             <th>housing type</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @php
-                            $i =0;
-                        @endphp
+
                         @foreach ($hotels as $hotel)
                         <tr>
-                            <form action="{{ url('AdminUpdateHotel/'.$hotel->id) }}" method="POST" enctype="multipart/form-data">
-                                <input type="hidden" name="_method" value="PUT">
-                                @csrf
-                                <td>
-                                    <label>{{ $hotel->id }}</label><input type="hidden" value="{{ $hotel->id }}" name="id" >
-                                </td>
-                                <td>
-                                    <label id="name<?=$i?>" for="">{{ $hotel->hotelName  }}</label>
-                                    <input type="inputName" id="inputName<?=$i?>" value="{{ $hotel->hotelName }}" name="name" style="display:none" >
-                                </td>
-                                <td>
-                                    <label id="adresse<?=$i?>" >{{ $hotel->hotelAdresse  }}</label>
-                                    <input type="text" id="inputAdresse<?=$i?>" value="{{ $hotel->hotelAdresse }}" name="photoPrincipal" style="display:none" >
-                                </td>
-                                <td>
-                                    <label id="photoPr<?=$i?>" ><img src="{{ asset( $hotel->photoPrincipal ) }}" alt="" height="40px"></label>
-                                    <input type="file" id="inputPhotoPr<?=$i?>" value="{{ $hotel->photoPrincipal }}" name="photoPrincipal" style="display:none" >
-                                </td>
-                                <td>
-                                    <label id="description<?=$i?>" >{{ $hotel->hotelDescription  }}</label>
-                                    <input type="text" id="inputDescription<?=$i?>" value="{{ $hotel->hotelDescription }}" name="description" style="display:none" >
-                                </td>
-                                <td> <a href="{{ url('adminPhotoHotel/'.$hotel->id) }}"  id="photos<?=$i?>" class="btn btn-warning btn-md photo" > Add photo</a></td>
-                                <td> <a href="#"  id="photoPrincipal<?=$i?>" class="btn btn-warning btn-md photo" > Add caracteristique</a></td>
+                            <td>{{ $hotel->id }}</td>
+                            <td>{{ $hotel->hotelName  }}</td>
+                            <td>{{ $hotel->hotelAdresse  }}</td>
+                            <td><img src="{{ asset( $hotel->photoPrincipal ) }}" alt="" height="40px"></td>
+                            <td>{{ $hotel->hotelDescription  }}</td>
+                            <td> <a href="{{ url('adminPhotoHotel/'.$hotel->id) }}"  class="btn btn-warning btn-md photo" > Add photo</a></td>
+                            <td> <a href="{{ url('AdminChambreHotel/'.$hotel->id) }}"  class="btn btn-warning btn-md photo" > Add Chambre</a></td>
 
-                                <td class="actionBtn">
-                                    <div style="display: inline">
-                                        <input type="submit"  class="btn btn-success" class="saveInput" id="btnsave<?=$i?>" value="save" style="display:none">
-                                        <a type="text"  class="btn btn-warning" id="btncancel<?=$i?>" onclick='cancel(<?=$i?>)' style="display:none">annuler</a>
-                                    </div>
-                                    <a  onclick='modifie(<?=$i?>)' id="btnedit<?=$i?>" class="btn btn-info btn-md"> Update</a>
-                            </form>
-
-                                    <form action="{{ url('AdminDltHotel/'.$hotel->id) }}" method="POST">
-                                        {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
-                                        {{-- <a type="submit">Delete</a> --}}
-                                        <button  id="btndlt<?=$i?>" class="btn btn-danger btn-md">Delete</button>
-                                    </form>
-
-                                </td>
+                            <td style="display: flex" >
+                                <a href="{{ url('AdminEditHotel/'.$hotel->id ) }}" class="btn btn-info btn-md"> Update</a>
+                                <form action="{{ url('AdminDltHotel/'.$hotel->id) }}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <button   class="btn btn-danger btn-md">Delete</button>
+                                </form>
+                            </td>
                         </tr>
-                        <?=$i++?>
                         @endforeach
                     </tbody>
                 </table>
@@ -119,45 +91,8 @@
             </div>
         </div>
     </div>
-
-
-
 @endsection
 
-<script>
-    function modifie(e){
-    document.getElementById('name'+e).style.display="none";
-    document.getElementById('inputName'+e).style.display="block";
-    document.getElementById('adresse'+e).style.display="none";
-    document.getElementById('inputAdresse'+e).style.display="block";
-    document.getElementById('photoPr'+e).style.display="block";
-    document.getElementById('inputPhotoPr'+e).style.display="block";
-    document.getElementById('description'+e).style.display="none";
-    document.getElementById('inputDescription'+e).style.display="block";
-    document.getElementById('btnedit'+e).style.display="none";
-    document.getElementById('btndlt'+e).style.display="none";
-    document.getElementById('photos'+e).style.display="none";
-    document.getElementById('photoPrincipal'+e).style.display="none";
-    document.getElementById('btnsave'+e).style.display="block";
-    document.getElementById('btncancel'+e).style.display="block";
-    }
 
-    function cancel(e)
-    {
-        document.getElementById('name'+e).style.display="block";
-        document.getElementById('inputName'+e).style.display="none";
-        document.getElementById('adresse'+e).style.display="block";
-        document.getElementById('inputAdresse'+e).style.display="none";
-        document.getElementById('description'+e).style.display="block";
-        document.getElementById('inputPhotoPr'+e).style.display="none";
-        document.getElementById('inputDescription'+e).style.display="none";
-        document.getElementById('btnedit'+e).style.display="block";
-        document.getElementById('btndlt'+e).style.display="block";
-        document.getElementById('photos'+e).style.display="block";
-        document.getElementById('photoPrincipal'+e).style.display="block";
-        document.getElementById('btnsave'+e).style.display="none";
-        document.getElementById('btncancel'+e).style.display="none";
-    }
-</script>
 
 

@@ -64,24 +64,22 @@ Route::post('/comment/save','App\Http\Controllers\CommentController@store');
 Route::get('/comment/{id}/show', 'App\Http\Controllers\CommentController@show');
 Route::delete('/commentDlt/{id}','App\Http\Controllers\CommentController@destroy');
 
-//booking
-Route::get('/AdminAddBooking', 'App\Http\Controllers\BookingController@index');
-Route::post('/AdminAddBooking', 'App\Http\Controllers\BookingController@store');
-Route::delete('/AdminDltBooking/{id}', 'App\Http\Controllers\BookingController@descroy');
-Route::get('/AdminEditBooking/{id}', 'App\Http\Controllers\BookingController@edit');
-Route::put('/AdminUpdateBooking/{id}', 'App\Http\Controllers\BookingController@update');
-
-//hotel
+//hotels
 Route::get('/AdminHotel', 'App\Http\Controllers\RiadController@index');
 Route::post('/AdminAddHotel', 'App\Http\Controllers\RiadController@store');
 Route::delete('/AdminDltHotel/{id}', 'App\Http\Controllers\RiadController@destroy');
 Route::get('/AdminEditHotel/{id}', 'App\Http\Controllers\RiadController@edit');
 Route::put('/AdminUpdateHotel/{id}', 'App\Http\Controllers\RiadController@update');
 
-//photo
+//photos
 Route::get('/adminPhotoHotel/{id}', 'App\Http\Controllers\RiadController@show');
 Route::get('/adminPhotoHotel', 'App\Http\Controllers\PhotoHotelController@index');
 Route::post('/AdminAddPhotoHotel', 'App\Http\Controllers\PhotoHotelController@store');
 Route::delete('/AdminDltPhotoHotel/{id}', 'App\Http\Controllers\PhotoHotelController@destroy');
-Route::get('/AdminEditPhotoHotel', 'App\Http\Controllers\PhotoHotelController@edit');
-Route::put('/AdminUpdatePhotoHotel', 'App\Http\Controllers\PhotoHotelController@update');
+
+//chambres
+Route::get('/AdminChambreHotel/{id}', 'App\Http\Controllers\RiadController@showChambre');
+Route::post('/AdminAddHotel', 'App\Http\Controllers\ChambreController@store');
+Route::delete('/AdminDltHotel/{id}', 'App\Http\Controllers\ChambreController@destroy');
+Route::get('/AdminEditHotel/{id}', 'App\Http\Controllers\ChambreController@edit');
+Route::put('/AdminUpdateHotel/{id}', 'App\Http\Controllers\ChambreController@update');
