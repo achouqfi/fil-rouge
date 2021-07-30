@@ -21,7 +21,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/plan', function () {
-    return view('user.reservation');
+    return view('user.plan.reservation');
 });
 
 Auth::routes();
@@ -59,13 +59,12 @@ Route::delete('/articleDlt/{id}','App\Http\Controllers\ArticleController@destroy
 
 //comments
 Route::post('/comment/save','App\Http\Controllers\CommentController@store');
-// Route::get('/comment/{id}/edit', 'App\Http\Controllers\CommentController@edit');
-// Route::put('/comment/{id}', 'App\Http\Controllers\CommentController@update');
 Route::get('/comment/{id}/show', 'App\Http\Controllers\CommentController@show');
 Route::delete('/commentDlt/{id}','App\Http\Controllers\CommentController@destroy');
 
 //hotels
 Route::get('/AdminHotel', 'App\Http\Controllers\RiadController@index');
+Route::get('/hotel', 'App\Http\Controllers\RiadController@hotelView');
 Route::post('/AdminAddHotel', 'App\Http\Controllers\RiadController@store');
 Route::delete('/AdminDltHotel/{id}', 'App\Http\Controllers\RiadController@destroy');
 Route::get('/AdminEditHotel/{id}', 'App\Http\Controllers\RiadController@edit');
@@ -79,7 +78,7 @@ Route::delete('/AdminDltPhotoHotel/{id}', 'App\Http\Controllers\PhotoHotelContro
 
 //chambres
 Route::get('/AdminChambreHotel/{id}', 'App\Http\Controllers\RiadController@showChambre');
-Route::post('/AdminAddHotel', 'App\Http\Controllers\ChambreController@store');
-Route::delete('/AdminDltHotel/{id}', 'App\Http\Controllers\ChambreController@destroy');
-Route::get('/AdminEditHotel/{id}', 'App\Http\Controllers\ChambreController@edit');
-Route::put('/AdminUpdateHotel/{id}', 'App\Http\Controllers\ChambreController@update');
+Route::post('/AdminAddChambre', 'App\Http\Controllers\ChambreController@store');
+Route::delete('/AdminDltChambre/{id}', 'App\Http\Controllers\ChambreController@destroy');
+Route::get('/AdminEditChambre/{id}', 'App\Http\Controllers\ChambreController@edit');
+Route::put('/AdminUpdateChambre/{id}', 'App\Http\Controllers\ChambreController@update');

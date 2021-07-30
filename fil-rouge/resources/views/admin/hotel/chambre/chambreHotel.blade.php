@@ -7,7 +7,7 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Chambres de {{ $hotel->hotelName }}</b></h2>
+                            <h2>Chambres de {{ $hotelCh->hotelName }}</b></h2>
                         </div>
                         <div class="col-sm-6">
                             <a href="#addHotel" class="btn btn-success" data-toggle="modal">Add Photo</a>
@@ -27,23 +27,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach ($hotel->chambres as $chambre)
+                        @foreach ($hotelCh->chambres as $chambre)
                         <tr>
                             <td>{{ $chambre->id }}</td>
-                            <td>{{ $chambre->id }}</td>
-                            <td>{{ $chambre->id }}</td>
-                            <td>{{ $chambre->id }}</td>
-                            <td>{{ $chambre->id }}</td>
-                            <td>{{ $chambre->id }}</td>
+                            <td>{{ $chambre->housingType }}</td>
+                            <td>{{ $chambre->for }} personne</td>
+                            <td>{{ $chambre->price }} MAD</td>
+                            <td>{{ $chambre->option }}</td>
                             <td class="actionBtn">
-                                <form action="{{ url('AdminDltPhotoHotel/'.$photo->id) }}" method="POST">
+                                <a href="{{ url('AdminEditChambre/'.$chambre->id) }}" class="btn btn-info">Update</a>
+                                <form action="{{ url('AdminDltChambre/'.$chambre->id) }}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
                                     <button class="btn btn-danger btn-md">Delete</button>
                                 </form>
                             </td>
                         </tr>
-                        @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -54,13 +54,13 @@
     <div id="addHotel" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="{{ url('AdminAddHotel') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('AdminAddChambre') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">						
                         <h4 class="modal-title">Add New room</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
-                    <input type="hidden" name="hotel_id" value="{{ $hotel->id }}">
+                    <input type="hidden" name="hotel_id" value="{{ $hotelCh->id }}">
                     <div class="modal-body">					
                         <div class="form-group">
                             <label>Type le logement</label>

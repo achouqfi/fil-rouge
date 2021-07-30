@@ -12,12 +12,8 @@ class article extends Model
     public function comments(){
         return $this->hasMany(Comment::class);
     }
-
-    public function chambres(){
-        return $this->hasMany(Chambre::class);
-    }
     
-    // public function user(){
-    //     return $this->belongsTo(User::class);
-    // }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

@@ -18,7 +18,7 @@ class CreateChambresTable extends Migration
             $table->string('housingType');
             $table->string('for');
             $table->string('price');
-            $table->string('option');
+            $table->longText('option');
             $table->foreignId('riad_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

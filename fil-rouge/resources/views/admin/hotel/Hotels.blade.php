@@ -52,6 +52,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                <span>{{ $hotels->links( "pagination::bootstrap-4") }}</span>
             </div>
         </div>        
     </div>

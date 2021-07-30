@@ -12,4 +12,8 @@ class Riad extends Model
     public function photos(){
         return $this->hasMany(PhotoHotel::class);
     }
+
+    public function chambres(){
+        return $this->hasMany(Chambre::class);
+    }
 }

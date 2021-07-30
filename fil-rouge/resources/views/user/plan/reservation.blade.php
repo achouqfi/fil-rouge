@@ -26,7 +26,7 @@
             </p>
           </div>
           <div class="Shipbtn">
-            <a class="btn btn-primary btn-outline btn-lg" href="#">Book New</a>
+            <a class="btn btn-primary btn-outline btn-lg" href="{{ url("/hotel") }}">Book New</a>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
             </p>
           </div>
           <div class="Shipbtn">
-            <a class="btn btn-primary btn-outline btn-lg" href="#">Book Now</a>
+            <a class="btn btn-primary btn-outline btn-lg" href="">Book Now</a>
           </div>
         </div>
 
