@@ -11,7 +11,7 @@
                             <h2>HOTEL LIST</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#addHotel" class="btn btn-success" data-toggle="modal">Add New Employee</a>
+                            <a href="#addHotel" class="btn btn-success" data-toggle="modal">Add Hotel</a>
                         </div>
                     </div>
                 </div>
