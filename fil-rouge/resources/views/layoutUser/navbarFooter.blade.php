@@ -42,6 +42,7 @@
 
 
     @yield('content')
+    @yield('scriptjs')
 
 
     <!---------------- footer ------------>
