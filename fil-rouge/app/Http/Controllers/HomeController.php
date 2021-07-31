@@ -45,6 +45,7 @@ class HomeController extends Controller
 
         $contact= Contact::All();
         $contactCount = count($contact);
+        
         return view('admin.homeAdmin',["contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount]);
     }
 }

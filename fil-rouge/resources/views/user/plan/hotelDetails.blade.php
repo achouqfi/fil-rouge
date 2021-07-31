@@ -16,6 +16,7 @@
             <img src="{{ asset( $photo->pathPhoto) }}" alt="">
         @endforeach
     </div>
+
     
     {{-- informartion sur l'hotel --}}
     <div class="container informartionHotel">
@@ -29,11 +30,11 @@
                     </tr>
                     <tr>
                         <th>Address</th>
-                        <td>{{  }}</td>
+                        <td>{{ $hotelDetails->hotelAdresse }}</td>
                     </tr>
                     <tr>
-                        <th class="info">Email</th>
-                        <td>{{  }}</td>
+                        <th>Caracteritque</th>
+                        <td>{{ $hotelDetails->hotelDescription }}</td>
                     </tr>
 
                 </thead>   
@@ -41,4 +42,39 @@
         </div>
     </div>
 
+    {{-- les chambre et les Caracteritiques --}}
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Chambres de {{ $hotelDetails->hotelName }}</h2>
+                    </div>
+
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Type de logement</th>
+                        <th>Pour</th>
+                        <th>Prix</th>
+                        <th>Options</th>
+                        <th>Nombre des nuits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($hotelDetails->chambres as $chambre)
+                    <tr>
+                        <td>{{ $chambre->housingType }}</td>
+                        <td>{{ $chambre->for }} personne</td>
+                        <td>{{ $chambre->price }} MAD</td>
+                        <td>{!! Str::limit($chambre->option,40) !!}<a style="color: #" href="">Suite</a></td> 
+                        <td><input type="number" min="0" max="7"></td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>  
 @endsection

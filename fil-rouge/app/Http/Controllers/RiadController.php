@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Riad;
+use App\Models\Chambre;
+use App\Models\PhotoHotel;
 use Illuminate\Http\Request;
 
 class RiadController extends Controller
@@ -25,10 +27,12 @@ class RiadController extends Controller
 
     }
 
-    public function showHotel($id){
+    public function showHotel($id)
+    {
         //
         $hotel= Riad::find($id);
         return view('user.plan.hotelDetails',["hotelDetails"=>$hotel]);
+
     }
 
     public function store(Request $request)

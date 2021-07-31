@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="email">chambre adress</label>
-                                    <textarea style="height: 150px" name="option" id="Text" name="" class="form-control">{{ $chambre->option }}</textarea>
+                                    <textarea style="height: 150px" name="option" id="Text" name="" class="form-control" >{{ $chambre->option }}</textarea>
                                 </div>
         
                                 <button type="submit" class="btn btn-success">Save</button>                            

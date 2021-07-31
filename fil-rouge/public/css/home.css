@@ -511,6 +511,14 @@ body{
     align-items: center;
     margin: 3% 5% 5% 5%;
 }
+.hotelPhoto::-webkit-scrollbar {
+    width: 10px;
+}
+
+.hotelPhoto::-webkit-scrollbar-thumb {
+    background: #17a2b8;
+    border-radius: 10px;
+}
 .hotelPhoto img{
     height: 200px;
     width: 300px;
@@ -522,8 +530,34 @@ body{
     font-family: 'Noto Serif', serif;
 }
 
+/* table  */
 
+.table-wrapper {
+    margin-top: 3%;
+	background: #fff;
+	padding: 20px 12px;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
 
+.table-title {        
+	padding-bottom: 15px;
+	background: #17a2b8;
+	color: #fff;
+	padding: 16px 12px;
+	min-width: 100%;
+	margin: -20px -21px 10px;
+	border-radius: 3px 3px 0 0;
+}
 
+.table-title h2 {
+	margin: 5px 0 0;
+	font-size: 24px;
+}
 
-
+table.table-striped tbody tr{
+	background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+	background: #f5f5f5;
+}
