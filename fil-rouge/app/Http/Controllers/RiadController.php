@@ -25,6 +25,12 @@ class RiadController extends Controller
 
     }
 
+    public function showHotel($id){
+        //
+        $hotel= Riad::find($id);
+        return view('user.plan.hotelDetails',["hotelDetails"=>$hotel]);
+    }
+
     public function store(Request $request)
     {
         //insertion des hotel
@@ -45,18 +51,19 @@ class RiadController extends Controller
         return redirect("AdminHotel");
     }
 
-    public function show($id)
+    public function showPhotos($id)
     {
         //
         $hotel = Riad::find($id);
         return view('admin.hotel.photo.hotelsPhotos',["hotel"=>$hotel]);
     }
 
-    public  function ShowChambre($id)
+    public  function ShowChambres($id)
     {
         $hotel = Riad::find($id);
         return view('admin.hotel.chambre.chambreHotel',["hotelCh"=>$hotel]);
     }
+
     public function edit($id)
     {
         //

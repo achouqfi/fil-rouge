@@ -36,7 +36,7 @@ body{
 	padding-left: 0;
 	font-size: 20px;
 	padding-right: 50px;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Noto Serif', serif;
 }
 .navbar .navbar-brand b {
 	font-weight: bold;
@@ -216,11 +216,7 @@ body{
     margin-left: 45%;
     margin-bottom: 26px;
 }
-/* .row {
-    margin-left: -95px;
-    margin-right: -159px;
-} */
-
+ 
 .desc{
 	position: absolute;
     bottom: 0;
@@ -507,8 +503,24 @@ body{
     text-decoration: none;
 }
 
-/* plan */
+/* plan hotel information page */
+.hotelPhoto{
+    display: flex;
+    overflow-x: scroll;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3% 5% 5% 5%;
+}
+.hotelPhoto img{
+    height: 200px;
+    width: 300px;
+    margin-left: 3%;
+}
 
+.informationHotel {
+    color: #17a2b8!important;
+    font-family: 'Noto Serif', serif;
+}
 
 
 

@@ -21,7 +21,7 @@
                     <h3><a href="#" class="mt-2 text-info text-justify">{{ $hotel->hotelName }} </a></h3>
                     <p class="text-dark">{{ $hotel->hotelDescription }}</p>
                     <p><mark>{{ $hotel->hotelAdresse }}</mark></p>
-                    <a href="" class="btn btn-md btn-info float-right">Details</a>
+                    <a href="{{ url('hotelDetails/'.$hotel->id) }}" class="btn btn-md btn-info float-right">Details</a>
                 </div>
             </div>
             @endforeach

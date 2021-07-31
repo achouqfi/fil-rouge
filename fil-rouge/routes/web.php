@@ -65,19 +65,20 @@ Route::delete('/commentDlt/{id}','App\Http\Controllers\CommentController@destroy
 //hotels
 Route::get('/AdminHotel', 'App\Http\Controllers\RiadController@index');
 Route::get('/hotel', 'App\Http\Controllers\RiadController@hotelView');
+Route::get('/hotelDetails/{id}', 'App\Http\Controllers\RiadController@showHotel');
 Route::post('/AdminAddHotel', 'App\Http\Controllers\RiadController@store');
 Route::delete('/AdminDltHotel/{id}', 'App\Http\Controllers\RiadController@destroy');
 Route::get('/AdminEditHotel/{id}', 'App\Http\Controllers\RiadController@edit');
 Route::put('/AdminUpdateHotel/{id}', 'App\Http\Controllers\RiadController@update');
 
 //photos
-Route::get('/adminPhotoHotel/{id}', 'App\Http\Controllers\RiadController@show');
+Route::get('/adminPhotoHotel/{id}', 'App\Http\Controllers\RiadController@showPhotos');
 Route::get('/adminPhotoHotel', 'App\Http\Controllers\PhotoHotelController@index');
 Route::post('/AdminAddPhotoHotel', 'App\Http\Controllers\PhotoHotelController@store');
 Route::delete('/AdminDltPhotoHotel/{id}', 'App\Http\Controllers\PhotoHotelController@destroy');
 
 //chambres
-Route::get('/AdminChambreHotel/{id}', 'App\Http\Controllers\RiadController@showChambre');
+Route::get('/AdminChambreHotel/{id}', 'App\Http\Controllers\RiadController@showChambres');
 Route::post('/AdminAddChambre', 'App\Http\Controllers\ChambreController@store');
 Route::delete('/AdminDltChambre/{id}', 'App\Http\Controllers\ChambreController@destroy');
 Route::get('/AdminEditChambre/{id}', 'App\Http\Controllers\ChambreController@edit');
