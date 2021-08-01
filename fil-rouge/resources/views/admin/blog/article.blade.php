@@ -8,7 +8,7 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>HOTEL LIST</b></h2>
+                            <h2>Article LIST</b></h2>
                         </div>
                         <div class="col-sm-6">
                             <a href="/article/create" class="btn btn-success" >Add Article</a>
@@ -19,9 +19,10 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>titre</th>
-                            <th>photo</th>
-                            <th>date de publication</th>
+                            <th>Titre</th>
+                            <th>Photo</th>
+                            <th>Article</th>
+                            <th>Date de publication</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -32,6 +33,7 @@
                             <td> {{ $article->id }}</td>
                             <td> {{ $article->title}}</td>
                             <td><img  src="{{ asset($article->photo) }}" height="40px" width="50px"/></td>
+                            <td>{!! Str::limit($article->text,40) !!}   <a style="color:#17a2b8" href="" data-toggle="modal">Suite</a></td> 
                             <td> {{ $article->created_at }}</td>
                             <td style="display: flex">
                                 <form action="{{ url('articleDlt/'.$article->id) }}" method="POST">
@@ -49,6 +51,10 @@
             </div>
         </div>        
     </div>
+
+    {{-- Article  --}}
+        <!-- Add -->
+
 @endsection
 
 

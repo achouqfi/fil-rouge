@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 class ChambreController extends Controller
 {
 
+    public function showChambre($id)
+    {
+        $chambre = Chambre::find($id);
+        return view("admin.hotel.Hotels",["chambre" => $chambre]);
+    }
+
     public function store(Request $request)
     {
         //

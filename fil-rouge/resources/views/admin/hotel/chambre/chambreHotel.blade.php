@@ -33,7 +33,9 @@
                             <td>{{ $chambre->housingType }}</td>
                             <td>{{ $chambre->for }} personne</td>
                             <td>{{ $chambre->price }} MAD</td>
-                            <td>{!! Str::limit($chambre->option,40) !!}<a style="color:#17a2b8" href="">Suite</a></td> 
+                            <td>{!! Str::limit($chambre->option,40) !!}
+                                <a href="{{ url("ShowChambreOption/".$chambre->id) }}" style="color:#17a2b8" >Suite</a>
+                            </td> 
                             <td class="actionBtn">
                                 <a href="{{ url('AdminEditChambre/'.$chambre->id) }}" class="btn btn-info">Update</a>
                                 <form action="{{ url('AdminDltChambre/'.$chambre->id) }}" method="POST">

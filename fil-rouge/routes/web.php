@@ -79,6 +79,7 @@ Route::delete('/AdminDltPhotoHotel/{id}', 'App\Http\Controllers\PhotoHotelContro
 
 //chambres
 Route::get('/AdminChambreHotel/{id}', 'App\Http\Controllers\RiadController@showChambres');
+Route::get('/ShowChambreOption/{id}', 'App\Http\Controllers\ChambreController@showChambre');
 Route::post('/AdminAddChambre', 'App\Http\Controllers\ChambreController@store');
 Route::delete('/AdminDltChambre/{id}', 'App\Http\Controllers\ChambreController@destroy');
 Route::get('/AdminEditChambre/{id}', 'App\Http\Controllers\ChambreController@edit');
