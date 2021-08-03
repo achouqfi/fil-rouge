@@ -22,6 +22,7 @@
                             <th>Titre</th>
                             <th>Photo</th>
                             <th>Article</th>
+                            <th>Comments</th>
                             <th>Date de publication</th>
                             <th>Action</th>
                         </tr>
@@ -34,6 +35,7 @@
                             <td> {{ $article->title}}</td>
                             <td><img  src="{{ asset($article->photo) }}" height="40px" width="50px"/></td>
                             <td>{!! Str::limit($article->text,40) !!}   <a style="color:#17a2b8" href="" data-toggle="modal">Suite</a></td> 
+                            <td><a href="{{ url('comment/'.$article->id.'/shomAdmin') }}" class="btn btn-info">Comments</a></td>
                             <td> {{ $article->created_at }}</td>
                             <td style="display: flex">
                                 <form action="{{ url('articleDlt/'.$article->id) }}" method="POST">
@@ -52,8 +54,7 @@
         </div>        
     </div>
 
-    {{-- Article  --}}
-        <!-- Add -->
+
 
 @endsection
 

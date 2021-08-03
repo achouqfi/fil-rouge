@@ -61,26 +61,9 @@
                             </div>
                         </div>
 
-                        {{-- <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('adress') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="nationality" type="nationality" class="form-control @error('adress') is-invalid @enderror" name="adress" value="{{ old('adress') }}" required autocomplete="adress">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="PostalCode" class="col-md-4 col-form-label text-md-right">{{ __('Postal Code') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="PostalCode" type="PostalCode" class="form-control " name="PostalCode"  required autocomplete="PostalCode">
-                            </div>
-                        </div> --}}
-
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-info">
                                     {{ __('Register') }}
                                 </button>
                             </div>

@@ -61,6 +61,13 @@ class ArticleController extends Controller
         return view('user.showArticle',["article"=>$article]);
     }
 
+    public function showComment($id)
+    {
+        $article = article::find($id);
+        return view('admin.blog.comment',["article"=>$article]);
+
+    }
+
     public function edit($id)
     {
         //

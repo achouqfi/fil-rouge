@@ -257,7 +257,6 @@ body{
 
 .card-footer {
     font-size: 1em;
-    position: static;
     top: 0;
     left: 0;
     max-width: 100%;

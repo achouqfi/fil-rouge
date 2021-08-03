@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Shap;
 use App\Models\User;
+use App\Models\Comment;
 
 
 
@@ -37,15 +38,22 @@ class HomeController extends Controller
     
     public function adminHome()
     {
+        //ship count
         $ship= Shap::All();
         $ShipCount = count($ship);
 
+        //users count
         $users= User::All();
         $userCount = count($users);
 
+        //contact count
         $contact= Contact::All();
         $contactCount = count($contact);
+
+        //comment count
+        $comment= Comment::All();
+        $commentCount = count($comment);
         
-        return view('admin.homeAdmin',["contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount]);
+        return view('admin.homeAdmin',["contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount,"CommentCount" => $commentCount]);
     }
 }

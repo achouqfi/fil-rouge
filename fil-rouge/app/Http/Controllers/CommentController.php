@@ -33,4 +33,13 @@ class CommentController extends Controller
         return redirect()->back();
     }
 
+    public function DltComment($id)
+    {
+        //
+        $comment = Comment::find($id);
+        $comment->delete();
+        
+        return redirect()->back();
+    }
+
 }

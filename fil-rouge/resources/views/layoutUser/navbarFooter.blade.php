@@ -9,14 +9,14 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="{{ URL::asset('css/home.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('css/frontoffice.css') }}">
   <title>Home</title>
 </head>
 <body>
 
   <!-------------------- navbar ------------------->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">Moroccan<b>Surf</b></a>  		
+        <a class="navbar-brand" href="/">Moroccan<b>Surf</b></a>  		
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,12 +28,30 @@
             <a href="/plan" class="nav-item nav-link ">Plan</a>
             <a href="/blog" class="nav-item nav-link ">Blog</a>
             <a href="/contact" class="nav-item nav-link">Contact</a>
+         </div>
+         @auth 
+         @if (\Auth::user())
+            <div class="navbar-nav ml-auto">
+               <a  class="nav-link" href="/auth"  >{{ Auth::user()->name }}</a>
+               <form  action="{{ route('logout') }}" method="POST" >
+                  @csrf
+                  <button class="btn btn-info">Logout</button>
+               </form>
             </div>
-        <div class="navbar-nav ml-auto">
+         @else
+         <div class="navbar-nav ml-auto">
             <div class="loginbtn" >
-              <a href="/admin" class="btn btn-info">Login</a>
+            <a href="/auth" class="btn btn-info">Login</a>
             </div>
-        </div>		
+         </div>
+         @endif 
+         @endauth	
+         
+         <div class="navbar-nav ml-auto">
+            <div class="loginbtn" >
+            <a href="/auth" class="btn btn-info">Login</a>
+            </div>
+         </div>
         </div>
     </nav>
 

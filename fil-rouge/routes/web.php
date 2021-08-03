@@ -26,7 +26,7 @@ Route::get('/plan', function () {
 
 Auth::routes();
 
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('admin/home', 'App\Http\Controllers\HomeController@adminHome')->name('admin')->middleware('is_admin');
 
 // contact route
@@ -56,11 +56,13 @@ Route::get('/article/{id}/edit', 'App\Http\Controllers\ArticleController@edit');
 Route::put('/article/{id}', 'App\Http\Controllers\ArticleController@update');
 Route::get('/article/{id}/show', 'App\Http\Controllers\ArticleController@show');
 Route::delete('/articleDlt/{id}','App\Http\Controllers\ArticleController@destroy');
+Route::get('/comment/{id}/shomAdmin', 'App\Http\Controllers\ArticleController@showComment');
 
 //comments
 Route::post('/comment/save','App\Http\Controllers\CommentController@store');
-Route::get('/comment/{id}/show', 'App\Http\Controllers\CommentController@show');
 Route::delete('/commentDlt/{id}','App\Http\Controllers\CommentController@destroy');
+Route::delete('/commentDltDashboard/{id}','App\Http\Controllers\CommentController@DltComment');
+
 
 //hotels
 Route::get('/AdminHotel', 'App\Http\Controllers\RiadController@index');
