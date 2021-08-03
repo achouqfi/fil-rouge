@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  {{-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> --}}
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="{{ URL::asset('css/home.css') }}">
@@ -45,29 +45,30 @@
     <!---------------- footer ------------>
     <footer>
       <div class="footer">
-        <div class="footerEmail">
-          <h4>Send your email adress</h4>
-          <input type="text" placeholder="Email">
-          <a class="btn btn-primary btn-outline" href="#">Send</a>
-        </div>
-        <div>
-          <div class="footerimg">
-            <img src="./image/logo s.png" alt="" height="120px">
-          </div>
-        </div>
-        <div class="SocialMedia">
-          <h4>Social Media</h4  >
-          <div class="SocialMediaicon">
-            <ul>
-              <li><a href="#" ><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#" ><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-              <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-            </ul>
-          </div>
-        </div>
+         <div class="container">
+            <div class="row pdn-top-30">
+               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <div class="Follow">
+                     <h3>Follow Us</h3>
+                  </div>
+                  <ul class="location_icon">
+                     <li> <a href="#"><img src="./image/facebook.png"></a></li>
+                     <li> <a href="#"><img src="./image/Twitter.png"></a></li>
+                     <li> <a href="#"><img src="./image/linkedin.png"></a></li>
+                     <li> <a href="#"><img src="./image/instagram.png"></a></li>
+                  </ul>
+               </div>
+               <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                  <div class="Follow">
+                     <h3>Newsletter</h3>
+                  </div>
+                  <input class="Newsletter" placeholder="Enter your email" type="Enter your email">
+                  <button class="Subscribe">Subscribe</button>
+               </div>
+            </div>
+         </div>
       </div>
-    </footer>
+   </footer>
 
 
 </body>

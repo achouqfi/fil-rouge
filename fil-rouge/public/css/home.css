@@ -272,171 +272,6 @@ body{
 
 /*------------------ blog -------------------*/
 
-
-
-/*---------------- Surfboard ----------------*/
-
-.ship{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 3%;
-    margin-bottom: 6%;
-
-}
-
-.shipDesc{
-    width: 600px;
-    height: 310px;
-}
-
-.shipTitle{
-    text-align: center;
-    margin-bottom: 6%;
-    font-family: 'Noto Serif', serif;
-}
-
-.shipPar{
-    text-align: center;
-}
-
-.Shipbtn{
-    text-align: center;
-    margin-top: 6%;
-
-}
-.Shipbtn a{
-	background-color: white;
-	color: #5EB6DD !important;
-}.Shipbtn a:hover{
-    color: white !important;
-}
-
-
-
-/*--------------- contact-------------- */
-
-.containerContact{
-    background: #053742;
-    height: 200px;
-    padding-top: 10px;
-}
-.contact h2{
-    text-align: center;
-    font-family: 'Noto Serif', serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 3rem;
-	margin-bottom: 10px;
-    color: white;
-}
-
-.linecontact{
-    border-bottom: 5px solid #ffffff;
-    width: 7%;
-    margin-left: 46.5%;
-    margin-bottom: 26px;
-}
-
-.contactDesc{
-    display: flex;
-    justify-content: space-around;
-}
-
-.imgContact img{
-    margin-top: -20%;
-}
-.contactpar{
-    margin-top: -2%;
-}
-.contactpar p{
-    color: white;
-    text-align: center;
-    font-family: 'Noto Serif', serif;
-}
-.contactbtn a{
-    border: 1px solid white !important;
-    width: 117px;
-    height: 47px;
-    align-items: center;
-    text-align: center;
-    margin-left: 35%;
-}.contactbtn a:hover{
-    background-color: #5EB6DD;
-    color: white;
-}
-
-/*---------- footer ------------*/
-
-.footer{
-    display: flex;
-    justify-content: space-around;
-    /* margin-top: 5%; */
-    padding:5% 3% 3% 5%;
-    background-color: whitesmoke;
-}
-.footer img{
-    margin-top: -10%;
-    margin-left: -25%;
-}
-.footerEmail input{
-    height: 41px;
-    padding-top: 10px;
-    margin-left: -6%;
-    width: 280px;
-    border: 1px solide #5EB6DD !important;
-}
-.footerEmail h4{
-    font-family: 'Noto Serif', serif;
-}
-.footerEmail a{
-    color: #5EB6DD !important;
-}
-.SocialMedia h4{
-    text-align: center;
-}
-.SocialMediaicon{
-    height: 50px;
-    margin-top: 4%;
-    margin-left: -11%;
-}
-.SocialMediaicon ul{
-	text-align: center;
-}
-
-.SocialMediaicon ul li{
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    margin: 0px 10px;
-    border-radius: 100%;
-    background: #5EB6DD;
-}
-.SocialMediaicon ul li a{
-	text-decoration: none;
-	color: #272727;
-	font-size: 25px;
-	display: block;
-}
-.SocialMediaicon ul li a i{
-    line-height: 40px;
-    color: white;
-}.SocialMediaicon ul li a i:hover{
-    color: #5EB6DD;
-}
-.SocialMediaicon ul li:hover{
-	background: white;
-}
-.SocialMedia h4{
-    font-family: 'Noto Serif', serif;
-}
-
-
-/* blog */
-
 .card-box {
     border: 1px solid #ddd;
     padding: 20px;
@@ -458,6 +293,75 @@ body{
     font-size: 20px;
     text-decoration: none;
 }
+
+/*---------------- Surfboard Ship & About Us ----------------*/
+
+
+.ship{
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+}@media (min-width:480px) and (max-width:1000px) {
+    .row2{
+        display: inline !important;
+    }
+}
+
+.shipDesc{
+    width: 600px;
+    height: 310px;
+}
+
+.shipTitle{
+    text-align: center;
+    margin-bottom: 6%;
+    margin-top: 5%;
+    font-family: 'Noto Serif', serif;
+}
+
+.shipPar{
+    text-align: center;
+}
+
+.Shipbtn{
+    text-align: center;
+    margin-top: 6%;
+
+}
+.Shipbtn a{
+	background-color: white;
+	color: #5EB6DD !important;
+    margin-bottom: 6%;
+}.Shipbtn a:hover{
+    color: white !important;
+    background-color: #5EB6DD !important;
+}
+
+.imgBords img{
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+
+.discBoard{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 4%;
+    margin-bottom: 5%;
+}
+.textDesc{
+    width: 60%;
+}
+
+.img2{
+    margin-left: 5px;
+}
+
+/*---------- footer ------------*/
+
+
 
 /* plan hotel information page */
 .hotelPhoto{

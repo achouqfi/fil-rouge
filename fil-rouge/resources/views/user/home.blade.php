@@ -132,8 +132,8 @@
                 </div>
                 <h3><a href="#" class="mt-2 text-info ">Tawshif is a web designer living in Bangladesh.</a></h3>
                 <p class="text-dark">Tawshif Ahsan Khan</p>
-                <a class="btn btn btn-info float-right">Read more >></a>
-            </div>
+                <a href="" class="btn btn btn-info btn-md float-right">Read More</a>
+              </div>
         </div>
         <div class="col-md-6 col-lg-4">
           <div class="card-box">
@@ -142,7 +142,7 @@
               </div>
               <h3><a href="#" class="mt-2 text-info ">Tawshif is a web designer living in Bangladesh.</a></h3>
               <p class="text-dark">Tawshif Ahsan Khan</p>
-              <a class="btn btn btn-info float-right">Read more >></a>
+              <a href="" class="btn btn btn-info btn-md float-right">Read More</a>
           </div>
         </div>
         <div class="col-md-6 col-lg-4">
@@ -152,8 +152,8 @@
               </div>
               <h3><a href="#" class="mt-2 text-info ">Tawshif is a web designer living in Bangladesh.</a></h3>
               <p class="text-dark">Tawshif Ahsan Khan</p>
-              <a class="btn btn btn-info float-right">Read more >></a>
-          </div>
+              <a href="" class="btn btn btn-info btn-md float-right">Read More</a>
+            </div>
         </div>
         {{-- @endforeach --}}
     </div>
@@ -165,8 +165,32 @@
     <div class="line"></div>
   </div>
 
-  {{-- ------------------- contact ----------------------------}}
+  <div class="container ship">
+    <div class="row row2">
+      <div class="col  imageAbout">
+        <img src="./image/boardShipping1.jpg" alt="" width="100%">
+      </div>
+      <div class="col">
+        <div class="shipTitle">
+          <h2>About our website</h2>
+        </div>
+        <div class="shipPar">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem a nihil est impedit numquam eos sequi exercitationem inventore, unde similique ea culpa illum mollitia, quae accusantium obcaecati distinctio maxime natus?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, sunt obcaecati eaque omnis ipsam a asperiores tenetur dicta, aliquid pariatur sapiente beatae ratione, totam aliquam suscipit necessitatibus et dolor accusantium.
+          </p>
+        </div>
+        <div class="Shipbtn">
+          <a class="btn btn-primary btn-outline btn-md" href="#">See All Activity</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  {{-- ------------------- contact ----------------------------}}
+  <div class="trip">
+    <h2>Contact Us</h2> 
+    <div class="line"></div>
+  </div>
  
 
 @endsection
