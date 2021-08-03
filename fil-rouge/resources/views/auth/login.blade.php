@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('layoutUser.navbarFooter')
 
 @section('content')
 <div class="container">
@@ -71,3 +72,4 @@
     </div>
 </div>
 @endsection
+

@@ -31,7 +31,7 @@
             </div>
         <div class="navbar-nav ml-auto">
             <div class="loginbtn" >
-              <button class="btn btn-info">Login</button>
+              <a href="/admin" class="btn btn-info">Login</a>
             </div>
         </div>		
         </div>
@@ -44,14 +44,13 @@
 
     <!---------------- footer ------------>
     <footer>
-      <div class="footer">
-         <div class="container">
-            <div class="row pdn-top-30">
+         <div class="container footer">
+            <div class="row ">
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                  <div class="Follow">
+                  <div class="Follow text-center">
                      <h3>Follow Us</h3>
                   </div>
-                  <ul class="location_icon">
+                  <ul class="icon d-flex align-middle ">
                      <li> <a href="#"><img src="./image/facebook.png"></a></li>
                      <li> <a href="#"><img src="./image/Twitter.png"></a></li>
                      <li> <a href="#"><img src="./image/linkedin.png"></a></li>
@@ -59,15 +58,14 @@
                   </ul>
                </div>
                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-                  <div class="Follow">
+                  <div class="Follow text-center">
                      <h3>Newsletter</h3>
                   </div>
                   <input class="Newsletter" placeholder="Enter your email" type="Enter your email">
-                  <button class="Subscribe">Subscribe</button>
+                  <button class="btn btn-danger btn-md">Envoyer</button>
                </div>
             </div>
          </div>
-      </div>
    </footer>
 
 

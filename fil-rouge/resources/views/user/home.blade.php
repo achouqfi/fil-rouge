@@ -76,7 +76,7 @@
               <div class="card-footer">
                   <span class="float-right">Joined in 2013</span>
                   <a href="" class="btn btn btn-info btn-sm">See more</a>
-                </div>
+              </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
@@ -157,6 +157,9 @@
         </div>
         {{-- @endforeach --}}
     </div>
+    <div class="text-center mb-3 seeMore">
+      <button type="button" class="btn btn-outline-info btn-lg">See more</button>
+    </div>
   </div>
 
   {{------------------- surf customizing --------------------------}}
@@ -167,7 +170,7 @@
 
   <div class="container ship">
     <div class="row row2">
-      <div class="col  imageAbout">
+      <div class="col imageAbout">
         <img src="./image/boardShipping1.jpg" alt="" width="100%">
       </div>
       <div class="col">
@@ -180,18 +183,11 @@
           </p>
         </div>
         <div class="Shipbtn">
-          <a class="btn btn-primary btn-outline btn-md" href="#">See All Activity</a>
+          <a class="btn btn-primary btn-outline btn-md" href="#">Shap Your board</a>
         </div>
       </div>
     </div>
   </div>
-
-  {{-- ------------------- contact ----------------------------}}
-  <div class="trip">
-    <h2>Contact Us</h2> 
-    <div class="line"></div>
-  </div>
  
-
 @endsection
 

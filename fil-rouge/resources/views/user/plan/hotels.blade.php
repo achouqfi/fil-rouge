@@ -10,20 +10,23 @@
         <div class="line"></div>
     </div>
 
-    <div class="container">
-        <div class="row">
+    <div class="container Contrip">
+        <div class="row ">
             @foreach ($hotels as $hotel)
-            <div class="col-md-6 col-lg-4">
-                <div class="card-box">
-                    <div class="card-thumbnail">
-                        <img src="{{ asset($hotel->photoPrincipal) }}" class="img-fluid" alt="">
+                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ asset($hotel->photoPrincipal) }}">
+                        <div class="card-block">
+                            <h4 class="card-title">{{ $hotel->hotelName }}</h4>
+                            <div class="card-text">
+                                {{ $hotel->hotelAdresse }}
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ url('hotelDetails/'.$hotel->id) }}" class="btn btn btn-info btn-md">Book New</a>
+                        </div>
                     </div>
-                    <h3><a href="#" class="mt-2 text-info text-justify">{{ $hotel->hotelName }} </a></h3>
-                    <p class="text-dark">{{ $hotel->hotelDescription }}</p>
-                    <p><mark>{{ $hotel->hotelAdresse }}</mark></p>
-                    <a href="{{ url('hotelDetails/'.$hotel->id) }}" class="btn btn-md btn-info float-right">Details</a>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>
