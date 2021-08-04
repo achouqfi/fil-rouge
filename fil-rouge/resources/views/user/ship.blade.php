@@ -56,7 +56,7 @@
             <p>While surfboard volume is not the only factor in picking the right boards, knowing some general volume ranges that work for you for different types of boards can make choosing a good board easier.</p>
           </div>
           <div class="Shipbtn">
-            <a class="btn btn-primary btn-outline btn-lg" href="#">See More</a>
+            <a class="btn btn-primary btn-outline btn-lg" href="/blog">See More</a>
           </div>
         </div>
         <div class="col imageAbout">
@@ -101,7 +101,7 @@
                 <textarea name="MoreDetails" id="" cols="30" rows="10" placeholder="More Details"></textarea>
               </div>
               <div class="btnForm">
-                <input type="submit" name="submit" class="btn btn-info btn-md" value="Send Message" />
+                <input type="submit" name="submit" class="btn btn-outline-info btn-md" value="Send order" />
               </div>
             </div>
           </div>

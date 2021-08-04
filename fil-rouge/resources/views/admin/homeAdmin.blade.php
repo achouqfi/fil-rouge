@@ -2,42 +2,29 @@
 
 @section('content')
 
-    <div class="content">
-        <div class="navCount">
-            <div class="order">
-                <i class="fa fa-shopping-cart"></i>
-                <div class="info">
-                    <span class="numbers">{{ $ShipCount }}</span>
-                    <span class="name">Orders</span>
+    <div class="container countContainer">
+        <div class="row">
+            <div class=" col-md-3">
+                <div class="counter-box "> <i class="fa fa-shopping-cart"></i> <span class="counter">{{ $ShipCount }}</span>
+                    <p>Orders</p>
                 </div>
             </div>
-
-            <div class="order" >
-            <i class="fa fa-envelope"></i>
-            <div class="info">
-                <span class="numbers">{{ $contactCount }}</span>
-                <span class="message">Messages</span>
-            </div>
-            </div>
-
-            <div class="order" >
-            <i class="fa fa-ticket"></i>
-                <div class="info">
-                    <span class="numbers">{{ $CommentCount }}</span>
-                    <span class="reservation">Commentaire</span>
+            <div class=" col-md-3">
+                <div class="counter-box"> <i class="fa fa-envelope"></i> <span class="counter">{{ $contactCount }}</span>
+                    <p>Messages</p>
                 </div>
             </div>
-
-            <div class="order" >
-            <i class="fa fa-users"></i>
-            <div class="info">
-                <span class="numbers">{{ $userCount }}</span>
-                <span class="users">Users</span>
+            <div class=" col-md-3">
+                <div class="counter-box"> <i class="fa fa-comment"></i> <span class="counter">{{ $CommentCount }}</span>
+                    <p>Comment</p>
+                </div>
             </div>
+            <div class=" col-md-3">
+                <div class="counter-box"> <i class="fa fa-group"></i> <span class="counter">{{ $userCount }}</span>
+                    <p>Registered Members</p>
+                </div>
             </div>
         </div>
     </div>
-
-
 @endsection
 

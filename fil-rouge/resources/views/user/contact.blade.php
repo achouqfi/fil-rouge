@@ -37,9 +37,9 @@
                             <textarea class="textarea" name="message" placeholder="Message" required></textarea>
                         </div>
                         </div>
-                        <button class=" btn btn-danger btn-lg align-center send-btn">Send</button>
+                        <button class=" btn font-weight-bold btn-outline-light btn-lg align-center send-btn">Send</button>
                         @if (session('message'))
-                            <div class="alert alert-success">{{ session('message') }}</div>            
+                            <div class="alert alert-info">{{ session('message') }}</div>            
                         @endif
                     </form>
                 </div>

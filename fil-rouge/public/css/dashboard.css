@@ -141,51 +141,42 @@ table.table td a {
 
 /*---------------- navCount--------------- */
 
-.navCount{
-    display: flex;
-    justify-content: space-between;
-    width: 130%;
-    margin-left: 25%;
+
+.countContainer {
+    margin-top: 3%
 }
 
-.order{
-    display: flex;
-    background-color: #026d9e;
-    height: 123px;
-    width: 213px;
+.counter-box {
+    display: block;
+    background: #026d9e;
+    padding: 40px 20px 37px;
+    text-align: center
+}
+
+.counter-box p {
+    margin: 5px 0 0;
+    padding: 0;
     color: white;
-    border-radius: 10px;
-    box-shadow: 4px 4px rgb(197 197 197);
-    margin-top: 5%;
-    margin-left: -7%;
+    font-size: 18px;
+    font-weight: 500
 }
-.order i{
-    font-size: 70px;
-    margin-top: 18%;
-    margin-left: 5%;   
+
+.counter-box i {
+    font-size: 60px;
+    margin: 0 0 15px;
+    color: white;
 }
-.info{
-    margin-left: 15%;
+
+.counter {
+    display: block;
+    font-size: 32px;
+    color: white;
+    font-weight: 700;
+    line-height: 28px
+
 }
-.name{
-    margin-top: 10%;
-    margin-left: 7%;
-    font-size: x-large;
+
+.counter-box.colored {
+    background: #026d9e
 }
-.numbers{
-    margin-left: 30%;
-    font-size: x-large;
-}
-.message{
-    margin-top: 10%;
-    margin-left: -13%;
-    font-size: x-large;
-}.reservation{
-    margin-top: 10%;
-    margin-left: -28%;
-    font-size: x-large;
-}.users{
-    margin-top: 10%;
-    margin-left: 10%;
-    font-size: x-large;
-}
+

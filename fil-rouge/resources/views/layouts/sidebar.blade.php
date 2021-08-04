@@ -19,7 +19,7 @@
     <nav class="main-menu">
         <ul class="logo">
             <li>
-                <a href="/admin/home"><img src="./image/logo.png" alt="" height="40px" width="65px"> </a>
+                <a href="/admin/home"><img src="/image/logo.png" alt="" height="40px" width="65px"> </a>
             </li>  
         </ul>
 
@@ -46,8 +46,7 @@
 
         <form action="{{ route('logout') }}" method="POST" class="logout">
             @csrf
-            <button type="submit">
-                {{-- {{ __('Logout') }} --}}
+            <button type="submit" >
                 <i class="fa fa-power-off "></i>
             </button>
         </form>

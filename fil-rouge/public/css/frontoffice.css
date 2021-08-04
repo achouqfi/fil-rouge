@@ -563,12 +563,16 @@ table.table-striped.table-hover tbody tr:hover {
 }
 
 .Contact {
-   background-color: #96F1FF;
-   margin-top: 90px;
-   margin: 90px;
-   padding: 30px 0px 30px 0px;
-   min-height: 450px;
-}
+    background-image: url(/image/panorama.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.;
+    margin-top: 90px;
+    margin: 90px;
+    padding: 30px 0px 30px 0px;
+    min-height: 450px;
+    }
+
 
 
 .form-control {

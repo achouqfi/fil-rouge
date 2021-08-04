@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Shap;
 use App\Models\User;
+use App\Models\Riad;
 use App\Models\Comment;
 
 
@@ -53,8 +54,11 @@ class HomeController extends Controller
         //comment count
         $comment= Comment::All();
         $commentCount = count($comment);
+
+        $hotel= Riad::All();
+        $hotelCount = count($hotel);
         
-        return view('admin.homeAdmin',["contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount,"CommentCount" => $commentCount]);
+        return view('admin.homeAdmin',["contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount,"CommentCount" => $commentCount,"hotelCount" => $hotelCount]);
     }
 
     public function DltUser($id)
