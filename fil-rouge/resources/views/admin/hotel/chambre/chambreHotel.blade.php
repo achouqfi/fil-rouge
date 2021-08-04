@@ -3,6 +3,15 @@
 @section('content')
     <div class="container-xl">
         <div class="table-responsive">
+            @if (session('chambre'))
+            <div class="alert alert-success">{{ session('chambre') }}</div>            
+            @endif
+            @if (session('dltchambre'))
+            <div class="alert alert-success">{{ session('dltchambre') }}</div>            
+            @endif
+            @if (session('editchambre'))
+            <div class="alert alert-success">{{ session('editchambre') }}</div>            
+            @endif
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">

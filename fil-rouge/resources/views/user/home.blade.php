@@ -1,5 +1,14 @@
 @extends('layoutUser.navbarFooter')
 
+@section('navbar')
+    <a href="/" class="nav-item nav-link active" >Home</a>
+    <a href="/about" class="nav-item nav-link">About</a>			
+    <a href="/ship" class="nav-item nav-link">Ship</a>
+    <a href="/plan" class="nav-item nav-link ">Plan</a>
+    <a href="/blog" class="nav-item nav-link ">Blog</a>
+    <a href="/contact" class="nav-item nav-link ">Contact</a>
+@endsection
+
 @section('content')
 <body>
     <!-- <div class="header"> -->

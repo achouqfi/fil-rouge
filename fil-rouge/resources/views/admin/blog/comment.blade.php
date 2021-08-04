@@ -3,6 +3,9 @@
 @section('content')
     <div class="container-xl">
         <div class="table-responsive">
+            @if (session('dltcomment'))
+            <div class="alert alert-success">{{ session('dltcomment') }}</div>            
+            @endif
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">

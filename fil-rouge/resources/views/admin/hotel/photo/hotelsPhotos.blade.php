@@ -2,8 +2,14 @@
 
 @section('content')
 
-    <div class="container-xl">
+    <div class="container">
         <div class="table-responsive">
+            @if (session('photo'))
+            <div class="alert alert-success">{{ session('photo') }}</div>            
+            @endif
+            @if (session('dltphoto'))
+            <div class="alert alert-success">{{ session('dltphoto') }}</div>            
+            @endif
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
@@ -14,6 +20,7 @@
                             <a href="#addHotel" class="btn btn-success" data-toggle="modal">Add Photo</a>
                             <a href="/AdminHotel" class="btn btn-dark"> < Back</a>
                         </div>
+
                     </div>
                 </div>
                 <table class="table table-striped table-hover">

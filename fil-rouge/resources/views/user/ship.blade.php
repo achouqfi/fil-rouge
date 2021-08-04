@@ -1,5 +1,14 @@
 @extends('layoutUser.navbarFooter')
 
+@section('navbar')
+    <a href="/" class="nav-item nav-link " >Home</a>
+    <a href="/about" class="nav-item nav-link">About</a>			
+    <a href="/ship" class="nav-item nav-link active">Ship</a>
+    <a href="/plan" class="nav-item nav-link ">Plan</a>
+    <a href="/blog" class="nav-item nav-link ">Blog</a>
+    <a href="/contact" class="nav-item nav-link ">Contact</a>
+@endsection
+
 @section('content')
 <body>
     <!-------------------------- About Us ----------------->
@@ -98,6 +107,9 @@
           </div>
         </form>
       </div>
+      @if (session('order'))
+        <div class="alert alert-success">{{ session('order') }}</div>            
+      @endif
     @endif   
     @endauth
 

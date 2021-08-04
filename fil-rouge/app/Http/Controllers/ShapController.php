@@ -11,27 +11,20 @@ class ShapController extends Controller
 {
     public function index()
     {
-        //
-        
+        //affichage au utilisateur
         return view('user.ship');
     }
 
     public function admin()
     {
-        //
+        //affichage des commande pour dans la page admin
         $ship= Shap::All();
-        return view("admin.ship",["ship" => $ship]);
-        
+        return view("admin.ship",["ship" => $ship]);  
     }
-
-    public function create()
-    {
-        //
-    }
-
 
     public function store(Request $request)
     {
+        // insertion du commande
         $shap = new Shap();
         $shap -> category = $request -> category;
         $shap -> color =  $request -> color;
@@ -44,28 +37,13 @@ class ShapController extends Controller
         $shap -> users_id = auth::user() -> id;
 
         $shap ->save();
-        return redirect("ship");
-    }
-
-    public function show()
-    {
-        //
-    }
-
-    public function edit( )
-    {
-        //
-    }
-
-    public function update()
-    {
-        //
+        return redirect("ship")->with('order','commande envoyer');
     }
 
     public function destroy( $id)
     {
-        //
+        //supression du commande
         Shap::destroy($id);
-        return redirect("/shipadmin");
+        return redirect()->back()->with('dltorder','order are deleted');
     }
 }

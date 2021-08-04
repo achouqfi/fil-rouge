@@ -3,6 +3,9 @@
 @section('content')
    <div class="container">
         <div class="table-responsive"  style="width: 110%;margin-left:-5%">
+            @if (session('dltuser'))
+                <div class="alert alert-success">{{ session('dltuser') }}</div>            
+            @endif
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">

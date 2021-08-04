@@ -49,7 +49,7 @@ class ChambreController extends Controller
         $chambre -> option = $request -> option;
 
         $chambre -> save();
-        return redirect("AdminChambreHotel/".$request -> hotel_id);
+        return redirect("AdminChambreHotel/".$request -> hotel_id)->with('editchambre','your modification are saved');
     }
 
     public function destroy($id)

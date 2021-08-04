@@ -4,6 +4,15 @@
 
     <div class="container">
         <div class="table-responsive"  style="width: 110%;margin-left:-5%">
+            @if (session('article'))
+            <div class="alert alert-success">{{ session('article') }}</div>            
+            @endif
+            @if (session('dltarticle'))
+            <div class="alert alert-success">{{ session('dltarticle') }}</div>            
+            @endif
+            @if (session('editarticle'))
+            <div class="alert alert-success">{{ session('editarticle') }}</div>            
+            @endif
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
@@ -21,7 +30,6 @@
                             <th>ID</th>
                             <th>Titre</th>
                             <th>Photo</th>
-                            <th>Article</th>
                             <th>Comments</th>
                             <th>Date de publication</th>
                             <th>Action</th>
@@ -34,7 +42,6 @@
                             <td> {{ $article->id }}</td>
                             <td> {{ $article->title}}</td>
                             <td><img  src="{{ asset($article->photo) }}" height="40px" width="50px"/></td>
-                            <td>{!! Str::limit($article->text,40) !!}   <a style="color:#17a2b8" href="" data-toggle="modal">Suite</a></td> 
                             <td><a href="{{ url('comment/'.$article->id.'/shomAdmin') }}" class="btn btn-info">Comments</a></td>
                             <td> {{ $article->created_at }}</td>
                             <td style="display: flex">
@@ -49,7 +56,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                {{-- <span>{{ $articles->links( "pagination::bootstrap-4") }}</span> --}}
+                <span>{{ $articles->links( "pagination::bootstrap-4") }}</span>
             </div>
         </div>        
     </div>

@@ -15,7 +15,7 @@ class ContactController extends Controller
     public function admin()
     {
         //
-        $contact= Contact::All();
+        $contact= Contact::paginate(7);
         return view("admin.contact",["contacts" => $contact]);
     }
 
@@ -29,23 +29,7 @@ class ContactController extends Controller
         $contact -> message =  $request -> message;
 
         $contact ->save();
-        return redirect("contact");
-    }
-
-    public function show(contact $contact)
-    {
-        //
-    }
-
-    
-    public function edit(contact $contact)
-    {
-        //
-    }
-
-    public function update(Request $request, contact $contact)
-    {
-        //
+        return redirect()->back()->with('message', 'Message envoyer');
     }
 
     public function destroy($id)
@@ -54,6 +38,6 @@ class ContactController extends Controller
         $contact = Contact::find($id);
         $contact->delete();
         
-        return redirect("/contactadmin");
+        return redirect()->back()->with('dltcontact','message are deleted');
     }
 }

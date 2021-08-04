@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Riad;
-use App\Models\Chambre;
-use App\Models\PhotoHotel;
+// use App\Models\Chambre;
+// use App\Models\PhotoHotel;
 use Illuminate\Http\Request;
 
 class RiadController extends Controller
@@ -52,7 +52,7 @@ class RiadController extends Controller
         $hotel->photoPrincipal = $filepath.$filename;
 
         $hotel ->save();
-        return redirect("AdminHotel");
+        return redirect("AdminHotel")->with('hotel','hotel are inserted');
     }
 
     public function showPhotos($id)
@@ -93,13 +93,13 @@ class RiadController extends Controller
         $hotel->photoPrincipal = $filepath.$filename;
 
         $hotel -> save();
-        return redirect("AdminHotel");
+        return redirect("AdminHotel")->with('edithotel','your modification are saved');
     }
 
     public function destroy($id)
     {
-        //
+        //supression de l'hotel
         Riad::destroy($id);
-        return redirect("AdminHotel");
+        return redirect("AdminHotel")->with('dlthotel','hotel are deleted');
     }
 }

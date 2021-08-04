@@ -1,8 +1,6 @@
 @extends('layouts.sidebar')
 
 @section('content')
-
-	{{-- <link rel="stylesheet" href="{{ URL::asset('css/createArticle.css') }}"> --}}
 	
 	<div class="container">
         <div class="table-responsive"  style="width: 110%;margin-left:-5%">
@@ -26,19 +24,19 @@
 						<div class="form-group">
 						  <label class="control-label col-sm-2" >Titre de l'article</label>
 						  <div class="col-sm-12">          
-							<input type="text" class="form-control" placeholder="Saisir le titre" name="titre">
+							<input type="text" class="form-control" placeholder="Saisir le titre" name="titre" required>
 						  </div>
 						</div>
 						<div class="form-group">
 						  <label class="control-label col-sm-2" >Photo</label>
 						  <div class="col-sm-12">          
-							<input type="file" class="form-control"  name="photo">
+							<input type="file" class="form-control"  name="photo" required>
 						  </div>
 						</div>
 						<div class="form-group">
 						  <label class="control-label col-sm-2">Article</label>
 						  <div class="col-sm-12">
-							<textarea name="article" placeholder="Saisir l'article" id="Text"></textarea>
+							<textarea name="article" placeholder="Saisir l'article" id="Text" required></textarea>
 						</div>
 						</div>
 						<div class="form-group">        

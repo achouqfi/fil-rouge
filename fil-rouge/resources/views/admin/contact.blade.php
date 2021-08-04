@@ -4,6 +4,9 @@
 
     <div class="container">
         <div class="table-responsive"  style="width: 110%;margin-left:-5%">
+            @if (session('dltcontact'))
+                <div class="alert alert-success">{{ session('dltcontact') }}</div>            
+            @endif
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
@@ -44,7 +47,7 @@
 
                     </tbody>
                 </table>
-                {{-- <span>{{ $articles->links( "pagination::bootstrap-4") }}</span> --}}
+                <span >{{ $contacts->links( "pagination::bootstrap-4") }}</span>
             </div>
         </div>        
     </div>

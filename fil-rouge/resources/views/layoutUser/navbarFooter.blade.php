@@ -10,7 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="{{ URL::asset('css/frontoffice.css') }}">
-  <title>Home</title>
+  <title>surf in morocco</title>
 </head>
 <body>
 
@@ -22,36 +22,31 @@
         </button>
         <div id="navbarCollapse" class="collapse navbar-collapse ">
         <div class="navbar-nav">
-            <a href="/" class="nav-item nav-link active" >Home</a>
-            <a href="/about" class="nav-item nav-link">About</a>			
-            <a href="/ship" class="nav-item nav-link">Ship</a>
-            <a href="/plan" class="nav-item nav-link ">Plan</a>
-            <a href="/blog" class="nav-item nav-link ">Blog</a>
-            <a href="/contact" class="nav-item nav-link">Contact</a>
+
+            @yield('navbar')
+
          </div>
+         <!-- if user is authenticated --> 
          @auth 
-         @if (\Auth::user())
-            <div class="navbar-nav ml-auto">
-               <a  class="nav-link" href="/auth"  >{{ Auth::user()->name }}</a>
-               <form  action="{{ route('logout') }}" method="POST" >
-                  @csrf
-                  <button class="btn btn-info">Logout</button>
-               </form>
-            </div>
-         @else
-         <div class="navbar-nav ml-auto">
-            <div class="loginbtn" >
-            <a href="/auth" class="btn btn-info">Login</a>
-            </div>
-         </div>
-         @endif 
+            @if (\Auth::user())
+               <div class="navbar-nav ml-auto">
+                  <a  class="nav-link" href="/auth"  >{{ Auth::user()->name }}</a>
+                  <form  action="{{ route('logout') }}" method="POST" >
+                     @csrf
+                     <button class="btn btn-info">Logout</button>
+                  </form>
+               </div>
+            @endif 
          @endauth	
          
-         <div class="navbar-nav ml-auto">
-            <div class="loginbtn" >
-            <a href="/auth" class="btn btn-info">Login</a>
+         <!-- if user is NOT authenticated -->
+         @guest
+            <div class="navbar-nav ml-auto">
+               <div class="loginbtn" >
+               <a href="/auth" class="btn btn-info">Login</a>
+               </div>
             </div>
-         </div>
+         @endguest
         </div>
     </nav>
 

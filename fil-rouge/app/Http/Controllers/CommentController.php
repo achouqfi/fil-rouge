@@ -21,7 +21,7 @@ class CommentController extends Controller
         $comment-> article_id =$request -> article;
         $comment ->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('comment',"votre commentaire à été inserer");
     }
 
     public function destroy($id)
@@ -30,7 +30,7 @@ class CommentController extends Controller
         $comment = Comment::find($id);
         $comment->delete();
         
-        return redirect()->back();
+        return redirect()->back()->with('dltcomment','votre commentaire est supprimer');
     }
 
     public function DltComment($id)
@@ -39,7 +39,7 @@ class CommentController extends Controller
         $comment = Comment::find($id);
         $comment->delete();
         
-        return redirect()->back();
+        return redirect()->back()->with('dltcomment','your comment are deleted');
     }
 
 }

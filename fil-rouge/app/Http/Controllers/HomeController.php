@@ -56,4 +56,11 @@ class HomeController extends Controller
         
         return view('admin.homeAdmin',["contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount,"CommentCount" => $commentCount]);
     }
+
+    public function DltUser($id)
+    {
+        //
+        User::destroy($id);
+        return redirect()->back()->with('dltuser','user account are deleted');
+    }
 }

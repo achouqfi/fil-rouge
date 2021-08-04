@@ -10,15 +10,10 @@ class PhotoHotelController extends Controller
 
     public function store(Request $request)
     {
-        //
- 
-        
+        //insertion d'ensemble des photos selectionner 
         foreach ($request->file('photos') as $file) {
-            // $photo = new PhotoHotel();
 
-            // $photo->hotel_id = $request->hotel_id;
             $name = time()."".$file->getClientOriginalName();
-            // $filename=time()."".$name;
             $file->move('storage/uploads/', $name);
             $filepath="storage/uploads/".$name;
             PhotoHotel::create([
@@ -27,21 +22,13 @@ class PhotoHotelController extends Controller
             ]);
 
         }
-
-        return redirect()->back();
-    }
-
-
-    public function show(PhotoHotel $photoHotel)
-    {
-        //
+        return redirect()->back() ->with('photo', 'Photos are inserted');
     }
 
     public function destroy($id)
     {
-        //
+        //suppression d'une image
         PhotoHotel::destroy($id);
-
-        return redirect()->back();
+        return redirect()->back()->with('dltphoto','photo are deleted');
     }
 }

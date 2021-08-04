@@ -39,7 +39,7 @@
                                         <input type="file" class="form-control"  name="photoPrincipal" required/>
                                     </div>
                                 </div>
-        
+                                
                                 <div class="form-group">
                                     <label>Description</label>
                                     <textarea name="description" class="form-control" required>{{ $hotel->hotelDescription }}</textarea>

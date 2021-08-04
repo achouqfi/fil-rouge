@@ -4,6 +4,9 @@
 
     <div class="container">
         <div class="table-responsive"  style="width: 110%;margin-left:-5%">
+            @if (session('dltorder'))
+                <div class="alert alert-success">{{ session('dltorder') }}</div>            
+            @endif
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">

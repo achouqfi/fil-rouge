@@ -43,6 +43,7 @@ Route::delete('/shipadmin/{id}','App\Http\Controllers\ShapController@destroy');
 
 //users
 Route::get('/users','App\Http\Controllers\HomeController@user');
+Route::delete('/users/{id}','App\Http\Controllers\HomeController@DltUser');
 
 //user view page
 Route::get('/compte','App\Http\Controllers\UserInfoController@index');

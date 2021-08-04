@@ -1,9 +1,15 @@
 @extends('layoutUser.navbarFooter')
 
+@section('navbar')
+    <a href="/" class="nav-item nav-link " >Home</a>
+    <a href="/about" class="nav-item nav-link">About</a>			
+    <a href="/ship" class="nav-item nav-link">Ship</a>
+    <a href="/plan" class="nav-item nav-link ">Plan</a>
+    <a href="/blog" class="nav-item nav-link ">Blog</a>
+    <a href="/contact" class="nav-item nav-link active">Contact</a>
+@endsection
+
 @section('content')
-
-
-
     <div class="Contact">
         <div class="container">
             <div class="contact">
@@ -16,24 +22,27 @@
                         @csrf
                         <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <input class="form-control" placeholder="Name" name="name" type="text">
+                            <input class="form-control" placeholder="Name" name="name" type="text" required>
                         </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <input class="form-control" placeholder="Email" name="email" type="Email">
+                            <input class="form-control" placeholder="Email" name="email" type="Email" required>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <input class="form-control" placeholder="Phone Number" name="phone" type="text">
+                            <input class="form-control" placeholder="Phone Number" name="phone" type="text" required>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <input class="form-control" placeholder="Subject" name="subject" type="text">
+                            <input class="form-control" placeholder="Subject" name="subject" type="text" required>
                         </div>
                         <div class="col-sm-12">
-                            <textarea class="textarea" name="message" placeholder="Message"></textarea>
+                            <textarea class="textarea" name="message" placeholder="Message" required></textarea>
                         </div>
                         </div>
+                        <button class=" btn btn-danger btn-lg align-center send-btn">Send</button>
+                        @if (session('message'))
+                            <div class="alert alert-success">{{ session('message') }}</div>            
+                        @endif
                     </form>
                 </div>
-                <button class=" btn btn-danger btn-lg align-center send-btn">Send</button>
             </div>
         </div>
     </div>

@@ -4,6 +4,15 @@
 
     <div class="container">
         <div class="table-responsive"  style="width: 120%;margin-left:-10%">
+            @if (session('hotel'))
+            <div class="alert alert-success">{{ session('hotel') }}</div>            
+            @endif
+            @if (session('dlthotel'))
+            <div class="alert alert-success">{{ session('dlthotel') }}</div>            
+            @endif
+            @if (session('edithotel'))
+            <div class="alert alert-success">{{ session('edithotel') }}</div>            
+            @endif
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">

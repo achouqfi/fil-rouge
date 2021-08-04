@@ -12,7 +12,7 @@ class ArticleController extends Controller
     public function index()
     {
         //
-        $article= Article::All();
+        $article= Article::paginate(5);
         return view('admin.blog.article',["articles"=>$article]);
 
     }
@@ -21,9 +21,6 @@ class ArticleController extends Controller
     {
         //
         $article= article::All();
-        // $comment= Comment::All();
-
-
         return view('user.blog',["articles"=>$article]);
 
     }
@@ -49,7 +46,7 @@ class ArticleController extends Controller
         $article->photo = $filepath.$filename;
 
         $article ->save();
-        return redirect("article");
+        return redirect("article")->with('article','article are inserted');
 
     }
 
@@ -93,15 +90,13 @@ class ArticleController extends Controller
 
         $article ->save();
 
-        return redirect("article");
+        return redirect("article")->with('editarticle','modification are saved');
     }
 
     public function destroy($id)
     {
         //
         article::destroy($id);
-
-
-        return redirect("article");
+        return redirect("article")->with('dltarticle','article are deleted');
     }
 }

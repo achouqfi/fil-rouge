@@ -1,9 +1,16 @@
 @extends('layoutUser.navbarFooter')
 
+@section('navbar')
+    <a href="/" class="nav-item nav-link " >Home</a>
+    <a href="/about" class="nav-item nav-link">About</a>			
+    <a href="/ship" class="nav-item nav-link ">Ship</a>
+    <a href="/plan" class="nav-item nav-link ">Plan</a>
+    <a href="/blog" class="nav-item nav-link active">Blog</a>
+    <a href="/contact" class="nav-item nav-link ">Contact</a>
+@endsection
+
 @section('content')
 <section>
-
-    <link rel="stylesheet" href="{{ URL::asset('css/home.css') }}">
 
     <div class="trip">
         <h2>Blog </h2> 
@@ -36,19 +43,24 @@
                                         <div class="clearfix"></div>
                                     </form>
                                 @elseif (\Auth::user()->is_admin == 1)
-                                    <h3>this is comment list</h3>
-                                @else
-                                    <button class="btn btn-">connectez-vous</button>
+                                    <h3 class="text-info">Voila la liste des commentaires</h3>
                                 @endif 
-                            @endauth
+                                @endauth
+
+                                @guest
+                                    <div class="navbar-nav ml-auto">
+                                        <h3 class="text-info">Connectez-vour</h3>
+                                        <div class="loginbtn" >
+                                            <a href="/auth" class="btn btn-info">Login</a>
+                                        </div>
+                                    </div>
+                                @endguest
 
                             <hr>
                             <ul class="media-list">
                                 @foreach($article->comments as $comment)
                                 <li class="media">
                                     <div class="media-body">
-                                        {{-- <strong class="text-muted">{{ $comment->message }}</strong> --}}
-                                        <span></span>
                                         <span class="text-muted pull-right">
                                             <small class="text-muted">{{ $comment->created_at }}</small>
                                         </span>
@@ -69,11 +81,16 @@
                                             @endif
                                             @endauth
                                         </p>
-
                                     </div>
                                 </li>
                                 @endforeach
-                            </ul>
+                            </ul> 
+                            @if (session('comment'))
+                                <div class="alert alert-success">{{ session('comment') }}</div>            
+                            @endif
+                            @if (session('dltcomment'))
+                                <div class="alert alert-success">{{ session('dltcomment') }}</div>            
+                            @endif
                         </div>
                     </div>
                 </div>
