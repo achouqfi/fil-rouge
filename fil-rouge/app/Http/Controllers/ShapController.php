@@ -31,10 +31,14 @@ class ShapController extends Controller
         $shap -> rocker =  $request -> rocker;
         $shap -> typeOfWave =  $request -> typeOfWave;
         $shap -> lenght =  $request -> lenght;
+        $shap -> Phone =  $request -> Phone;
+        $shap -> Adresse =  $request -> Adresse;
+        $shap -> postcode =  $request -> postcode;
+        $shap -> etat =  $request -> etat;
         $shap -> width =  $request -> width;
         $shap -> thickness =  $request -> thickness;
         $shap -> MoreDetails =  $request -> MoreDetails;
-        $shap -> users_id = auth::user() -> id;
+        $shap -> user_id = auth::user() -> id;
 
         $shap ->save();
         return redirect("ship")->with('order','commande envoyer');

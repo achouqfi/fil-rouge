@@ -25,6 +25,8 @@
                 </div>
             </div>
         </div>
+        <img class="mt-5" src="https://img.icons8.com/dotty/80/000000/admin-settings-male.png" width="30%"/>
+
     </div>
 @endsection
 

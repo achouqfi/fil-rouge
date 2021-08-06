@@ -92,6 +92,12 @@
                 <input type="text" name="rocker" placeholder="rocker">
                 <input type="text" name="typeOfWave" placeholder="type of wave">
               </div>
+              <div class="rowform1">
+                <input type="text" name="Phone" placeholder="Phone number">
+                <input type="text" name="Adresse" placeholder="Adresse">
+                <input type="text" name="postcode" placeholder="postcode">
+                <input type="hidden" name="etat" value="envoyer">
+              </div>
               <div class="rowform2"> 
                 <input type="text" name="lenght" placeholder="lenght in inch">
                 <input type="text" name="width" placeholder="width in inch">
