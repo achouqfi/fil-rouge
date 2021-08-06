@@ -3,19 +3,19 @@
 @section('content')
 
     <div class="container">
-        <div class="table-responsive"  style="width: 130%;margin-left: -15%">
+        <div class="table-responsive" style="width: 110%;margin-left:-5%">
             @if (session('dltorder'))
                 <div class="alert alert-success">{{ session('dltorder') }}</div>            
             @endif
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col">
                             <h2>ORDER LIST</b></h2>
                         </div>
                     </div>
                 </div>
-                <table class="table table-striped table-hover">
+                <table class="tableShap table-hover" style="">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -32,6 +32,7 @@
                             <th>MoreDetails</th>
                             <th>user </th>
                             <th>Etat</th>
+                            <th>modification</th>
                             {{-- <th class="text-center">Action</th> --}}
                         </tr>
                     </thead>
@@ -51,11 +52,27 @@
                             <td> {{ $ship->thickness }}</td>
                             <td> {{ $ship->MoreDetails }}</td>
                             <td> {{ $ship->user->name }}</td>
-                            
-                            <form action="">
-                                <td  class=" container d-flex"> <select  name="etat">
-                                        <option value="{{ $ship->etat }}">{{ $ship->etat }}</option>
+
+                            @if (  $ship->etat === 'envoyer')
+                                <td> <span class="bg-success   text-white p-2 rounded">envoyer</span> </td>     
+                            @endif
+                            @if (  $ship->etat === 'confirmer')
+                                <td> <span class="bg-success   text-white p-2 rounded">Comfirmed</span> </td>     
+                            @endif
+                            @if (  $ship->etat === 'livrer')
+                                <td > <span class="bg-info   text-white p-2 rounded">livré</span> </td>     
+                            @endif
+                            @if (  $ship->etat === 'annuler')
+                                <td> <span  class="bg-danger  text-white p-2 rounded">annuler</span></td>     
+                            @endif
+                            <form action="{{ url('etatCommande/'.$ship->id) }}" method="POST" enctype="multipart/form-data">
+                                <input type="hidden" name="_method" value="PUT">
+                                @csrf   
+                                <td  class=" container d-block pt-4"> 
+                                    <select  name="etat">
+                                        <option value="" selected="selected" disabled>etat</option>
                                         <option class="bg-success text-white " value="confirmer">confirmer</option>
+                                        <option class="bg-info text-white" value="livrer">livré</option>
                                         <option class="bg-danger text-white" value="annuler">annuler</option>
                                     </select>&nbsp;
                                     <button class="btn btn-success btn-md">modifie</button>
@@ -73,7 +90,7 @@
 
                     </tbody>
                 </table>
-                {{-- <span>{{ $articles->links( "pagination::bootstrap-4") }}</span> --}}
+                {{-- <span >{{ $ship->links( "pagination::bootstrap-4") }}</span> --}}
             </div>
         </div>        
     </div>

@@ -18,7 +18,7 @@ class ShapController extends Controller
     public function admin()
     {
         //affichage des commande pour dans la page admin
-        $ship= Shap::All();
+        $ship= Shap::paginate(5);
         return view("admin.ship",["ship" => $ship]);  
     }
 
@@ -49,5 +49,15 @@ class ShapController extends Controller
         //supression du commande
         Shap::destroy($id);
         return redirect()->back()->with('dltorder','order are deleted');
+    }
+
+    public function etatUpdate(Request $request, $id)
+    {
+        //supression du commande
+        $etat = Shap::find($id);
+
+        $etat -> etat = $request -> etat;
+        $etat ->save();
+        return redirect()->back()->with('etat','your modification are saved');
     }
 }
