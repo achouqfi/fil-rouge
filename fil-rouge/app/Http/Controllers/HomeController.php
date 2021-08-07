@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Contact;
-use App\Models\Shap;
 use App\Models\User;
+use App\Models\Shap;
 use App\Models\Riad;
 use App\Models\Comment;
 
@@ -29,7 +29,11 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(){
-        return view('Home');
+        $ship= Shap::All();
+        $comment= Comment::All();
+        $user = User::All();
+
+        return view('Home',["ships"=>$ship,"comments"=>$comment]);
     }
 
     public function user(){

@@ -1,251 +1,139 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
-                        {{ __('You are logged in!') }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
     
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="osahan-account-page-left shadow-sm bg-white h-100">
-                <div class="border-bottom p-4">
-                    <div class="osahan-user text-center">
-                        <div class="osahan-user-media">
-                            <img class="mb-3 rounded-pill shadow-sm mt-1" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="gurdeep singh osahan">
-                            <div class="osahan-user-media-body">
-                                <h6 class="mb-2">Gurdeep Singh</h6>
-                                <p class="mb-1">+91 85680-79956</p>
-                                <p>iamosahan@gmail.com</p>
-                                <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3" data-toggle="modal" data-target="#edit-profile-modal" href="#"><i class="icofont-ui-edit"></i> EDIT</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <ul class="nav nav-tabs flex-column border-0 pt-4 pl-4 pb-4" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="payments-tab" data-toggle="tab" href="#payments" role="tab" aria-controls="payments" aria-selected="true"><i class="icofont-credit-card"></i> Payments</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="osahan-account-page-right shadow-sm bg-white p-4 h-100">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade active show" id="payments" role="tabpanel" aria-labelledby="payments-tab">
-                        <h4 class="font-weight-bold mt-0 mb-4">Payments</h4>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="bg-white card payments-item mb-4 shadow-sm">
-                                    <div class="gold-members p-4">
-                                        <a href="#">
-                                        </a>
-                                        <div class="media">
-                                            <div class="media-body">
-                                               <a href="#">
-                                                   <i class="icofont-visa icofont-4x"></i>
-                                               </a>
-                                                <a href="#">
-                                                    <h6 class="mb-1">6070-XXXXXXXX-0666</h6>
-                                                    <p>VALID TILL 10/2025</p>
-                                                </a>
-                                                <p class="mb-0 text-black font-weight-bold">
-                                                    <a href="#">
-                                                    </a><a class="text-danger" data-toggle="modal" data-target="#delete-address-modal" href="#"><i class="icofont-ui-delete"></i> DELETE</a></p>
-                                            </div>
-                                        </div>
 
+    <div class="container">
+		<div class="main-body">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-body">
+							<div class="d-flex flex-column align-items-center text-center">
+								<img src="https://image.flaticon.com/icons/png/512/149/149071.png" alt="Admin" class="rounded-circle p-1 bg-info" width="110">
+								<div class="mt-3">
+									<h4>{{ Auth::user()->name }}</h4>
+									<p class="text-secondary mb-1">
+                                        @if (Auth::user()->is_admin === 1)
+                                        <td>Admin</td>
+                                        @else
+                                            <td>User</td>
+                                        @endif 
+                                    </p>
+									<p class="text-muted font-size-sm">{{ Auth::user()->email }}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+                @if (Auth::user()->is_admin === 0)
+                <div class="col-lg-8">
+					<div class="card">
+						<div class="card-body">
+                            <h5 class="d-flex align-items-center mb-3"> <b>Vos Commentaires</b></h5>
+							<div class="row mb-3">
+                                @foreach ($comments as $comment)
+                                    <label>{{ $comment->comment }} </label>      
+                                @endforeach
+							</div> 
+						</div>
+					</div>
+                        
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="card ">
+                                @foreach (Auth::user()->commandes as $commande)
+                                <h3 class="text-white bg-info mt-3 p-3">Etat de votre commande </h3> 
+                                @if ($commande->etat === 'confirmer')
+                                @endif
+                                @if (  $commande->etat === 'envoyer')
+                                    <td> <span class="text-info p-2 ">Vous pouvez modifier votre commande avant la comfirmation</span> </td>    
+                                    <div class="card-body">
+                                        
+                                        <input type="text" class="form-control" value="{{ $commande->category }}">
+                                        <input type="text" class="form-control"  value="{{ $commande->color }}">
+                                        <input type="text" class="form-control"  value="{{ $commande->rocker }}">
+                                        <input type="text" class="form-control"  value="{{ $commande->typeOfWave }}">
+                                        <input type="text" class="form-control"  value="{{ $commande->lenght }}">
+                                        <input type="text" class="form-control"  value="{{ $commande->width }}">
+                                        <input class="form-control" type="text"  value="{{ $commande->thickness }}">
+                                        <input class="form-control" type="text"  value="{{ $commande->MoreDetails }}">
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="bg-white card payments-item mb-4 shadow-sm">
-                                    <div class="gold-members p-4">
-                                        <a href="#">
-                                        </a>
-                                        <div class="media">
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <i class="icofont-mastercard icofont-4x"></i>
-                                                </a>
-                                                <a href="#">
-                                                    <h6 class="mb-1">6070-XXXXXXXX-0666</h6>
-                                                    <p>VALID TILL 10/2025</p>
-                                                </a>
-                                                <p class="mb-0 text-black font-weight-bold">
-                                                    <a href="#">
-                                                    </a><a class="text-danger" data-toggle="modal" data-target="#delete-address-modal" href="#"><i class="icofont-ui-delete"></i> DELETE</a></p>
+                                    <div class="col-sm-9 text-secondary mb-4">
+                                        <input type="button" class="btn btn-info " value="Save">
+                                    </div>
+                                @endif
+                                @if (  $commande->etat === 'confirmer')
+                                <div class="container">
+                                    <div class="table-wrapper">
+                                        <div class="table-title">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <h2></h2>
+                                                </div>
+                                                
                                             </div>
                                         </div>
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row pt-2 pb-2">
-                            <div class="col-md-6">
-                                <div class="bg-white card payments-item mb-4 shadow-sm">
-                                    <div class="gold-members p-4">
-                                        <a href="#">
-                                        </a>
-                                        <div class="media">
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <i class="icofont-american-express icofont-4x"></i>
-                                                </a>
-                                                <a href="#">
-                                                    <h6 class="mb-1">6070-XXXXXXXX-0666</h6>
-                                                    <p>VALID TILL 10/2025</p>
-                                                </a>
-                                                <p class="mb-0 text-black font-weight-bold">
-                                                    <a href="#">
-                                                    </a><a class="text-danger" data-toggle="modal" data-target="#delete-address-modal" href="#"><i class="icofont-ui-delete"></i> DELETE</a></p>
-                                            </div>
-                                        </div>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
 
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="bg-white card payments-item mb-4 shadow-sm">
-                                    <div class="gold-members p-4">
-                                        <a href="#">
-                                        </a>
-                                        <div class="media">
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <i class="icofont-mastercard icofont-4x"></i>
-                                                </a>
-                                                <a href="#">
-                                                    <h6 class="mb-1">6070-XXXXXXXX-0666</h6>
-                                                    <p>VALID TILL 10/2025</p>
-                                                </a>
-                                                <p class="mb-0 text-black font-weight-bold">
-                                                    <a href="#">
-                                                    </a><a class="text-danger" data-toggle="modal" data-target="#delete-address-modal" href="#"><i class="icofont-ui-delete"></i> DELETE</a></p>
-                                            </div>
-                                        </div>
+                                <td> <span class="bg-success   text-white p-2 rounded">Comfirmed</span> </td>     
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="bg-white card payments-item mb-4 shadow-sm">
-                                    <div class="gold-members p-4">
-                                        <a href="#">
-                                        </a>
-                                        <div class="media">
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <i class="icofont-visa icofont-4x"></i>
-                                                </a>
-                                                <a href="#">
-                                                    <h6 class="mb-1">6070-XXXXXXXX-0666</h6>
-                                                    <p>VALID TILL 10/2025</p>
-                                                </a>
-                                                <p class="mb-0 text-black font-weight-bold">
-                                                    <a href="#">
-                                                    </a><a class="text-danger" data-toggle="modal" data-target="#delete-address-modal" href="#"><i class="icofont-ui-delete"></i> DELETE</a></p>
-                                            </div>
-                                        </div>
+                                @endif
+                                @if (  $commande->etat === 'livrer')
+                                    <td > <span class="bg-info   text-white p-2 rounded">livré</span> </td>     
+                                @endif
+                                @if (  $commande->etat === 'annuler')
+                                <table class="table table-hover" style="">
+                                    <thead>
+                                        <tr>
+                                            <th>category</th>      
+                                            <th>color</th>
+                                            <th>rocker</th>
+                                            <th>typeOfWave</th>
+                                            <th>lenght</th>
+                                            <th>width</th>
+                                            <th>thickness</th>
+                                            <th>MoreDetails</th>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="bg-white card payments-item mb-4 shadow-sm">
-                                    <div class="gold-members p-4">
-                                        <a href="#">
-                                        </a>
-                                        <div class="media">
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <i class="icofont-mastercard icofont-4x"></i>
-                                                </a>
-                                                <a href="#">
-                                                    <h6 class="mb-1">6070-XXXXXXXX-0666</h6>
-                                                    <p>VALID TILL 10/2025</p>
-                                                </a>
-                                                <p class="mb-0 text-black font-weight-bold">
-                                                    <a href="#">
-                                                    </a><a class="text-danger" data-toggle="modal" data-target="#delete-address-modal" href="#"><i class="icofont-ui-delete"></i> DELETE</a></p>
-                                            </div>
-                                        </div>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> {{ $commande->category}}</td>
+                                            <td> {{ $commande->color}}</td>
+                                            <td> {{ $commande->rocker}}</td>
+                                            <td> {{ $commande->typeOfWave}}</td>
+                                            <td> {{ $commande->lenght}}</td>
+                                            <td> {{ $commande->width }}</td>
+                                            <td> {{ $commande->thickness }}</td>
+                                            <td> {{ $commande->MoreDetails }}</td>
+                                    </tbody>
+                                </table>
+                                    <td> <span  class="bg-danger  text-white p-2 rounded">annuler</span></td>     
+                                @endif
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row pt-2">
-                            <div class="col-md-6">
-                                <div class="bg-white card payments-item shadow-sm">
-                                    <div class="gold-members p-4">
-                                        <a href="#">
-                                        </a>
-                                        <div class="media">
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <i class="icofont-american-express icofont-4x"></i>
-                                                </a>
-                                                <a href="#">
-                                                    <h6 class="mb-1">6070-XXXXXXXX-0666</h6>
-                                                    <p class="text-black">VALID TILL 10/2025</p>
-                                                </a>
-                                                <p class="mb-0 text-black font-weight-bold">
-                                                    <a href="#">
-                                                    </a><a class="text-danger" data-toggle="modal" data-target="#delete-address-modal" href="#"><i class="icofont-ui-delete"></i> DELETE</a></p>
-                                            </div>
-                                        </div>
+                                @endforeach
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="bg-white card payments-item shadow-sm">
-                                    <div class="gold-members p-4">
-                                        <a href="#">
-                                        </a>
-                                        <div class="media">
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <i class="icofont-visa icofont-4x"></i>
-                                                </a>
-                                                <a href="#">
-                                                    <h6 class="mb-1">6070-XXXXXXXX-0666</h6>
-                                                    <p>VALID TILL 10/2025</p>
-                                                </a>
-                                                <p class="mb-0 text-black font-weight-bold">
-                                                    <a href="#">
-                                                    </a><a class="text-danger" data-toggle="modal" data-target="#delete-address-modal" href="#"><i class="icofont-ui-delete"></i> DELETE</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    
+							</div>
+						</div>
+					</div>
+				</div>
+                @endif
+			</div>
+		</div>
+	</div>
+        
+
 @endsection

@@ -47,7 +47,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function Commande(){
+    public function Commandes(){
         return $this->hasMany(Shap::class);
     }
+
 }

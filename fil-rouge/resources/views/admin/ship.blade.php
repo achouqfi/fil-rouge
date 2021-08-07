@@ -78,13 +78,7 @@
                                     <button class="btn btn-success btn-md">modifie</button>
                                 </td>
                             </form>
-                            {{-- <td>
-                                <form action="{{ url("shipadmin/".$ship->id) }}" method="POST" >
-                                    {{ csrf_field() }}
-                                    {{ method_field('DELETE') }}
-                                    <button class="btn btn-danger">Supprimer</button>
-                                </form>
-                            </td> --}}
+
                         </tr>
                     @endforeach
 

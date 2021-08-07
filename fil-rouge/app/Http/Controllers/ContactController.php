@@ -21,7 +21,7 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        //
+        // contact us
         $contact = new Contact();
         $contact -> name = $request -> name;
         $contact -> prenom =  $request -> email;
@@ -34,10 +34,15 @@ class ContactController extends Controller
 
     public function destroy($id)
     {
-        //
+        //suppression des messages
         $contact = Contact::find($id);
         $contact->delete();
         
         return redirect()->back()->with('dltcontact','message are deleted');
+    }
+
+    public function repenseEmail(){
+        //
+        
     }
 }
