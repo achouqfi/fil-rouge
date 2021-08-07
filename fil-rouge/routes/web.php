@@ -40,7 +40,9 @@ Route::get('/ship','App\Http\Controllers\ShapController@index');
 Route::post('/ship/create','App\Http\Controllers\ShapController@store');
 Route::get('/shipadmin','App\Http\Controllers\ShapController@admin');
 Route::put('/etatCommande/{id}','App\Http\Controllers\ShapController@etatUpdate');
-Route::delete('/shipadmin/{id}','App\Http\Controllers\ShapController@destroy');
+Route::put('/UpdateUser/{id}','App\Http\Controllers\ShapController@UserUpdate');
+Route::delete('/annulationUser/{id}','App\Http\Controllers\ShapController@annulation');
+
 
 //users
 Route::get('/users','App\Http\Controllers\HomeController@user');

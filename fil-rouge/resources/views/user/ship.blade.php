@@ -88,20 +88,16 @@
             </div>
             <div class="inputsForm">
               <div class="rowform1">
-                <input type="text" name="color" placeholder="color">
-                <input type="text" name="rocker" placeholder="rocker">
-                <input type="text" name="typeOfWave" placeholder="type of wave">
-              </div>
-              <div class="rowform1">
                 <input type="text" name="Phone" placeholder="Phone number">
                 <input type="text" name="Adresse" placeholder="Adresse">
-                <input type="text" name="postcode" placeholder="postcode">
-                <input type="hidden" name="etat" value="envoyer">
+                <input type="text" name="color" placeholder="color">
               </div>
+                <input type="hidden" name="etat" value="envoyer">
+
               <div class="rowform2"> 
+                <input type="text" name="typeOfWave" placeholder="type of wave">
                 <input type="text" name="lenght" placeholder="lenght in inch">
                 <input type="text" name="width" placeholder="width in inch">
-                <input type="text" name="thickness" placeholder="thickness in inch">
               </div>
               <div class="rowform3">
                 <textarea name="MoreDetails" id="" cols="30" rows="10" placeholder="More Details"></textarea>

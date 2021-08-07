@@ -13,7 +13,6 @@
                             <h2>les commentaires de {{ $article->title }}</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#addHotel" class="btn btn-success" data-toggle="modal">Add Photo</a>
                             <a href="/article" class="btn btn-dark"> < Back</a>
                         </div>
                     </div>

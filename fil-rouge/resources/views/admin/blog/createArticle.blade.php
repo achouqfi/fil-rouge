@@ -21,29 +21,29 @@
 						<form action="{{ url('article/save') }}" method="POST" enctype="multipart/form-data">
 							@csrf
 		
-						<div class="form-group">
-						  <label class="control-label col-sm-2" >Titre de l'article</label>
-						  <div class="col-sm-12">          
-							<input type="text" class="form-control" placeholder="Saisir le titre" name="titre" required>
-						  </div>
-						</div>
-						<div class="form-group">
-						  <label class="control-label col-sm-2" >Photo</label>
-						  <div class="col-sm-12">          
-							<input type="file" class="form-control"  name="photo" required>
-						  </div>
-						</div>
-						<div class="form-group">
-						  <label class="control-label col-sm-2">Article</label>
-						  <div class="col-sm-12">
-							<textarea name="article" placeholder="Saisir l'article" id="Text" required></textarea>
-						</div>
-						</div>
-						<div class="form-group">        
-						  <div class="col-sm-offset-2 col-sm-12">
-							<button type="submit" name="submit" class="btn btn-info">Submit</button>
-						  </div>
-						</div>
+							<div class="form-group">
+							<label class="control-label col-sm-2" >Titre de l'article</label>
+							<div class="col-sm-12">          
+								<input type="text" class="form-control" placeholder="Saisir le titre" name="titre" required>
+							</div>
+							</div>
+							<div class="form-group">
+							<label class="control-label col-sm-2" >Photo</label>
+							<div class="col-sm-12">          
+								<input type="file" class="form-control"  name="photo" required>
+							</div>
+							</div>
+							<div class="form-group">
+							<label class="control-label col-sm-2">Article</label>
+							<div class="col-sm-12">
+								<textarea name="article" placeholder="Saisir l'article" class="form-control" required></textarea>
+							</div>
+							</div>
+							<div class="form-group">        
+							<div class="col-sm-offset-2 col-sm-12">
+								<button type="submit"  class="btn btn-info">Submit</button>
+							</div>
+							</div>
 						</form>
 					</div>
 				</div>
@@ -56,12 +56,12 @@
 @endsection
 @section('scriptText')
 	
-	<script>
+	{{-- <script>
 		ClassicEditor
 			.create( document.querySelector( '#Text' ) )
 			.catch( error => {
 				console.error( error );
 			} );
-	</script>
+	</script> --}}
 
 @endsection

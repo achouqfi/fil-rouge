@@ -18,14 +18,11 @@ class CreateShapsTable extends Migration
             $table->string('category');  
             $table->string('Phone');  
             $table->string('Adresse');
-            $table->string('postcode'); 
             $table->string('etat');                      
             $table->string('color');            
-            $table->string('rocker');            
             $table->string('typeOfWave');            
             $table->string('lenght');            
             $table->string('width');
-            $table->string('thickness');            
             $table->string('MoreDetails');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();

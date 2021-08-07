@@ -4,9 +4,7 @@
 
     <div class="container">
         <div class="table-responsive" style="width: 110%;margin-left:-5%">
-            @if (session('dltorder'))
-                <div class="alert alert-success">{{ session('dltorder') }}</div>            
-            @endif
+
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
@@ -15,20 +13,17 @@
                         </div>
                     </div>
                 </div>
-                <table class="tableShap table-hover" style="">
+                <table class="table table-hover" style="">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>category</th>      
                             <th>color</th>
-                            <th>rocker</th>
                             <th>typeOfWave</th>
                             <th>Phone</th>  
                             <th>Adresse</th>
-                            <th>post code</th> 
                             <th>lenght</th>
                             <th>width</th>
-                            <th>thickness</th>
                             <th>MoreDetails</th>
                             <th>user </th>
                             <th>Etat</th>
@@ -42,14 +37,11 @@
                             <td> {{ $ship->id }}</td>
                             <td> {{ $ship->category}}</td>
                             <td> {{ $ship->color}}</td>
-                            <td> {{ $ship->rocker}}</td>
                             <td> {{ $ship->typeOfWave}}</td>
                             <td> {{ $ship->Phone}}</td>
                             <td> {{ $ship->Adresse}}</td>
-                            <td> {{ $ship->postcode}}</td>
                             <td> {{ $ship->lenght}}</td>
                             <td> {{ $ship->width }}</td>
-                            <td> {{ $ship->thickness }}</td>
                             <td> {{ $ship->MoreDetails }}</td>
                             <td> {{ $ship->user->name }}</td>
 

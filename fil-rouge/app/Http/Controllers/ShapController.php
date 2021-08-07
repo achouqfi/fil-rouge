@@ -28,15 +28,12 @@ class ShapController extends Controller
         $shap = new Shap();
         $shap -> category = $request -> category;
         $shap -> color =  $request -> color;
-        $shap -> rocker =  $request -> rocker;
         $shap -> typeOfWave =  $request -> typeOfWave;
         $shap -> lenght =  $request -> lenght;
         $shap -> Phone =  $request -> Phone;
         $shap -> Adresse =  $request -> Adresse;
-        $shap -> postcode =  $request -> postcode;
         $shap -> etat =  $request -> etat;
         $shap -> width =  $request -> width;
-        $shap -> thickness =  $request -> thickness;
         $shap -> MoreDetails =  $request -> MoreDetails;
         $shap -> user_id = auth::user() -> id;
 
@@ -60,4 +57,31 @@ class ShapController extends Controller
         $etat ->save();
         return redirect()->back()->with('etat','your modification are saved');
     }
+
+    public function UserUpdate(Request $request,$id)
+    {
+        // insertion du commande
+        $shap =  Shap::find($id);
+
+        $shap -> category = $request -> category;
+        $shap -> color =  $request -> color;
+        $shap -> typeOfWave =  $request -> typeOfWave;
+        $shap -> lenght =  $request -> lenght;
+        $shap -> Phone =  $request -> Phone;
+        $shap -> Adresse =  $request -> Adresse;
+        $shap -> width =  $request -> width;
+        $shap -> MoreDetails =  $request -> MoreDetails;
+
+        $shap ->save();
+        return redirect()->back()->with('update','les modifications sont sauvegardées.');
+    }
+
+    public function annulation($id)
+    {
+        //supression du commande
+         Shap::destroy($id);
+        return redirect()->back()->with('annuler','vous avez annuler la commande');
+    }
+
+
 }

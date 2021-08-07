@@ -526,10 +526,12 @@ ul, li {
 	background: #17a2b8;
 	color: #fff;
 	padding: 16px 12px;
-	min-width: 100%;
+	max-width: 100%;
 	margin: -20px -21px 10px;
 	border-radius: 3px 3px 0 0;
 }
+
+
 
 .table-title h2 {
 	margin: 5px 0 0;
