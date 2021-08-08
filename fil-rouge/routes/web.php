@@ -30,7 +30,7 @@ Auth::routes();
 Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('admin/home', 'App\Http\Controllers\HomeController@adminHome')->name('admin')->middleware('is_admin');
 Route::get('/changePassword/{id}','App\Http\Controllers\HomeController@changePassword');
-Route::post('/changePassword', 'App\Http\Controllers\HomeController@r@store');
+Route::post('/changePassword', 'App\Http\Controllers\HomeController@store');
 
 
 // contact route

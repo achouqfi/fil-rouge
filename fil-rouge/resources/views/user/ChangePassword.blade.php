@@ -9,7 +9,7 @@
                 </div>
                 <div class="card-body">
                     {{-- action="{{ route('change.password') }}" --}}
-                    <form method="POST" action="{{ url() }}" >
+                    <form method="POST" action="{{ url('changePassword') }}" >
                         @csrf 
    
                          @foreach ($errors->all() as $error)
