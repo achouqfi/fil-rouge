@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\User;
 use App\Models\Shap;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Riad;
 use App\Models\Comment;
 
@@ -77,6 +78,24 @@ class HomeController extends Controller
         return view('admin.homeAdmin',["contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount,"CommentCount" => $commentCount]);
     }
 
+    public function changePassword($id)
+    {
+        $user = User::Find($id);
+        return view('user.ChangePassword',$user);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required', new User],
+            'new_password' => ['required'],
+            'new_confirm_password' => ['same:new_password'],
+        ]);
+   
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+   
+        dd('Password change successfully.');
+    }
 
 
     public function DltUser($id)

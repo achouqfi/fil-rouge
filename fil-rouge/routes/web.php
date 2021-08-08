@@ -26,8 +26,12 @@ Route::get('/plan', function () {
 
 Auth::routes();
 
+
 Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('admin/home', 'App\Http\Controllers\HomeController@adminHome')->name('admin')->middleware('is_admin');
+Route::get('/changePassword/{id}','App\Http\Controllers\HomeController@changePassword');
+Route::post('/changePassword', 'App\Http\Controllers\HomeController@r@store');
+
 
 // contact route
 Route::get('/contact','App\Http\Controllers\ContactController@index');
@@ -49,7 +53,7 @@ Route::get('/users','App\Http\Controllers\HomeController@user');
 Route::delete('/users/{id}','App\Http\Controllers\HomeController@DltUser');
 
 //user view page
-Route::get('/compte','App\Http\Controllers\UserInfoController@index');
+// Route::get('/compte','App\Http\Controllers\UserInfoController@index');
 
 //articles
 Route::get('/article','App\Http\Controllers\ArticleController@index');

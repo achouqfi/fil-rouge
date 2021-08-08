@@ -19,10 +19,10 @@
 								<img src="https://image.flaticon.com/icons/png/512/149/149071.png" alt="userOrAdmin" class="rounded-circle p-1 bg-info" width="110">
 								<div class="mt-3">
 									<h4>{{ Auth::user()->name }}</h4>
-									<p class="text-secondary mb-1">
-                                        <td>User</td>
-                                    </p>
-									<p class="text-muted font-size-sm">{{ Auth::user()->email }}</p>
+									<p class="text-secondary mb-1"> <td>User</td> </p>
+									<p class="text-secondary font-size-sm">{{ Auth::user()->email }}</p>
+									<p class="text-secondary mb-3">Modifié votre mode de passe </p>
+                                    <a href={{ url('changePassword/'.Auth::user()->id) }} class="btn btn-info p-2">Modifié</a>
 								</div>
 							</div>
 						</div>
