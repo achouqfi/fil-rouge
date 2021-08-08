@@ -81,10 +81,10 @@
                     <h3>Follow Us</h3>
                  </div>
                  <ul class="icon d-flex align-middle ">
-                    <li> <a href="#"><img src="./image/facebook.png"></a></li>
-                    <li> <a href="#"><img src="./image/Twitter.png"></a></li>
-                    <li> <a href="#"><img src="./image/linkedin.png"></a></li>
-                    <li> <a href="#"><img src="./image/instagram.png"></a></li>
+                    <li> <a href="#"><img src="/image/facebook.png"></a></li>
+                    <li> <a href="#"><img src="/image/Twitter.png"></a></li>
+                    <li> <a href="#"><img src="/image/linkedin.png"></a></li>
+                    <li> <a href="#"><img src="/image/instagram.png"></a></li>
                  </ul>
               </div>
               <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">

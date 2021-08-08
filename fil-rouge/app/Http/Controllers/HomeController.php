@@ -1,16 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+
 use App\Models\Contact;
 use App\Models\User;
 use App\Models\Shap;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Riad;
 use App\Models\Comment;
 
 
 
-use Illuminate\Http\Request;
+
 
 class HomeController extends Controller
 {
@@ -47,7 +48,6 @@ class HomeController extends Controller
         //comment count
         $commentCount = count($comment);
 
-
         return view('Home',["ships"=>$ship,"comments"=>$comment,"contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount,"CommentCount" => $commentCount]);
     }
 
@@ -78,23 +78,35 @@ class HomeController extends Controller
         return view('admin.homeAdmin',["contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount,"CommentCount" => $commentCount]);
     }
 
-    public function changePassword($id)
+    public function changePassword()
     {
-        $user = User::Find($id);
-        return view('user.ChangePassword',$user);
+        // $user = User::Find($id);
+        return view('user.ChangePassword');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'current_password' => ['required', new User],
-            'new_password' => ['required'],
-            'new_confirm_password' => ['same:new_password'],
-        ]);
+        // $request->Validator([
+        //     'current_password' => ['required', new User],
+        //     'new_password' => ['required'],
+        //     'new_confirm_password' => ['same:new_password'],
+        // ]);
+
+        // $user = new User();
+            
+        $current_user=auth()->user();
+        $user = User::find($current_user->id) ;
+        // if(Hash::check($request->old_password,$current_user->password))
+        // {
+            $user->update([
+                'password'=>bcrypt($request->new_password)
+            ]);
+            return redirect()->back()->with('success','mode de passe est changer');
+
+        // }else{
+        //     return redirect()->back()->with('','');
+        // }
    
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
-   
-        dd('Password change successfully.');
     }
 
 
