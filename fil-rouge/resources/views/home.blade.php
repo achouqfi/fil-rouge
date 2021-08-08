@@ -11,6 +11,7 @@
     <div class="container">
 		<div class="main-body">
 			<div class="row">
+                @if (Auth::user()->is_admin === 0)
 				<div class="col-lg-4">
 					<div class="card">
 						<div class="card-body">
@@ -19,11 +20,7 @@
 								<div class="mt-3">
 									<h4>{{ Auth::user()->name }}</h4>
 									<p class="text-secondary mb-1">
-                                        @if (Auth::user()->is_admin === 1)
-                                        <td>Admin</td>
-                                        @else
-                                            <td>User</td>
-                                        @endif 
+                                        <td>User</td>
                                     </p>
 									<p class="text-muted font-size-sm">{{ Auth::user()->email }}</p>
 								</div>
@@ -32,7 +29,6 @@
 					</div>
 				</div>
 
-                @if (Auth::user()->is_admin === 0)
 
                 <div class="col-lg-8">
 					<div class="card pb-3">
@@ -104,10 +100,9 @@
                                             <th>category</th>      
                                             <th>color</th>
                                             <th>type</th>
+                                            <th >Details</th>
                                             <th>lenght</th>
                                             <th>width</th>
-                                            <th >Details</th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -115,9 +110,9 @@
                                             <td> {{ $commande->category}} </td>
                                             <td> {{ $commande->color}}</td>
                                             <td> {{ $commande->typeOfWave}}</td>
+                                            <td > {{ $commande->MoreDetails }}</td>
                                             <td> {{ $commande->lenght}} inch</td>
                                             <td> {{ $commande->width }} inch</td>
-                                            <td > {{ $commande->MoreDetails }}</td>
                                     </tbody>
                                 </table>
                                 <td> <span class="bg-success   text-white p-2 rounded">Comfirmed</span> </td>     
@@ -162,6 +157,52 @@
 						</div>
 					</div>
 				</div>
+                
+
+                <!--if the person connected is the admin-->
+                @else
+                <div class="col">
+					<div class="card">
+						<div class="card-body">
+							<div class=" flex-column  text-center">
+								<img src="https://image.flaticon.com/icons/png/512/149/149071.png" alt="userOrAdmin" class="rounded-circle p-1 bg-info" width="110">
+								<div class="mt-3">
+									<h4>{{ Auth::user()->name }}</h4>
+									<p class="text-secondary mb-1">
+                                        <td>Admin</td>
+                                    </p>
+									<p class="text-muted font-size-sm">{{ Auth::user()->email }}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="container countContainer">
+                    <h3 class=" text-center text-info mb-5">Here are the actions carried out by the users</h3>
+
+                    <div class="row">
+                        <div class=" col-md-3 mb-4">
+                            <div class="counter-box bg-info"> <i class="fa fa-shopping-cart"></i> <span class="counter">{{ $ShipCount }}</span>
+                                <p>Orders</p>
+                            </div>
+                        </div>
+                        <div class=" col-md-3 mb-4">
+                            <div class="counter-box bg-info"> <i class="fa fa-envelope"></i> <span class="counter">{{ $contactCount }}</span>
+                                <p>Messages</p>
+                            </div>
+                        </div>
+                        <div class=" col-md-3 mb-4">
+                            <div class="counter-box bg-info"> <i class="fa fa-comment"></i> <span class="counter">{{ $CommentCount }}</span>
+                                <p>Comment</p>
+                            </div>
+                        </div>
+                        <div class=" col-md-3 mb-4">
+                            <div class="counter-box bg-info"> <i class="fa fa-group"></i> <span class="counter">{{ $userCount }}</span>
+                                <p>Registered Members</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 @endif
 			</div>
 		</div>

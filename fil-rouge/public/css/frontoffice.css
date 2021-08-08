@@ -531,8 +531,6 @@ ul, li {
 	border-radius: 3px 3px 0 0;
 }
 
-
-
 .table-title h2 {
 	margin: 5px 0 0;
 	font-size: 24px;
@@ -606,3 +604,45 @@ table.table-striped.table-hover tbody tr:hover {
     margin-bottom: 1.5rem;
     box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
 }
+
+/* count in admin page => front office */
+
+.countContainer {
+    margin-top: 3%
+}
+
+.counter-box {
+    display: block;
+    background: #026d9e;
+    padding: 40px 20px 37px;
+    text-align: center
+}
+
+.counter-box p {
+    margin: 5px 0 0;
+    padding: 0;
+    color: white;
+    font-size: 18px;
+    font-weight: 500
+}
+
+.counter-box i {
+    font-size: 60px;
+    margin: 0 0 15px;
+    color: white;
+}
+
+.counter {
+    display: block;
+    font-size: 32px;
+    color: white;
+    font-weight: 700;
+    line-height: 28px
+
+}
+
+.counter-box.colored {
+    background: #026d9e
+}
+
+

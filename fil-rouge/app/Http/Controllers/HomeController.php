@@ -32,8 +32,22 @@ class HomeController extends Controller
         $ship= Shap::All();
         $comment= Comment::All();
         $user = User::All();
+        $contact= Contact::All();
 
-        return view('Home',["ships"=>$ship,"comments"=>$comment]);
+        //commande count
+        $ShipCount = count($ship);
+
+        //users count
+        $userCount = count($user);
+
+        //contact count
+        $contactCount = count($contact);
+
+        //comment count
+        $commentCount = count($comment);
+
+
+        return view('Home',["ships"=>$ship,"comments"=>$comment,"contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount,"CommentCount" => $commentCount]);
     }
 
     public function user(){
@@ -59,11 +73,11 @@ class HomeController extends Controller
         $comment= Comment::All();
         $commentCount = count($comment);
 
-        $hotel= Riad::All();
-        $hotelCount = count($hotel);
         
-        return view('admin.homeAdmin',["contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount,"CommentCount" => $commentCount,"hotelCount" => $hotelCount]);
+        return view('admin.homeAdmin',["contactCount" => $contactCount,"ShipCount" => $ShipCount,"userCount" => $userCount,"CommentCount" => $commentCount]);
     }
+
+
 
     public function DltUser($id)
     {
