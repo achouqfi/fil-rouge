@@ -109,11 +109,22 @@
           </div>
         </form>
       </div>
+      @endauth
+      @endif   
+
+      @guest
+        <div class="m-5 bg-info p-2">
+          <div class="bg-white p-4 d-flex justify-content-center ">
+            <h4 class="mt-1 text-info">Authentifiez-vous:  </h4>
+            <a href="/login " class="btn btn-info floart-center ml-2">Login</a>
+          </div>
+        </div>
+
+      @endguest
+          
       @if (session('order'))
         <div class="alert alert-success">{{ session('order') }}</div>            
       @endif
-    @endif   
-    @endauth
 
 </body>
 @endsection

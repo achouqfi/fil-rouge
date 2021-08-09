@@ -12,21 +12,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('user.home');
-});
 
+//page home route
+Route::get('/', 'App\Http\Controllers\HomeController@homepage');
+
+//about 
 Route::get('/about', function () {
     return view('user.aboutUs');
 });
 
+//firt page static in plan
 Route::get('/plan', function () {
     return view('user.plan.reservation');
 });
 
 Auth::routes();
 
-
+//authentification, changement de mode de passe et les action de l'utilisateur
 Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('admin/home', 'App\Http\Controllers\HomeController@adminHome')->name('admin')->middleware('is_admin');
 Route::get('/changePassword/{id}','App\Http\Controllers\HomeController@changePassword');

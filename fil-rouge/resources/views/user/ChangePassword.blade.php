@@ -1,9 +1,11 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
+<div class="container mb-3">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            
+            @if (session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>            
+            @endif
             <div class="card">
                 <div class="card-header bg-info "> 
                     <h2 class="text-center font-weight-bold text-light">{{ __('Changer votre mode de passe') }}</h2>
@@ -16,9 +18,9 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">Ancien mode de passe</label>
   
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="current_password">
-                                @if ($errors->any('old_password'))
-                                    <span class="text-danger">{{ $errors->first('old_password') }}</span>
+                                <input  type="password" class="form-control" name="current_password">
+                                @if ($errors->any('current_password'))
+                                    <span class="text-danger">{{ $errors->first('current_password') }}</span>
                                 @endif
                             </div>
                         </div>
@@ -27,7 +29,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">Nouveau mode de passe</label>
   
                             <div class="col-md-6">
-                                <input id="new_password" type="password" class="form-control" name="new_password" >
+                                <input type="password" class="form-control" name="new_password" >
                                 @if ($errors->any('new_password'))
                                     <span class="text-danger">{{ $errors->first('new_password') }}</span>
                                 @endif
@@ -38,9 +40,9 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">Confirmer le mode de passe</label>
     
                             <div class="col-md-6">
-                                <input id="new_confirm_password" type="password" class="form-control" name="password" >
-                                @if ($errors->any('comfirm_password'))
-                                    <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
+                                <input type="password" class="form-control" name="password" >
+                                @if ($errors->any('password'))
+                                    <span class="text-danger">{{ $errors->first('password') }}</span>
                                 @endif
                             </div>
                         </div>

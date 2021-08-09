@@ -17,7 +17,6 @@ class RiadController extends Controller
         return view("admin.hotel.Hotels",["hotels" => $hotel]);
     }
 
-    
 
     public function hotelView()
     {

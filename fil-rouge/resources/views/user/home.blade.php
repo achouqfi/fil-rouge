@@ -16,12 +16,15 @@
     <img src="./image/pexels-alexandre-saraiva-carniato-1644724.jpg" alt="home page" width="100%">
   </div>
   <div class="text">
-    <h3>Trouvez des offres sur des hôtels, des hébergements <br>
-      dfhrth zz tt ffffff  fssss dd ffff fffff tr <br>
-      des offres sur des hôtels...</h3>
+    <h3>Safi, Magic Wave & Best right hand in Morocco<br>
+      Est une ville dans l'ouest du Maroc sur l'océan Atlantique.<br>
+      Capitale de la province de Safi et de l'ancienne région Marrakech-Safi</h3>
     <div class="reservation">
-      <button class="btn btn-danger btn-md but-now">But Now</button>
-      <button class="btn btn-info btn-md learn-more">Learn More</button>
+      {{-- <button class="btn btn-danger btn-md but-now"></button>
+      <button class="btn btn-info btn-md learn-more">See Blog</button> --}}
+      <a href="/hotel"  class="btn btn-danger btn-md but-now"><b>See Hotels</b> </a>
+      <a href="/blog"class="btn btn-info btn-md learn-more"><b>About Safi</b> </a>
+      
     </div>
   </div>
 
@@ -58,70 +61,25 @@
 
   <div class="container Contrip">
     <div class="row ">
+      @foreach ($hotels as $hotel)
         <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
             <div class="card">
-                <img class="card-img-top" src="https://picsum.photos/200/150/?random">
+                <img class="card-img-top" src="{{ asset($hotel->photoPrincipal) }}">
                 <div class="card-block">
-                    <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                    <h4 class="card-title">{{ $hotel->hotelName }}</h4>
                     <div class="card-text">
-                        Tawshif is a web designer living in Bangladesh.
+                      {{ $hotel->hotelAdresse }}
                     </div>
                 </div>
                 <div class="card-footer">
-                    <span class="float-right">Joined in 2013</span>
-                    <a href="" class="btn btn btn-info btn-md">See more</a>
+                    <a href="{{ url('hotelDetails/'.$hotel->id) }}" class="btn btn btn-info btn-md">See more</a>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-          <div class="card">
-              <img class="card-img-top" src="https://picsum.photos/200/150/?random">
-              <div class="card-block">
-                  <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                  <div class="card-text">
-                      Tawshif is a web designer living in Bangladesh.
-                  </div>
-              </div>
-              <div class="card-footer">
-                  <span class="float-right">Joined in 2013</span>
-                  <a href="" class="btn btn btn-info btn-sm">See more</a>
-              </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-          <div class="card">
-            <img class="card-img-top" src="https://picsum.photos/200/150/?random">
-            <div class="card-block">
-                <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                <div class="card-text">
-                    Tawshif is a web designer living in Bangladesh.
-                </div>
-            </div>
-            <div class="card-footer">
-                <span class="float-right">Joined in 2013</span>
-                <a href="" class="btn btn btn-info btn-sm">See more</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-          <div class="card">
-            <img class="card-img-top" src="https://picsum.photos/200/150/?random">
-            <div class="card-block">
-                <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                <div class="card-text">
-                    Tawshif is a web designer living in Bangladesh.
-                </div>
-            </div>
-            <div class="card-footer">
-                <span class="float-right">Joined in 2013</span>
-                <a href="" class="btn btn btn-info btn-sm">See more</a>
-            </div>
-          </div>
-        </div>
-        
+      @endforeach
     </div>
     <div class="text-center seeMore">
-      <button type="button" class="btn btn-outline-info btn-lg">See more</button>
+      <a href="/hotel" class="btn btn-outline-info btn-lg">See more</a>
     </div>
   </div>
 

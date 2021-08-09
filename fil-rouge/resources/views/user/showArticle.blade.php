@@ -47,16 +47,6 @@
                                 @endif 
                                 @endauth
 
-                                @guest
-                                    <div class="navbar-nav ml-auto">
-                                        <h3 class="text-info">Connectez-vour</h3>
-                                        <div class="loginbtn" >
-                                            <a href="/auth" class="btn btn-info">Login</a>
-                                        </div>
-                                    </div>
-                                @endguest
-
-                            <hr>
                             <ul class="media-list">
                                 @foreach($article->comments as $comment)
                                 <li class="media">
@@ -97,4 +87,12 @@
             </div>
         </div>
     </div>
+    @guest
+    <div class="m-5 bg-info p-2">
+        <div class="bg-white p-4 d-flex justify-content-center ">
+          <h4 class="mt-1 text-info">Authentifiez-vous pour commenter:  </h4>
+          <a href="/login " class="btn btn-info floart-center ml-2">Login</a>
+        </div>
+    </div>
+    @endguest
 @endsection
