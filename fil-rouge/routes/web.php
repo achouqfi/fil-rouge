@@ -96,3 +96,8 @@ Route::post('/AdminAddChambre', 'App\Http\Controllers\ChambreController@store');
 Route::delete('/AdminDltChambre/{id}', 'App\Http\Controllers\ChambreController@destroy');
 Route::get('/AdminEditChambre/{id}', 'App\Http\Controllers\ChambreController@edit');
 Route::put('/AdminUpdateChambre/{id}', 'App\Http\Controllers\ChambreController@update');
+
+//newsletter
+Route::get('/newsletter', 'App\Http\Controllers\NewsletterController@index');
+Route::delete('/Dltnewsletter/{id}', 'App\Http\Controllers\NewsletterController@destroy');
+Route::post('/createnewletter', 'App\Http\Controllers\NewsletterController@store');

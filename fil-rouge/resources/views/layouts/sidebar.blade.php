@@ -42,6 +42,9 @@
             <li>
                 <a href="/users"><i class="fa fa-users "></i></a>
             </li>
+            <li>
+                <a href="/newsletter" ><i class=" ml-.5 fa fa-envelope-square"></i></a>
+            </li>
         </ul>
 
         <form action="{{ route('logout') }}" method="POST" class="logout">

@@ -15,7 +15,7 @@ class ContactController extends Controller
     public function admin()
     {
         //
-        $contact= Contact::paginate(7);
+        $contact= Contact::orderBy('id', 'DESC')->paginate(7);
         return view("admin.contact",["contacts" => $contact]);
     }
 

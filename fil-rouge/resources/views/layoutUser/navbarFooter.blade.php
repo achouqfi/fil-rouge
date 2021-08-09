@@ -13,7 +13,9 @@
   <title>surf in morocco</title>
 </head>
 <body>
-
+   @if (session('message'))
+      <div class="alert alert-success">{{ session('message') }}</div>            
+   @endif
   <!-------------------- navbar ------------------->
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="/">Moroccan<b>Surf</b></a>  		
@@ -74,8 +76,11 @@
                   <div class="Follow text-center">
                      <h3>Newsletter</h3>
                   </div>
-                  <input class="Newsletter" placeholder="Enter your email" type="Enter your email">
-                  <button class="btn btn-danger btn-md">Envoyer</button>
+                  <form action="{{ url('createnewletter') }}" method="POST" enctype="multipart/form-data">
+                     @csrf
+                     <input class="Newsletter" name="email" placeholder="Enter your email" type="Enter your email">
+                     <button class="btn btn-danger btn-md ml-1">Envoyer</button>
+                  </form>
                </div>
             </div>
          </div>

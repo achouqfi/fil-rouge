@@ -235,9 +235,14 @@ body{
     position: relative;
     margin: 0;
     padding: 1em;
+    height: 10rem;
     border: none;
     border-top: 1px solid rgba(34, 36, 38, .1);
     box-shadow: none;
+}@media  (max-width:570px) {
+    .card-block{
+        height: 5rem;
+    }
 }
 
 .card-img-top {
@@ -530,7 +535,7 @@ ul, li {
 	color: #fff;
 	padding: 16px 12px;
 	max-width: 100%;
-	margin: -20px -21px 10px;
+	margin: -20px 0px 10px;
 	border-radius: 3px 3px 0 0;
 }
 

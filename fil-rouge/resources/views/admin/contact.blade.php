@@ -20,8 +20,8 @@
                         <tr>
                             <th>ID</th>
                             <th>name</th>
-                            <th>prenom</th>
                             <th>email</th>
+                            <th>phone</th>
                             <th>message</th>
                             <th class="text-center">Action</th>
                         </tr>
@@ -35,12 +35,13 @@
                             <td> {{ $contact->prenom }}</td>
                             <td> {{ $contact->email }}</td>
                             <td> {{ $contact->message }}</td>
-                            <td>
+                            <td class="d-flex ">
                                 <form action="{{ url('contact/'.$contact->id) }}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
-                                    <button class="btn btn-danger">Supprimer</button>
+                                    <button class="btn btn-danger btn-md">Supprimer</button>
                                 </form>
+                                <a href="mailto: {{ $contact->prenom }}" class="btn btn-info btn-md ml-4">reply</a>
                             </td>
                         </tr>
                         @endforeach
