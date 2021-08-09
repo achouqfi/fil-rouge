@@ -16,6 +16,8 @@ body{
     background-color: rgb(2, 109, 158);
     width: 70px;
     height: 759px;
+    border-bottom-right-radius: 35px;
+    
 }
 
 li{

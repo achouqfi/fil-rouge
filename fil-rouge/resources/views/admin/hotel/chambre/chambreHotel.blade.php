@@ -19,7 +19,7 @@
                             <h2>Chambres de {{ $hotelCh->hotelName }}</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#addHotel" class="btn btn-success" data-toggle="modal">Add Photo</a>
+                            <a href="#addHotel" class="btn btn-success" data-toggle="modal">Add Chambre</a>
                             <a href="/AdminHotel" class="btn btn-dark"> < Back</a>
                         </div>
                     </div>
@@ -45,12 +45,12 @@
                             <td>{!! Str::limit($chambre->option,40) !!}
                                 <a href="{{ url("ShowChambreOption/".$chambre->id) }}" style="color:#17a2b8" >Suite</a>
                             </td> 
-                            <td class="actionBtn">
+                            <td class="actionBtn d-flex">
                                 <a href="{{ url('AdminEditChambre/'.$chambre->id) }}" class="btn btn-info">Update</a>
                                 <form action="{{ url('AdminDltChambre/'.$chambre->id) }}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
-                                    <button class="btn btn-danger btn-md">Delete</button>
+                                    <button class="btn btn-danger btn-md ml-2">Delete</button>
                                 </form>
                             </td>
                         </tr>

@@ -11,7 +11,7 @@
 
 @section('content')
 <body>
-    <!-- <div class="header"> -->
+
   <div class="img-home">
     <img src="./image/pexels-alexandre-saraiva-carniato-1644724.jpg" alt="home page" width="100%">
   </div>
@@ -20,8 +20,7 @@
       Est une ville dans l'ouest du Maroc sur l'océan Atlantique.<br>
       Capitale de la province de Safi et de l'ancienne région Marrakech-Safi</h3>
     <div class="reservation">
-      {{-- <button class="btn btn-danger btn-md but-now"></button>
-      <button class="btn btn-info btn-md learn-more">See Blog</button> --}}
+
       <a href="/hotel"  class="btn btn-danger btn-md but-now"><b>See Hotels</b> </a>
       <a href="/blog"class="btn btn-info btn-md learn-more"><b>About Safi</b> </a>
       
@@ -91,41 +90,16 @@
 
   <div class="container">
     <div class="row">
-        {{-- @foreach ($articles as $article) --}}
-        <div class="col-md-6 col-lg-4">
-            <div class="card-box">
-                <div class="card-thumbnail">
-                    <img src="./image/pexels-alexandre-saraiva-carniato-1644724.jpg" class="img-fluid"   alt="" >
-                </div>
-                <h3><a href="#" class="mt-2 text-info ">Tawshif is a web designer living in Bangladesh.</a></h3>
-                <p class="text-dark">Tawshif Ahsan Khan</p>
-                <a href="" class="btn btn btn-info btn-md float-right">Read More</a>
-              </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card-box">
-              <div class="card-thumbnail">
-                  <img src="./image/pexels-alexandre-saraiva-carniato-1644724.jpg"  class="img-fluid"  alt="" >
-              </div>
-              <h3><a href="#" class="mt-2 text-info ">Tawshif is a web designer living in Bangladesh.</a></h3>
-              <p class="text-dark">Tawshif Ahsan Khan</p>
-              <a href="" class="btn btn btn-info btn-md float-right">Read More</a>
+        @foreach ($articles as $article)
+        <div class="col-12 col-sm-6 col-md-4 image-grid-item">
+          <div style="background-image: url({{url($article->photo)}});" class="image-grid-cover">
+            <a href="#" class="cover-wrapper">{!! Str::limit($article->title,50) !!}</a>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card-box">
-              <div class="card-thumbnail">
-                  <img src="./image/pexels-alexandre-saraiva-carniato-1644724.jpg"  class="img-fluid"   alt="" >
-              </div>
-              <h3><a href="#" class="mt-2 text-info ">Tawshif is a web designer living in Bangladesh.</a></h3>
-              <p class="text-dark">Tawshif Ahsan Khan</p>
-              <a href="" class="btn btn btn-info btn-md float-right">Read More</a>
-            </div>
-        </div>
-        {{-- @endforeach --}}
+        @endforeach
     </div>
     <div class="text-center mb-3 seeMore">
-      <button type="button" class="btn btn-outline-info btn-lg">See more</button>
+      <a href="/blog" class="btn btn-outline-info btn-lg">See more</a>
     </div>
   </div>
 
@@ -150,7 +124,7 @@
           </p>
         </div>
         <div class="Shipbtn">
-          <a class="btn btn-primary btn-outline btn-md" href="#">Shap Your board</a>
+          <a class="btn btn-primary btn-outline btn-md" href="/ship">Shap Your board</a>
         </div>
       </div>
     </div>

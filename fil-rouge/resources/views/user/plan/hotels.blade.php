@@ -38,6 +38,7 @@
                 </div>
             @endforeach
         </div>
+        {{-- <span >{{ $hotels->links( "pagination::bootstrap-4") }}</span> --}}
     </div>
 
 @endsection

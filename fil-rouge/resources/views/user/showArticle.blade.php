@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container ml-5 mr-5 " >
         <div class="row bootstrap snippets bootdeys">
             <div class="col-md-8 col-sm-12">
                 <div class="comment-wrapper">

@@ -21,7 +21,7 @@ class RiadController extends Controller
     public function hotelView()
     {
         //
-        $hotel=Riad::All();
+        $hotel=Riad::orderBy('id', 'DESC')->get();
         return view("user.plan.hotels",["hotels" => $hotel]);
 
     }
@@ -63,6 +63,7 @@ class RiadController extends Controller
 
     public  function ShowChambres($id)
     {
+        //
         $hotel = Riad::find($id);
         return view('admin.hotel.chambre.chambreHotel',["hotelCh"=>$hotel]);
     }

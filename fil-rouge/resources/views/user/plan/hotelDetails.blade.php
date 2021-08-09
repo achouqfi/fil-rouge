@@ -85,7 +85,7 @@
                         <td >{{ $chambre->price }} MAD
                             <input type="hidden" name="prix" value="{{ $chambre->price }}" id="price<?=$i?>">
                          </td>
-                        <td>{!! Str::limit($chambre->option,40) !!}<a style="color: #" href="">Suite</a></td> 
+                        <td>{!! Str::limit($chambre->option,40) !!}<a class="text-info " >Suite</a></td> 
                         <td><input type="number" id="jrs<?=$i?>" value="0" min="0" max="7"></td>
                     </tr>
                     @php

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //page home route
-Route::get('/', 'App\Http\Controllers\HomeController@homepage');
+Route::get('/', 'App\Http\Controllers\Controller@homepage');
 
 //about 
 Route::get('/about', function () {

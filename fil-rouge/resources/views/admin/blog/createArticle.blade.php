@@ -36,7 +36,7 @@
 							<div class="form-group">
 							<label class="control-label col-sm-2">Article</label>
 							<div class="col-sm-12">
-								<textarea name="article" placeholder="Saisir l'article" class="form-control" required></textarea>
+								<textarea name="article" class="form-control" id="Text" required>Article :</textarea>
 							</div>
 							</div>
 							<div class="form-group">        
@@ -56,12 +56,12 @@
 @endsection
 @section('scriptText')
 	
-	{{-- <script>
+	<script>
 		ClassicEditor
 			.create( document.querySelector( '#Text' ) )
 			.catch( error => {
 				console.error( error );
 			} );
-	</script> --}}
+	</script>
 
 @endsection

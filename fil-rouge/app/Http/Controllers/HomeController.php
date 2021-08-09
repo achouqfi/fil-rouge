@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\User;
 use App\Models\Shap;
+use App\Models\Article;
+use App\Models\Riad;
+
 use Illuminate\Support\Facades\Hash;
 use App\Models\Comment;
-use App\Models\Riad;
 
 
 
@@ -88,7 +90,6 @@ class HomeController extends Controller
             'current_password' => "required|string",
             'new_password' =>"required|string|min:8",
             'password' =>'required|string|min:8',
-            
         ]);
 
         if($request->new_password == $request ->password){
@@ -106,7 +107,7 @@ class HomeController extends Controller
         }
         }
         else{
-        return redirect()->back()->with('','');
+            return redirect()->back()->with('','');
         }  
     }
 
@@ -120,11 +121,5 @@ class HomeController extends Controller
     }
 
     // fonction pour la page de home de mode de passe dans la partie front office
-    public function homePage()
-    {
-        //last 3 id in page home
-        $hotel = Riad::orderBy('id', 'DESC')->take(4)->get();
-    
-        return view('user.home',["hotels" => $hotel]);
-    }
+
 }

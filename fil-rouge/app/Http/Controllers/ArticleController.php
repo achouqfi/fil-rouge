@@ -20,7 +20,7 @@ class ArticleController extends Controller
     public function blog()
     {
         //
-        $article= article::All();
+        $article= article::orderBy('id', 'DESC')->get();
         return view('user.blog',["articles"=>$article]);
 
     }
