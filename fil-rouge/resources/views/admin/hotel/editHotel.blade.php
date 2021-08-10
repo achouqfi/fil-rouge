@@ -31,6 +31,11 @@
                                     <label for="email">Hotel adress</label>
                                     <input type="text" class="form-control" value="{{ $hotel->hotelAdresse }}" name="adresse" required/>
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Hotel phone</label>
+                                    <input type="text" class="form-control" value="{{ $hotel->phone }}" name="phone" required/>
+                                </div>
         
                                 <div class="form-group">
                                     <label>Add  principal photo</label>

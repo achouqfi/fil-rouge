@@ -44,7 +44,7 @@
                             <td><img  src="{{ asset($article->photo) }}" height="40px" width="50px"/></td>
                             <td><a href="{{ url('comment/'.$article->id.'/shomAdmin') }}" class="btn btn-info">Comments</a></td>
                             <td> {{ $article->created_at }}</td>
-                            <td style="display: flex">
+                            <td class="d-flex">
                                 <form action="{{ url('articleDlt/'.$article->id) }}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}

@@ -44,6 +44,10 @@
                         <th>Caracteritque</th>
                         <td>{{ $hotelDetails->hotelDescription }}</td>
                     </tr>
+                    <tr>
+                        <th>Numero de téléphone</th>
+                        <td>{{ $hotelDetails->phone }}</td>
+                    </tr>
 
                 </thead>   
             </table>
@@ -85,7 +89,7 @@
                         <td >{{ $chambre->price }} MAD
                             <input type="hidden" name="prix" value="{{ $chambre->price }}" id="price<?=$i?>">
                          </td>
-                        <td>{{ $chambre->option}}</td> 
+                        <td>{!! $chambre->option !!}</td> 
                         <td><input type="number" id="jrs<?=$i?>" value="0" min="0" max="7"></td>
                     </tr>
                     @php
@@ -93,7 +97,7 @@
                         $i++;
                     @endphp
                     @endforeach
-                    <button onclick="calcul(<?=$a?>)" class="btn btn-info btn-lg float-right" >Estimer</button>
+                    <button onclick="calcul(<?=$a?>)" class="btn btn-info btn-lg mb-3 float-right" >Estimer</button>
                 </tbody>
             </table>
         </div>
@@ -125,11 +129,6 @@
                                                 <td id="total" class="text-right"></td>
                                             </tr>
                                             <tr>
-                                                <td class="thick-line"></td>
-                                                <td class="thick-line text-center"><strong>Total HT</strong></td>
-                                                <td class="thick-line text-right">670.99 MAD</td>
-                                            </tr>
-                                            <tr>
                                                 <td class="no-line"></td>
                                                 <td class="no-line text-center"><strong>TVA</strong></td>
                                                 <td class="no-line text-right"><input type="hidden" value="0.2" id="tva"> 20%</td>
@@ -137,12 +136,13 @@
                                             <tr>
                                                 <td class="no-line"></td>
                                                 <td class="no-line text-center"><strong>Total TTC</strong></td>
-                                                <td class="no-line text-right"> 685.99 MAD</td>
+                                                <td class="no-line text-right" id="totalTTC"></td>
                                             </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <button class="btn btn-info btn-lg float-right" >Reserver</button>
+                            <a href="whatsapp: https://wa.me/{{ $hotelDetails->phone }}" class="btn btn-info btn-lg float-right mb-5" >Reserver</a>
+
                         </div>
                     </div>
                 </div>
@@ -156,18 +156,24 @@
         function calcul(j)
         {
             document.getElementById('facture').style.display="block";
+
             var totaljr = 0;
             var prixTotal = 0;
             for (var i = 0; i <= j; i++) {
-
                 var jrs = document.getElementById('jrs'+i).value;
                 var price =  document.getElementById('price'+i).value;
-                prixTotal =parseInt(price);
+                
+                var total = price * jrs;
+                prixTotal += total;
                 totaljr += parseInt(jrs);
+                // alert(total);
             }
-            var total = prixTotal * totaljr;
+         
+            // var total = prixTotal * totaljr;
             document.getElementById('jrsFacture').innerHTML=totaljr;
-            document.getElementById('total').innerHTML = total ;
+            document.getElementById('total').innerHTML = prixTotal ;
+
+            document.getElementById('totalTTC').innerHTML=parseFloat(prixTotal * 1.2);
         }
 
     </script>

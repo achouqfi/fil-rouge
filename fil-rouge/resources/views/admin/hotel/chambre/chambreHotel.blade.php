@@ -42,9 +42,7 @@
                             <td>{{ $chambre->housingType }}</td>
                             <td>{{ $chambre->for }} personne</td>
                             <td>{{ $chambre->price }} MAD</td>
-                            <td>{!! Str::limit($chambre->option,40) !!}
-                                <a href="{{ url("ShowChambreOption/".$chambre->id) }}" style="color:#17a2b8" >Suite</a>
-                            </td> 
+                            <td>{{$chambre->option }} </td> 
                             <td class="actionBtn d-flex">
                                 <a href="{{ url('AdminEditChambre/'.$chambre->id) }}" class="btn btn-info">Update</a>
                                 <form action="{{ url('AdminDltChambre/'.$chambre->id) }}" method="POST">
@@ -87,7 +85,7 @@
                         </div>
                         <div class="form-group">
                             <label>Options</label>
-                            <textarea name="option" class="form-control" required></textarea>
+                            <textarea name="option" class="form-control" id="Text" required>Les options</textarea>
                         </div>					
                     </div>
                     <div class="modal-footer">
@@ -100,6 +98,16 @@
     </div>
 @endsection
 
+@section('scriptText')
+	
+	<script>
+		ClassicEditor
+			.create( document.querySelector( '#Text' ) )
+			.catch( error => {
+				console.error( error );
+			} );
+	</script>
 
+@endsection
 
 

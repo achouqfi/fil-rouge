@@ -42,6 +42,7 @@ class RiadController extends Controller
         $hotel -> hotelName = $request -> name;
         $hotel -> hotelAdresse =  $request -> adresse;
         $hotel -> hotelDescription =  $request -> description;
+        $hotel -> phone =  $request -> phone;
 
         $file = $request->photoPrincipal;
         $ext = $file->getClientOriginalExtension();
@@ -84,6 +85,7 @@ class RiadController extends Controller
         $hotel -> hotelName = $request -> name;
         $hotel -> hotelAdresse =  $request -> adresse;
         $hotel -> hotelDescription =  $request -> description;
+        $hotel -> phone =  $request -> phone;
         
         $file = $request->photoPrincipal;
         $ext = $file->getClientOriginalExtension();

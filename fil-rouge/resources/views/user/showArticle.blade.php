@@ -17,15 +17,15 @@
         <div class="line"></div>
     </div>
 
-    <div class="container">
-        <img src="{{ asset($article->photo) }}" class="img-fluid"  width="80%">
-        <h3>{{ $article->title }}</h3>
-        <div style="width: 90%">
+    <div class="container " style="width: 80%">
+        <img src="{{ asset($article->photo) }}" class="img-fluid mb-4" height="30%"  >
+        <h3 >{{ $article->title }}</h3>
+        <div >
             {!! $article->text !!}
         </div>
     </div>
 
-    <div class="container ml-5 mr-5 " >
+    <div class="container  mr-5  ">
         <div class="row bootstrap snippets bootdeys">
             <div class="col-md-8 col-sm-12">
                 <div class="comment-wrapper">
@@ -43,7 +43,11 @@
                                         <div class="clearfix"></div>
                                     </form>
                                 @elseif (\Auth::user()->is_admin == 1)
-                                    <h3 class="text-info">Voila la liste des commentaires</h3>
+                                    <div class="m-5 bg-info p-2">
+                                        <div class="bg-white p-4 d-flex justify-content-center ">
+                                        <h4 class="mt-1 text-info">Voila la liste des commentaires</h4>
+                                        </div>
+                                    </div>
                                 @endif 
                                 @endauth
 

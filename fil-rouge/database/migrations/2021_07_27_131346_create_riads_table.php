@@ -19,6 +19,8 @@ class CreateRiadsTable extends Migration
             $table->string('hotelAdresse');
             $table->longText('hotelDescription');
             $table->string('photoPrincipal');
+            $table->string('phone');
+            //add phone number
             $table->timestamps();
             
         });

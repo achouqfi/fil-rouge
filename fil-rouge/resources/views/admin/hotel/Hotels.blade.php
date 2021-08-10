@@ -31,6 +31,7 @@
                             <th>Id</th>
                             <th>Name</th>
                             <th>Adresse</th>
+                            <th>Phone</th>
                             <th>Photo principale</th>
                             <th>Description</th>
                             <th>Details photos</th>
@@ -45,17 +46,18 @@
                             <td>{{ $hotel->id }}</td>
                             <td>{{ $hotel->hotelName  }}</td>
                             <td>{{ $hotel->hotelAdresse  }}</td>
+                            <td>{{ $hotel->phone  }}</td>
                             <td><img src="{{ asset( $hotel->photoPrincipal ) }}" alt="" height="40px"></td>
                             <td>{{ $hotel->hotelDescription  }}</td>
                             <td> <a href="{{ url('adminPhotoHotel/'.$hotel->id) }}"  class="btn btn-warning btn-md photo" > Add photo</a></td>
                             <td> <a href="{{ url('AdminChambreHotel/'.$hotel->id) }}"  class="btn btn-warning btn-md photo" > Add Chambre</a></td>
 
-                            <td style="display: flex" >
+                            <td class="d-flex mt-3">
                                 <a href="{{ url('AdminEditHotel/'.$hotel->id ) }}" class="btn btn-info btn-md"> Update</a>
                                 <form action="{{ url('AdminDltHotel/'.$hotel->id) }}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
-                                    <button   class="btn btn-danger btn-md">Delete</button>
+                                    <button class="btn btn-danger btn-md ml-3">Delete</button>
                                 </form>
                             </td>
                         </tr>
@@ -84,6 +86,10 @@
                         <div class="form-group">
                             <label>Adresse</label>
                             <input type="text" name="adresse" class="form-control" required>
+                        </div> 
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" name="phone" class="form-control" required>
                         </div> 
                        <div class="form-group">
                             <label>Photo Principale</label>
