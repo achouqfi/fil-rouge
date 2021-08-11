@@ -12,7 +12,7 @@ class ArticleController extends Controller
     public function index()
     {
         //
-        $article= Article::paginate(5);
+        $article= Article::paginate(4);
         return view('admin.blog.article',["articles"=>$article]);
 
     }

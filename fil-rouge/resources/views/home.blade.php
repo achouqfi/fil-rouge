@@ -67,7 +67,6 @@
 					<div class="row">
 						<div class="col-sm-12">
                             <div class="card mt-3 pb-3">
-
                             <h3 class="text-white bg-info mt-3 p-3">Etat de votre commande </h3> 
                             @if (count(Auth::user()->commandes)===0)
                                 <h5>vous aves pas des commandes:</h5>
@@ -100,12 +99,13 @@
                                                 <input type="submit" class="btn btn-danger ml-2" value="Annuler">
                                             </form>
                                         </div>
-                            </div>
-                            </div>
+
 
                                 @endif
+                            
                                 @if (  $commande->etat === 'confirmer')
-                                <table class="table  table-hover mt-4 " style="" >
+                                <h4 class="text-info mt-4"> <b>Voila votre commande :</b> </h4>
+                                <table class="table  table-hover  " style="" >
                                     <thead>
                                         <tr>
                                             <th>category</th>      
@@ -133,6 +133,7 @@
                                     <td > <span class="bg-info   text-white p-2 rounded">livré</span> </td>     
                                 @endif
                                 @if (  $commande->etat === 'annuler')
+                                <h4 class="text-danger mt-4"> <b>Votre commande est annuler</b> </h4>
                                 <table class="table table-hover" style="">
                                     <thead>
                                         <tr>
@@ -167,6 +168,8 @@
 							</div>
 
                             @endif
+                        </div>
+                    </div>
                             {{-- @endif --}}
 						</div>
 					</div>

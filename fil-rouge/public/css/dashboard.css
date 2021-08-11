@@ -17,7 +17,6 @@ body{
     width: 70px;
     height: 759px;
     border-bottom-right-radius: 35px;
-    
 }
 
 li{
@@ -111,15 +110,13 @@ table.table tr th, table.table tr td {
 /*---------------- navCount--------------- */
 
 
-.countContainer {
-    margin-top: 3%
-}
 
 .counter-box {
     display: block;
     background: #026d9e;
     padding: 40px 20px 37px;
-    text-align: center
+    text-align: center;
+    margin-top: 40%;
 }
 
 .counter-box p {

@@ -13,7 +13,7 @@ class RiadController extends Controller
     public function index()
     {
         //select tous les hotels 
-        $hotel= Riad::paginate(5);
+        $hotel= Riad::paginate(4);
         return view("admin.hotel.Hotels",["hotels" => $hotel]);
     }
 

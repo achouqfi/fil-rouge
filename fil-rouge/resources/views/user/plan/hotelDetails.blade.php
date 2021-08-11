@@ -141,13 +141,15 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <a href="whatsapp: https://wa.me/{{ $hotelDetails->phone }}" class="btn btn-info btn-lg float-right mb-5" >Reserver</a>
-
+                            {{-- <a href="whatsapp: https://wa.me/{{ $hotelDetails->phone }}" class="btn btn-info btn-lg float-right mb-5" >Reserver</a> --}}
+                            <a href="https://api.whatsapp.com/send?phone={{ $hotelDetails->phone }}" class="btn btn-info btn-lg float-right mb-5" >Reserver</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    
+
 @endsection
 
 @section('scriptjs')

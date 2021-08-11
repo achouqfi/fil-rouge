@@ -12,7 +12,7 @@
 @section('content')
 <section>
 
-    <link rel="stylesheet" href="{{ URL::asset('css/home.css') }}">
+    {{-- <link rel="stylesheet" href="{{ URL::asset('css/home.css') }}"> --}}
 
     <div class="trip">
         <h2>About Us</h2> 
