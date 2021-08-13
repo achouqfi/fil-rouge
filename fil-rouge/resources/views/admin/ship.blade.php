@@ -13,7 +13,7 @@
                         </div>
                     </div>
                 </div>
-                <table class="table table-hover" style="">
+                <table class="table table-hover" >
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -27,37 +27,36 @@
                             <th>MoreDetails</th>
                             <th>user </th>
                             <th>Etat</th>
-                            <th>modification</th>
-                            {{-- <th class="text-center">Action</th> --}}
+                            <th>Modification</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($ship as $ship)
+                        @foreach ($shaps as $shap)
                         <tr>
-                            <td> {{ $ship->id }}</td>
-                            <td> {{ $ship->category}}</td>
-                            <td> {{ $ship->color}}</td>
-                            <td> {{ $ship->typeOfWave}}</td>
-                            <td> {{ $ship->Phone}}</td>
-                            <td> {{ $ship->Adresse}}</td>
-                            <td> {{ $ship->lenght}}</td>
-                            <td> {{ $ship->width }}</td>
-                            <td> {{ $ship->MoreDetails }}</td>
-                            <td> {{ $ship->user->name }}</td>
+                            <td> {{ $shap->id }}</td>
+                            <td> {{ $shap->category}}</td>
+                            <td> {{ $shap->color}}</td>
+                            <td> {{ $shap->typeOfWave}}</td>
+                            <td> {{ $shap->Phone}}</td>
+                            <td> {{ $shap->Adresse}}</td>
+                            <td> {{ $shap->lenght}}</td>
+                            <td> {{ $shap->width }}</td>
+                            <td> {{ $shap->MoreDetails }}</td>
+                            <td> {{ $shap->user->name }}</td>
 
-                            @if (  $ship->etat === 'envoyer')
+                            @if (  $shap->etat === 'envoyer')
                                 <td> <span class="bg-success   text-white p-2 rounded">envoyer</span> </td>     
                             @endif
-                            @if (  $ship->etat === 'confirmer')
+                            @if (  $shap->etat === 'confirmer')
                                 <td> <span class="bg-success   text-white p-2 rounded">Comfirmed</span> </td>     
                             @endif
-                            @if (  $ship->etat === 'livrer')
+                            @if (  $shap->etat === 'livrer')
                                 <td > <span class="bg-info   text-white p-2 rounded">livré</span> </td>     
                             @endif
-                            @if (  $ship->etat === 'annuler')
+                            @if (  $shap->etat === 'annuler')
                                 <td> <span  class="bg-danger  text-white p-2 rounded">annuler</span></td>     
                             @endif
-                            <form action="{{ url('etatCommande/'.$ship->id) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('etatCommande/'.$shap->id) }}" method="POST" enctype="multipart/form-data">
                                 <input type="hidden" name="_method" value="PUT">
                                 @csrf   
                                 <td  class=" container d-block pt-4"> 
@@ -73,10 +72,10 @@
 
                         </tr>
                     @endforeach
-
-                    </tbody>
+                </tbody>
                 </table>
-                {{-- <span >{{ $ship->links( "pagination::bootstrap-4") }}</span> --}}
+                <span>{{ $shaps->links( "pagination::bootstrap-4") }}</span>
+
             </div>
         </div>        
     </div>

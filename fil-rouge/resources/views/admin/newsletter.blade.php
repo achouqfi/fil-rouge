@@ -1,8 +1,6 @@
 @extends('layouts.sidebar')
 @auth
-    @if (Auth::user()->is_admin === 0)
-        <div class="alert alert-warning">c'est la page d'admin</div>    
-    @else 
+@if (Auth::user()->is_admin === 1)
     
 @section('content')
    <div class="container">
@@ -54,9 +52,7 @@
 @endsection
 
 @endif
-    <div class="alert alert-warning">c'est la page d'admin</div>    
-@guest
-    
-@endguest
 @endauth
+
+
 

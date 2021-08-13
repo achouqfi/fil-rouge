@@ -11,7 +11,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>  <!-- Bootstrap CSS -->
     <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>           <!--CKEditor CDN -->
     <link rel="stylesheet" href="{{ URL::asset('css/dashboard.css') }}">
-    <title>Home page</title>
+    <title>Dashboard</title>
 
 </head>
 <body>

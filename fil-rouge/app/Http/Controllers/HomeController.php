@@ -46,7 +46,7 @@ class HomeController extends Controller
 
     // fonction pour le tableau users dans la partie back office
     public function user(){
-        $users= User::All();
+        $users= User::paginate(7);
         return view("admin.users",["users" => $users]);
     }
     
@@ -116,10 +116,10 @@ class HomeController extends Controller
     public function DltUser($id)
     {
         //m
+        // $user=User::findOrfail($id);
         User::destroy($id);
         return redirect()->back()->with('dltuser','user account are deleted');
     }
 
-    // fonction pour la page de home de mode de passe dans la partie front office
 
 }

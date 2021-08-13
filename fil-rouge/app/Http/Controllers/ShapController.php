@@ -18,8 +18,8 @@ class ShapController extends Controller
     public function admin()
     {
         //affichage des commande pour dans la page admin
-        $ship= Shap::paginate(5);
-        return view("admin.ship",["ship" => $ship]);  
+        $shap= Shap::paginate(4);
+        return view("admin.ship",["shaps" => $shap]);  
     }
 
     public function store(Request $request)

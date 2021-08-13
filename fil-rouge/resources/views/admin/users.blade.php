@@ -48,7 +48,7 @@
 
                     </tbody>
                 </table>
-                {{-- <span>{{ $articles->links( "pagination::bootstrap-4") }}</span> --}}
+                <span>{{ $users->links( "pagination::bootstrap-4") }}</span>
             </div>
         </div>        
     </div>

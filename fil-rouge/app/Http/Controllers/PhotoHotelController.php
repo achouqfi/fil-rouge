@@ -16,6 +16,7 @@ class PhotoHotelController extends Controller
             $name = time()."".$file->getClientOriginalName();
             $file->move('storage/uploads/', $name);
             $filepath="storage/uploads/".$name;
+            
             PhotoHotel::create([
                 "pathPhoto"=>$filepath,
                 "riad_id"=>$request->hotel_id

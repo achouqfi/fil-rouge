@@ -10,15 +10,16 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="{{ URL::asset('css/frontoffice.css') }}">
-  <title>surf in morocco</title>
+  <title>surf in Safi</title>
 </head>
 <body>
+   <!-- about newsleter message-->
    @if (session('message'))
       <div class="alert alert-success">{{ session('message') }}</div>            
    @endif
   <!-------------------- navbar ------------------->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="/">Moroccan<b>Surf</b></a>  		
+        <a class="navbar-brand" href="/">Surfing In<b> SAFI</b></a>  		
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
         </button>
