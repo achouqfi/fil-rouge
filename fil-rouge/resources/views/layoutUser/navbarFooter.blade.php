@@ -24,7 +24,7 @@
         <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navbarCollapse" class="collapse navbar-collapse ">
-        <div class="navbar-nav">
+        <div class="navbar-nav ">
 
             @yield('navbar')
 
@@ -59,8 +59,8 @@
 
 
     <!---------------- footer ------------>
-    <footer>
-         <div class="container footer">
+    <footer class="bg-info">
+         <div class="container footer ">
             <div class="row ">
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                   <div class="Follow text-center">

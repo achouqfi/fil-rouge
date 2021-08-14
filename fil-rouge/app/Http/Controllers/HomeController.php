@@ -95,19 +95,19 @@ class HomeController extends Controller
         if($request->new_password == $request ->password){
         $current_user=auth()->user();
         $user = User::find($current_user->id) ;
-        if(Hash::check($request->current_password,$current_user->password))
-        {
-            $user->update([
-                'password'=>bcrypt($request->new_password)
-            ]);
-            return redirect()->back()->with('success','mode de passe est changer');
+            if(Hash::check($request->current_password,$current_user->password))
+            {
+                $user->update([
+                    'password'=>bcrypt($request->new_password)
+                ]);
+                return redirect()->back()->with('success','mode de passe est changer');
 
-        }else{
-            return redirect()->back()->with('','');
-        }
+            }else{
+                return redirect()->back()->with('mdError','ancien mode de passe est inccorrect');
+            }
         }
         else{
-            return redirect()->back()->with('','');
+            return redirect()->back()->with('Error','nouvelle mode de passe incorrect');
         }  
     }
 

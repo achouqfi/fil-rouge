@@ -1,9 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session('error'))
+    <div class="alert alert-warning">{{ session('error') }}</div>            
+@endif
+
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            
             <div class="card">
                 <div class="card-header bg-info "> 
                     <h2 class="text-center font-weight-bold text-light">{{ __('Login') }}</h2>

@@ -13,7 +13,7 @@ class CommentController extends Controller
 
     public function store(Request $request)
     {
-        //insertion des commentaires
+        //insertion des commentaires dans la DB
         $comment = new Comment();
 
         $comment -> message = $request -> commentaire;
@@ -26,7 +26,7 @@ class CommentController extends Controller
 
     public function destroy($id)
     {
-        //
+        //suppression des commentaires pour utilisateur
         $comment = Comment::find($id);
         $comment->delete();
         
@@ -35,7 +35,7 @@ class CommentController extends Controller
 
     public function DltComment($id)
     {
-        //
+        //suppression des commentaires pour admin
         $comment = Comment::find($id);
         $comment->delete();
         

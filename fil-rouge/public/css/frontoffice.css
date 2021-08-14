@@ -2,7 +2,7 @@
 
 /*------------------- navbar------------------------  */
 body{
-	font-family: 'Varela Round', sans-serif;
+	font-family: 'Noto Serif', serif ;
     margin: 0%;
 }
 .form-inline {
@@ -135,7 +135,7 @@ body{
     margin-top: 14.5%;
     font-size: x-large;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Noto Serif', serif;;
     line-height: 38px;
     margin-left: 2.7%;
 }@media (min-width:480px) and (max-width:700px){
@@ -460,7 +460,6 @@ body{
 }
 /*---------- footer ------------*/
 footer{
-    background-color: #5EB6DD;
     color: white;
     padding: 3%;
 

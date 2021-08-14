@@ -15,7 +15,7 @@ class Controller extends BaseController
 
     public function homePage()
     {
-        //last 3 id in page home
+        //affichege de contenu dans  page home
         $hotel = Riad::orderBy('id', 'DESC')->take(4)->get();
         $article = Article::orderBy('id', 'DESC')->take(3)->get();
     

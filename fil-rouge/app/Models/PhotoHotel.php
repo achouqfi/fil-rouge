@@ -9,6 +9,7 @@ class PhotoHotel extends Model
 {
     use HasFactory;
     
+    
     protected $fillable=[
         "pathPhoto","riad_id"
     ];

@@ -9,6 +9,7 @@ class Chambre extends Model
 {
     use HasFactory;
 
+    //relation chambre/hotel
     public function hotel(){
         return $this->belongsTo(Riad::class);
     }

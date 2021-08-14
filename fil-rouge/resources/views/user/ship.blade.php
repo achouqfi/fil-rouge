@@ -1,16 +1,19 @@
 @extends('layoutUser.navbarFooter')
 
 @section('navbar')
-    <a href="/" class="nav-item nav-link " >Home</a>
-    <a href="/about" class="nav-item nav-link">About</a>			
-    <a href="/ship" class="nav-item nav-link active">Ship</a>
-    <a href="/plan" class="nav-item nav-link ">Plan</a>
-    <a href="/blog" class="nav-item nav-link ">Blog</a>
-    <a href="/contact" class="nav-item nav-link ">Contact</a>
+  <a href="/" class="nav-item nav-link font-weight-bold " >Accueil</a>
+  <a href="/about" class="nav-item nav-link font-weight-bold ">About</a>			
+  <a href="/ship" class="nav-item nav-link font-weight-bold active">Shap</a>
+  <a href="/plan" class="nav-item nav-link font-weight-bold ">Hotel</a>
+  <a href="/blog" class="nav-item nav-link font-weight-bold ">Blog</a>
+  <a href="/contact" class="nav-item nav-link font-weight-bold ">Contact</a>
 @endsection
 
 @section('content')
 <body>
+  @if (session('order'))
+    <div class="alert alert-success">{{ session('order') }}</div>            
+  @endif
     <!-------------------------- About Us ----------------->
     <div class="trip">
         <h2>Customize your surfboard</h2> 
@@ -122,9 +125,7 @@
 
       @endguest
           
-      @if (session('order'))
-        <div class="alert alert-success">{{ session('order') }}</div>            
-      @endif
+
 
 </body>
 @endsection

@@ -6,6 +6,12 @@
             @if (session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>            
             @endif
+            @if (session('Error'))
+                <div class="alert alert-warning">{{ session('Error') }}</div>            
+            @endif
+            @if (session('mdError'))
+                <div class="alert alert-warning">{{ session('mdError') }}</div>            
+            @endif
             <div class="card">
                 <div class="card-header bg-info "> 
                     <h2 class="text-center font-weight-bold text-light">{{ __('Changer votre mode de passe') }}</h2>

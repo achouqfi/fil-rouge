@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Surfing in Safi') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -32,13 +32,13 @@
         <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navbarCollapse" class="collapse navbar-collapse ">
-            <div class="navbar-nav">
-                <a href="/" class="nav-item nav-link " >Home</a>
-                <a href="/about" class="nav-item nav-link">About</a>			
-                <a href="/ship" class="nav-item nav-link">Ship</a>
-                <a href="/plan" class="nav-item nav-link ">Plan</a>
-                <a href="/blog" class="nav-item nav-link ">Blog</a>
-                <a href="/contact" class="nav-item nav-link">Contact</a>
+            <div class="navbar-nav font-weight-bold">
+                <a href="/" class="nav-item nav-link font-weight-bold " >Accueil</a>
+                <a href="/about" class="nav-item nav-link font-weight-bold">About</a>			
+                <a href="/ship" class="nav-item nav-link font-weight-bold">Shap</a>
+                <a href="/plan" class="nav-item nav-link font-weight-bold ">Hotel</a>
+                <a href="/blog" class="nav-item nav-link font-weight-bold ">Blog</a>
+                <a href="/contact" class="nav-item nav-link font-weight-bold">Contact</a>
             </div>
             <div class="navbar-nav ml-auto">
                 <ul class="navbar-nav ml-auto">
@@ -57,7 +57,7 @@
                         @endif
                     @else
                         <li class="nav-item  d-flex">
-                            <a  class="nav-link" href="#"  >{{ Auth::user()->name }}</a>
+                            <a  class="nav-link" href="/auth"  >{{ Auth::user()->name }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                                 @csrf
                                 <button class="btn btn-info">Logout</button>
@@ -73,7 +73,7 @@
             @yield('content')
         </main>
 
-    <footer class="mt-5">
+    <footer class="mt-5 bg-info">
         <div class="container footer">
            <div class="row ">
               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
@@ -91,9 +91,13 @@
                  <div class="Follow text-center">
                     <h3>Newsletter</h3>
                  </div>
-                 <input class="Newsletter" placeholder="Enter your email" type="Enter your email">
-                 <button class="btn btn-danger btn-md">Envoyer</button>
+                 <form action="{{ url('createnewletter') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input class="Newsletter" name="email" placeholder="Enter your email" type="Enter your email">
+                    <button class="btn btn-danger btn-md ml-1">Envoyer</button>
+                 </form>
               </div>
+
            </div>
         </div>
   </footer>

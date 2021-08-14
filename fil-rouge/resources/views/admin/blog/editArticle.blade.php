@@ -1,3 +1,6 @@
+@auth
+@if (Auth::user()->is_admin === 1)
+
 @extends('layouts.sidebar')
 
 @section('content')
@@ -67,3 +70,6 @@
 	</script>
 
 @endsection
+
+@endif
+@endauth

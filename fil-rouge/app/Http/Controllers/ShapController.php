@@ -79,7 +79,7 @@ class ShapController extends Controller
     public function annulation($id)
     {
         //supression du commande
-         Shap::destroy($id);
+        Shap::destroy($id);
         return redirect()->back()->with('annuler','vous avez annuler la commande');
     }
 
