@@ -16,14 +16,11 @@
     <img src="./image/pexels-alexandre-saraiva-carniato-1644724.jpg" alt="home page" width="100%">
   </div>
   <div class="text">
-    <h3>Safi, Magic Wave & Best right hand in Morocco<br>
-      Est une ville dans l'ouest du Maroc sur l'océan Atlantique.<br>
-      Capitale de la province de Safi et de l'ancienne région Marrakech-Safi</h3>
+    <h3>Safi, Magic Wave & Meilleur bras droit au Maroc<br>
+      Est une ville dans l'ouest du Maroc sur l'océan Atlantique.<br></h3>
     <div class="reservation">
-
-      <a href="/hotel"  class="btn btn-danger btn-md but-now"><b>See Hotels</b> </a>
+      <a href="/hotel"  class="btn btn-danger btn-md but-now"><b>Voir Hotels</b> </a>
       <a href="/blog"class="btn btn-info btn-md learn-more"><b>About Safi</b> </a>
-      
     </div>
   </div>
 
@@ -54,7 +51,7 @@
   </div>
   {{--------------- -trip and hotel informartion -----------------}}
   <div class="trip">
-    <h2>Create a trip of a lifetime</h2> 
+    <h2>Créer un voyage</h2> 
     <div class="line"></div>
   </div>
 
@@ -71,20 +68,20 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="{{ url('hotelDetails/'.$hotel->id) }}" class="btn btn btn-info btn-md">See more</a>
+                    <a href="{{ url('hotelDetails/'.$hotel->id) }}" class="btn btn btn-info btn-md">Voir Plus</a>
                 </div>
             </div>
         </div>
       @endforeach
     </div>
     <div class="text-center seeMore">
-      <a href="/hotel" class="btn btn-outline-info btn-lg">See more</a>
+      <a href="/hotel" class="btn btn-outline-info btn-lg">Voir Plus</a>
     </div>
   </div>
 
   {{------------------ blog and surf actuality --------------------}}
   <div class="trip">
-    <h2>Blog </h2> 
+    <h2>Blog</h2> 
     <div class="line"></div>
   </div>
 
@@ -99,13 +96,13 @@
         @endforeach
     </div>
     <div class="text-center mb-3 seeMore">
-      <a href="/blog" class="btn btn-outline-info btn-lg">See more</a>
+      <a href="/blog" class="btn btn-outline-info btn-lg">Voir Plus</a>
     </div>
   </div>
 
   {{------------------- surf customizing --------------------------}}
   <div class="trip">
-    <h2>Customize Your Surfboard</h2> 
+    <h2>Personnalisez votre Surfboard</h2> 
     <div class="line"></div>
   </div>
 
@@ -116,7 +113,7 @@
       </div>
       <div class="col">
         <div class="shipTitle">
-          <h2>About our website</h2>
+          <h2>À propos de personnaliser la planche de Surfboard</h2>
         </div>
         <div class="shipPar">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem a nihil est impedit numquam eos sequi exercitationem inventore, unde similique ea culpa illum mollitia, quae accusantium obcaecati distinctio maxime natus?

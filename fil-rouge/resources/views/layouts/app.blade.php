@@ -6,8 +6,9 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Surfing in Safi</title>
 
-    <title>{{ config('app.name', 'Surfing in Safi') }}</title>
+    {{-- <title>{{ config('app.name', '') }}</title> --}}
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -15,7 +16,6 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
@@ -46,13 +46,13 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="">
-                                <a class="btn btn-info " href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="btn btn-info login" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             <li class="">
-                                <a class="btn btn-outline-info " href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="btn btn-outline-info login" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                     @else
@@ -93,7 +93,7 @@
                  </div>
                  <form action="{{ url('createnewletter') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input class="Newsletter" name="email" placeholder="Enter your email" type="Enter your email">
+                    <input class="Newsletter" name="email" placeholder="Enter your email" type="Enter your email" required>
                     <button class="btn btn-danger btn-md ml-1">Envoyer</button>
                  </form>
               </div>

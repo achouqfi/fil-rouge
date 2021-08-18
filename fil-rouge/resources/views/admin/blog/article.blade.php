@@ -48,11 +48,11 @@
                             <td><a href="{{ url('comment/'.$article->id.'/shomAdmin') }}" class="btn btn-info">Comments</a></td>
                             <td> {{ $article->created_at }}</td>
                             <td class="d-flex">
-                                <form action="{{ url('articleDlt/'.$article->id) }}" method="POST">
+                                <form action="{{ url('articleDlt/'.$article->id) }}" class="d-flex" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
                                     <button class="btn btn-danger btn-md">Delete</button>
-                                    <a href="{{ url('article/'.$article->id.'/edit') }}" class="btn btn-info btn-md">Update</a>
+                                    <a href="{{ url('article/'.$article->id.'/edit') }}" class="btn btn-info btn-md ml-3">Update</a>
                                 </form>
                             </td>
                         </tr>

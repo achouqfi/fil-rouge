@@ -38,8 +38,8 @@
                         </div>
                         </div>
                         <button class=" btn font-weight-bold btn-outline-light btn-lg align-center send-btn">Send</button>
-                        @if (session('message'))
-                            <div class="alert alert-info">{{ session('message') }}</div>            
+                        @if (session('contact'))
+                            <div class="alert alert-info">{{ session('contact') }}</div>            
                         @endif
                     </form>
                 </div>

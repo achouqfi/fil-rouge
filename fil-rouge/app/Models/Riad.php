@@ -16,4 +16,5 @@ class Riad extends Model
     public function chambres(){
         return $this->hasMany(Chambre::class);
     }
+    
 }

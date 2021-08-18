@@ -40,6 +40,10 @@ class ChambreController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'option' => "required|string",
+        ]);
+
         //update de contenu des articles
         $chambre = Chambre::find($id);
 

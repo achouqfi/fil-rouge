@@ -44,7 +44,7 @@
                                     <label>Add  principal photo</label>
                                     <div class="input-group">
                                         <img src="{{ asset($hotel->photoPrincipal) }}" alt="" width="50px">
-                                        <input type="file" class="form-control"  name="photoPrincipal" required/>
+                                        <input type="file" class="form-control" name="photoPrincipal" required/>
                                     </div>
                                 </div>
                                 

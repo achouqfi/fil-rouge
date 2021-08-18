@@ -37,8 +37,11 @@
                                     <input type="text" name="tarif" class="form-control" value="{{ $chambre->price }}" name="adresse" required/>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">chambre adress</label>
-                                    <textarea style="height: 150px" name="option"  id="Text" name="" class="form-control" >{{ $chambre->option }}</textarea>
+                                    <label for="text">Option</label>
+                                    <textarea style="height: 150px" name="option"  id="Text"  class="form-control" required>{{ $chambre->option }}</textarea>
+                                    @if ($errors->any('option'))
+                                        <span class="text-danger">{{ $errors->first('option') }}</span>
+                                    @endif
                                 </div>
         
                                 <button type="submit" class="btn btn-success">Save</button>                            

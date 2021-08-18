@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="{{ URL::asset('css/frontoffice.css') }}">
   <title>surf in Safi</title>
+
 </head>
 <body>
    <!-- about newsleter message-->
@@ -79,7 +81,7 @@
                   </div>
                   <form action="{{ url('createnewletter') }}" method="POST" enctype="multipart/form-data">
                      @csrf
-                     <input class="Newsletter" name="email" placeholder="Enter your email" type="Enter your email">
+                     <input class="Newsletter" name="email" placeholder="Enter your email" type="Enter your email" required>
                      <button class="btn btn-danger btn-md ml-1">Envoyer</button>
                   </form>
                </div>

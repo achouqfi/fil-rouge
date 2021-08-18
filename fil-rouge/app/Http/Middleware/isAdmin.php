@@ -15,6 +15,7 @@ class isAdmin
      * @param  \Closure  $next
      * @return mixed
      */
+    
     public function handle(Request $request, Closure $next)
     {
         if(auth()->user()->is_admin == 1){

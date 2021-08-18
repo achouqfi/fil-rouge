@@ -56,7 +56,7 @@
 
     {{-- les chambre et les Caracteritiques --}}
 
-    <div class="container">
+    <div class="container" style="padding-left:0% ">
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
@@ -168,14 +168,12 @@
                 var total = price * jrs;
                 prixTotal += total;
                 totaljr += parseInt(jrs);
-                // alert(total);
             }
          
-            // var total = prixTotal * totaljr;
             document.getElementById('jrsFacture').innerHTML=totaljr;
             document.getElementById('total').innerHTML = prixTotal ;
 
-            document.getElementById('totalTTC').innerHTML=parseFloat(prixTotal * 1.2);
+            document.getElementById('totalTTC').innerHTML=prixTotal * 1.2;
         }
 
     </script>

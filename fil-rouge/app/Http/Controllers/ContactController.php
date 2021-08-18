@@ -30,7 +30,7 @@ class ContactController extends Controller
         $contact -> message =  $request -> message;
 
         $contact ->save();
-        return redirect()->back()->with('message', 'Message envoyer');
+        return redirect()->back()->with('contact', 'Message envoyer');
     }
 
     public function destroy($id)

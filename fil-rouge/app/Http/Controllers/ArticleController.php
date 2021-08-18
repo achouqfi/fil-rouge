@@ -40,7 +40,7 @@ class ArticleController extends Controller
 
         $file = $request->photo;
         $ext = $file->getClientOriginalExtension();
-        $filename = time() . ".".$ext ;
+        $filename = time() . ".".$ext;
         $filepath ="storage/public/";
         $file->move($filepath,$filename);
         $article->photo = $filepath.$filename;

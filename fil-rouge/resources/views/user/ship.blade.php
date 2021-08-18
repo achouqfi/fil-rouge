@@ -16,7 +16,7 @@
   @endif
     <!-------------------------- About Us ----------------->
     <div class="trip">
-        <h2>Customize your surfboard</h2> 
+        <h2>Personnalisez votre Surfboard</h2> 
         <div class="line"></div>
     </div>
 
@@ -27,7 +27,7 @@
         </div>
         <div class="col">
           <div class="shipTitle">
-            <h2>How We work</h2>
+            <h2>Comment nous travaillons</h2>
           </div>
           <div class="shipPar">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem a nihil est impedit numquam eos sequi exercitationem inventore, unde similique ea culpa illum mollitia, quae accusantium obcaecati distinctio maxime natus?
@@ -71,7 +71,7 @@
     @auth 
     @if (\Auth::user()->is_admin== 0)
       <div class="titleShip">
-        <h4>Enter dimensions</h4>
+        <h4>Saisir les dimensions</h4>
         <div class="linee"></div>
       </div>
       <div class="container Conformulaire">
@@ -79,7 +79,7 @@
           <div class="formilaireCustomaze">
             @csrf
             <div class="select">
-              <select name="category" class="category">
+              <select name="category" class="category" required>
                 <option selected>Category</option>
                 <option value="ShortBoard">ShortBoard</option>
                 <option value="Fish">Fish</option>
@@ -91,19 +91,19 @@
             </div>
             <div class="inputsForm">
               <div class="rowform1">
-                <input type="text" name="Phone" placeholder="Phone number">
-                <input type="text" name="Adresse" placeholder="Adresse">
-                <input type="text" name="color" placeholder="color">
+                <input type="text" name="Phone" placeholder="Phone number" required>
+                <input type="text" name="Adresse" placeholder="Adresse" required>
+                <input type="text" name="color" placeholder="color" required>
               </div>
                 <input type="hidden" name="etat" value="envoyer">
 
               <div class="rowform2"> 
-                <input type="text" name="typeOfWave" placeholder="type of wave">
-                <input type="text" name="lenght" placeholder="lenght in inch">
-                <input type="text" name="width" placeholder="width in inch">
+                <input type="text" name="typeOfWave" placeholder="type of wave" required>
+                <input type="text" name="lenght" placeholder="lenght in inch" required>
+                <input type="text" name="width" placeholder="width in inch" required>
               </div>
               <div class="rowform3">
-                <textarea name="MoreDetails" id="" cols="30" rows="10" placeholder="More Details"></textarea>
+                <textarea name="MoreDetails" id="" cols="30" rows="10" placeholder="More Details" required></textarea>
               </div>
               <div class="btnForm">
                 <input type="submit" name="submit" class="btn btn-outline-info btn-md" value="Send order" />
@@ -118,7 +118,7 @@
       @guest
         <div class="m-5 bg-info p-2">
           <div class="bg-white p-4 d-flex justify-content-center ">
-            <h4 class="mt-1 text-info">Authentifiez-vous:  </h4>
+            <h4 class="mt-1 text-info">Authentifiez-vous pour commander:  </h4>
             <a href="/login " class="btn btn-info floart-center ml-2">Login</a>
           </div>
         </div>

@@ -25,10 +25,10 @@
 							@csrf
 		
 							<div class="form-group">
-							<label class="control-label col-sm-2" >Titre de l'article</label>
-							<div class="col-sm-12">          
-								<input type="text" class="form-control" placeholder="Saisir le titre" name="titre" required>
-							</div>
+								<label class="control-label col-sm-2" >Titre de l'article</label>
+								<div class="col-sm-12">          
+									<input type="text" class="form-control" placeholder="Saisir le titre" name="titre" required>
+								</div>
 							</div>
 							<div class="form-group">
 							<label class="control-label col-sm-2" >Photo</label>

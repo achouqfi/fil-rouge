@@ -61,14 +61,14 @@
                             <form action="{{ url('etatCommande/'.$shap->id) }}" method="POST" enctype="multipart/form-data">
                                 <input type="hidden" name="_method" value="PUT">
                                 @csrf   
-                                <td  class=" container d-block pt-4"> 
-                                    <select  name="etat">
+                                <td  class=" container "> 
+                                    <select  class="form-control ml-2 mt-" style="width: 100px;" name="etat">
                                         <option value="" selected="selected" disabled>etat</option>
                                         <option class="bg-success text-white " value="confirmer">confirmer</option>
                                         <option class="bg-info text-white" value="livrer">livré</option>
                                         <option class="bg-danger text-white" value="annuler">annuler</option>
                                     </select>&nbsp;
-                                    <button class="btn btn-success btn-md">modifie</button>
+                                    <button class="btn btn-success btn-md ml-2 mt-2 ">modifie</button>
                                 </td>
                             </form>
 
